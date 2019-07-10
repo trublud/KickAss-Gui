@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>LSMinimumSystemVersion</key>
+  <string>10.10.0</string>
+
+  <key>NSPrincipalClass</key>
+  <string>NSApplication</string>
+
+  <key>CFBundleIconFile</key>
+  <string>appicon.icns</string>
+
+  <key>CFBundlePackageType</key>
+  <string>APPL</string>
+
+  <key>CFBundleSignature</key>
+  <string>????</string>
+
+  <key>CFBundleExecutable</key>
+  <string>kickass-wallet-gui</string>
+  
+  <key>CFBundleName</key>
+  <string>KickAss GUI</string>
+
+  <key>CFBundleIdentifier</key>
+  <string>org.kickass-project.kickass-wallet-gui</string>
+
+  <key>NSSupportsAutomaticGraphicsSwitching</key>
+  <true/>
+
+  <key>NSRequiresAquaSystemAppearance</key>
+  <string>True</string>
+
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleURLName</key>
+      <string>kickass Handler</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>kickass</string>
+      </array>
+    </dict>
+    <dict>
+      <key>CFBundleURLName</key>
+      <string>kickassseed Handler</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>kickassseed</string>
+      </array>
+    </dict>
+  </array>
+</dict>
+</plist>

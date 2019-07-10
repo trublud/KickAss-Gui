@@ -1,0 +1,4 @@
+[submodule "monero"]
+	path = kickass
+	url = https://github.com/monero-project/monero
+	ignore = all
