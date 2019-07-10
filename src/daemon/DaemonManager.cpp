@@ -295,7 +295,7 @@ QVariantMap DaemonManager::validateDataDir(const QString &dataDir) const
 
         // Make sure there is 75GB storage available
         storageAvailable = storage.bytesAvailable()/1000/1000/1000;
-        if (storageAvailable < 75) {
+        if (storageAvailable < 5) {
             valid = false;
         }
     } else {
