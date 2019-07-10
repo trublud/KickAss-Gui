@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/contrib/epee/src/readline_buffer.cpp
+readline_buffer.h
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/contrib/epee/src/readline_buffer.h
+readline/readline.h
+-
+readline/history.h
+-
+iostream
+-
+boost/thread/mutex.hpp
+-
+boost/thread/lock_guard.hpp
+-
+boost/algorithm/string.hpp
+-
+
+contrib/epee/include/readline_buffer.h
+streambuf
+-
+sstream
+-
+vector
+-
+

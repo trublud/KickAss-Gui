@@ -37,8 +37,8 @@
 #include "serialization/keyvalue_serialization.h"
 #include "misc_log_ex.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "net"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "net"
 
 #ifndef MAKE_IP
 #define MAKE_IP( a1, a2, a3, a4 )	(a1|(a2<<8)|(a3<<16)|(a4<<24))

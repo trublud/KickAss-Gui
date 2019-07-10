@@ -1,4 +1,4 @@
-// Copyright (c) 2016, KickAss Research Labs
+// Copyright (c) 2016, KickAssCoin Research Labs
 //
 // Author: Shen Noether <shen.noether@gmx.com>
 //
@@ -61,7 +61,7 @@ extern "C" {
 #define DP(x)
 #endif
 
-//atomic units of kickasss
+//atomic units of kickasscoins
 #define ATOMS 64
 
 //for printing large ints

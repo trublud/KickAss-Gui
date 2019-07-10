@@ -1,9 +1,9 @@
-KickAss daemon internationalization
+KickAssCoin daemon internationalization
 ==================================
 
-The KickAss command line tools can be translated in various languages. If you wish to contribute and need help/support, contact the [KickAss Localization Workgroup on Taiga](https://taiga.getkickass.org/project/erciccione-kickass-localization/) or come chat on `#kickass-translations` (Freenode/IRC, riot/matrix, MatterMost)
+The KickAssCoin command line tools can be translated in various languages. If you wish to contribute and need help/support, contact the [KickAssCoin Localization Workgroup on Taiga](https://taiga.getkickasscoin.org/project/erciccione-kickasscoin-localization/) or come chat on `#kickasscoin-translations` (Freenode/IRC, riot/matrix, MatterMost)
 
-In order to use the same translation workflow as the [KickAss Core GUI](https://github.com/kickass-project/kickass-gui), they use Qt Linguist translation files.  However, to avoid the dependencies on Qt this normally implies, they use a custom loader to read those files at runtime.
+In order to use the same translation workflow as the [KickAssCoin Core GUI](https://github.com/kickasscoin-project/kickasscoin-gui), they use Qt Linguist translation files.  However, to avoid the dependencies on Qt this normally implies, they use a custom loader to read those files at runtime.
 
 ### Tools for translators
 
@@ -22,13 +22,13 @@ To update ts files after changing source code:
 To add a new language, eg Spanish (ISO code es):
 
 ```bash
-cp translations/kickass.ts translations/kickass_es.ts
+cp translations/kickasscoin.ts translations/kickasscoin_es.ts
 ```
 
 To edit translations for Spanish:
 
 ```bash
-linguist translations/kickass_es.ts
+linguist translations/kickasscoin_es.ts
 ```
 
 To build translations after modifying them:
@@ -40,7 +40,7 @@ To build translations after modifying them:
 To test a translation:
 
 ```bash
-LANG=es ./build/release/bin/kickass-wallet-cli
+LANG=es ./build/release/bin/kickasscoin-wallet-cli
 ```
 
 To add new translatable strings in the source code:

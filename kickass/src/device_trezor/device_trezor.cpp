@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -34,8 +34,8 @@ namespace trezor {
 
 #ifdef WITH_DEVICE_TREZOR
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "device.trezor"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "device.trezor"
 
 #define HW_TREZOR_NAME "Trezor"
 
@@ -208,7 +208,7 @@ namespace trezor {
     /*                              TREZOR PROTOCOL                            */
     /* ======================================================================= */
 
-    std::shared_ptr<messages::kickass::KickAssAddress> device_trezor::get_address(
+    std::shared_ptr<messages::kickasscoin::KickAssCoinAddress> device_trezor::get_address(
         const boost::optional<std::vector<uint32_t>> & path,
         const boost::optional<cryptonote::network_type> & network_type){
       TREZOR_AUTO_LOCK_CMD();
@@ -216,15 +216,15 @@ namespace trezor {
       device_state_reset_unsafe();
       require_initialized();
 
-      auto req = std::make_shared<messages::kickass::KickAssGetAddress>();
-      this->set_msg_addr<messages::kickass::KickAssGetAddress>(req.get(), path, network_type);
+      auto req = std::make_shared<messages::kickasscoin::KickAssCoinGetAddress>();
+      this->set_msg_addr<messages::kickasscoin::KickAssCoinGetAddress>(req.get(), path, network_type);
 
-      auto response = this->client_exchange<messages::kickass::KickAssAddress>(req);
+      auto response = this->client_exchange<messages::kickasscoin::KickAssCoinAddress>(req);
       MTRACE("Get address response received");
       return response;
     }
 
-    std::shared_ptr<messages::kickass::KickAssWatchKey> device_trezor::get_view_key(
+    std::shared_ptr<messages::kickasscoin::KickAssCoinWatchKey> device_trezor::get_view_key(
         const boost::optional<std::vector<uint32_t>> & path,
         const boost::optional<cryptonote::network_type> & network_type){
       TREZOR_AUTO_LOCK_CMD();
@@ -232,10 +232,10 @@ namespace trezor {
       device_state_reset_unsafe();
       require_initialized();
 
-      auto req = std::make_shared<messages::kickass::KickAssGetWatchKey>();
-      this->set_msg_addr<messages::kickass::KickAssGetWatchKey>(req.get(), path, network_type);
+      auto req = std::make_shared<messages::kickasscoin::KickAssCoinGetWatchKey>();
+      this->set_msg_addr<messages::kickasscoin::KickAssCoinGetWatchKey>(req.get(), path, network_type);
 
-      auto response = this->client_exchange<messages::kickass::KickAssWatchKey>(req);
+      auto response = this->client_exchange<messages::kickasscoin::KickAssCoinWatchKey>(req);
       MTRACE("Get watch key response received");
       return response;
     }
@@ -262,9 +262,9 @@ namespace trezor {
       require_initialized();
 
       auto req = protocol::tx::get_tx_key(tx_aux_data);
-      this->set_msg_addr<messages::kickass::KickAssGetTxKeyRequest>(req.get());
+      this->set_msg_addr<messages::kickasscoin::KickAssCoinGetTxKeyRequest>(req.get());
 
-      auto response = this->client_exchange<messages::kickass::KickAssGetTxKeyAck>(req);
+      auto response = this->client_exchange<messages::kickasscoin::KickAssCoinGetTxKeyAck>(req);
       MTRACE("Get TX key response received");
 
       protocol::tx::get_tx_key_ack(tx_keys, tx_aux_data.tx_prefix_hash, view_key_priv, response);
@@ -281,21 +281,21 @@ namespace trezor {
       device_state_reset_unsafe();
       require_initialized();
 
-      std::shared_ptr<messages::kickass::KickAssKeyImageExportInitRequest> req;
+      std::shared_ptr<messages::kickasscoin::KickAssCoinKeyImageExportInitRequest> req;
 
-      std::vector<protocol::ki::KickAssTransferDetails> mtds;
-      std::vector<protocol::ki::KickAssExportedKeyImage> kis;
+      std::vector<protocol::ki::KickAssCoinTransferDetails> mtds;
+      std::vector<protocol::ki::KickAssCoinExportedKeyImage> kis;
       protocol::ki::key_image_data(wallet, transfers, mtds);
       protocol::ki::generate_commitment(mtds, transfers, req);
 
       EVENT_PROGRESS(0.);
-      this->set_msg_addr<messages::kickass::KickAssKeyImageExportInitRequest>(req.get());
-      auto ack1 = this->client_exchange<messages::kickass::KickAssKeyImageExportInitAck>(req);
+      this->set_msg_addr<messages::kickasscoin::KickAssCoinKeyImageExportInitRequest>(req.get());
+      auto ack1 = this->client_exchange<messages::kickasscoin::KickAssCoinKeyImageExportInitAck>(req);
 
       const auto batch_size = 10;
       const auto num_batches = (mtds.size() + batch_size - 1) / batch_size;
       for(uint64_t cur = 0; cur < num_batches; ++cur){
-        auto step_req = std::make_shared<messages::kickass::KickAssKeyImageSyncStepRequest>();
+        auto step_req = std::make_shared<messages::kickasscoin::KickAssCoinKeyImageSyncStepRequest>();
         auto idx_finish = std::min(static_cast<uint64_t>((cur + 1) * batch_size), static_cast<uint64_t>(mtds.size()));
         for(uint64_t idx = cur * batch_size; idx < idx_finish; ++idx){
           auto added_tdis = step_req->add_tdis();
@@ -303,7 +303,7 @@ namespace trezor {
           *added_tdis = mtds[idx];
         }
 
-        auto step_ack = this->client_exchange<messages::kickass::KickAssKeyImageSyncStepAck>(step_req);
+        auto step_ack = this->client_exchange<messages::kickasscoin::KickAssCoinKeyImageSyncStepAck>(step_req);
         auto kis_size = step_ack->kis_size();
         kis.reserve(static_cast<size_t>(kis_size));
         for(int i = 0; i < kis_size; ++i){
@@ -316,8 +316,8 @@ namespace trezor {
       }
       EVENT_PROGRESS(1.);
 
-      auto final_req = std::make_shared<messages::kickass::KickAssKeyImageSyncFinalRequest>();
-      auto final_ack = this->client_exchange<messages::kickass::KickAssKeyImageSyncFinalAck>(final_req);
+      auto final_req = std::make_shared<messages::kickasscoin::KickAssCoinKeyImageSyncFinalRequest>();
+      auto final_ack = this->client_exchange<messages::kickasscoin::KickAssCoinKeyImageSyncFinalAck>(final_req);
       ski.reserve(kis.size());
 
       for(auto & sub : kis){
@@ -373,9 +373,9 @@ namespace trezor {
       device_state_reset_unsafe();
       require_initialized();
 
-      auto req = std::make_shared<messages::kickass::KickAssLiveRefreshStartRequest>();
-      this->set_msg_addr<messages::kickass::KickAssLiveRefreshStartRequest>(req.get());
-      this->client_exchange<messages::kickass::KickAssLiveRefreshStartAck>(req);
+      auto req = std::make_shared<messages::kickasscoin::KickAssCoinLiveRefreshStartRequest>();
+      this->set_msg_addr<messages::kickasscoin::KickAssCoinLiveRefreshStartRequest>(req.get());
+      this->client_exchange<messages::kickasscoin::KickAssCoinLiveRefreshStartAck>(req);
       m_live_refresh_in_progress = true;
       m_last_live_refresh_time = std::chrono::steady_clock::now();
     }
@@ -400,21 +400,21 @@ namespace trezor {
 
       m_last_live_refresh_time = std::chrono::steady_clock::now();
 
-      auto req = std::make_shared<messages::kickass::KickAssLiveRefreshStepRequest>();
+      auto req = std::make_shared<messages::kickasscoin::KickAssCoinLiveRefreshStepRequest>();
       req->set_out_key(out_key.data, 32);
       req->set_recv_deriv(recv_derivation.data, 32);
       req->set_real_out_idx(real_output_index);
       req->set_sub_addr_major(received_index.major);
       req->set_sub_addr_minor(received_index.minor);
 
-      auto ack = this->client_exchange<messages::kickass::KickAssLiveRefreshStepAck>(req);
+      auto ack = this->client_exchange<messages::kickasscoin::KickAssCoinLiveRefreshStepAck>(req);
       protocol::ki::live_refresh_ack(view_key_priv, out_key, ack, in_ephemeral, ki);
     }
 
     void device_trezor::live_refresh_finish_unsafe()
     {
-      auto req = std::make_shared<messages::kickass::KickAssLiveRefreshFinalRequest>();
-      this->client_exchange<messages::kickass::KickAssLiveRefreshFinalAck>(req);
+      auto req = std::make_shared<messages::kickasscoin::KickAssCoinLiveRefreshFinalRequest>();
+      this->client_exchange<messages::kickasscoin::KickAssCoinLiveRefreshFinalAck>(req);
       m_live_refresh_in_progress = false;
     }
 
@@ -583,13 +583,13 @@ namespace trezor {
       transaction_pre_check(init_msg);
       EVENT_PROGRESS(1, 1, 1);
 
-      auto response = this->client_exchange<messages::kickass::KickAssTransactionInitAck>(init_msg);
+      auto response = this->client_exchange<messages::kickasscoin::KickAssCoinTransactionInitAck>(init_msg);
       signer->step_init_ack(response);
 
       // Step: Set transaction inputs
       for(size_t cur_src = 0; cur_src < num_sources; ++cur_src){
         auto src = signer->step_set_input(cur_src);
-        auto ack = this->client_exchange<messages::kickass::KickAssTransactionSetInputAck>(src);
+        auto ack = this->client_exchange<messages::kickasscoin::KickAssCoinTransactionSetInputAck>(src);
         signer->step_set_input_ack(ack);
         EVENT_PROGRESS(2, cur_src, num_sources);
       }
@@ -597,7 +597,7 @@ namespace trezor {
       // Step: sort
       auto perm_req = signer->step_permutation();
       if (perm_req){
-        auto perm_ack = this->client_exchange<messages::kickass::KickAssTransactionInputsPermutationAck>(perm_req);
+        auto perm_ack = this->client_exchange<messages::kickasscoin::KickAssCoinTransactionInputsPermutationAck>(perm_req);
         signer->step_permutation_ack(perm_ack);
       }
       EVENT_PROGRESS(3, 1, 1);
@@ -605,27 +605,27 @@ namespace trezor {
       // Step: input_vini
       for(size_t cur_src = 0; cur_src < num_sources; ++cur_src){
         auto src = signer->step_set_vini_input(cur_src);
-        auto ack = this->client_exchange<messages::kickass::KickAssTransactionInputViniAck>(src);
+        auto ack = this->client_exchange<messages::kickasscoin::KickAssCoinTransactionInputViniAck>(src);
         signer->step_set_vini_input_ack(ack);
         EVENT_PROGRESS(4, cur_src, num_sources);
       }
 
       // Step: all inputs set
       auto all_inputs_set = signer->step_all_inputs_set();
-      auto ack_all_inputs = this->client_exchange<messages::kickass::KickAssTransactionAllInputsSetAck>(all_inputs_set);
+      auto ack_all_inputs = this->client_exchange<messages::kickasscoin::KickAssCoinTransactionAllInputsSetAck>(all_inputs_set);
       signer->step_all_inputs_set_ack(ack_all_inputs);
       EVENT_PROGRESS(5, 1, 1);
 
       // Step: outputs
       for(size_t cur_dst = 0; cur_dst < num_outputs; ++cur_dst){
         auto src = signer->step_set_output(cur_dst);
-        auto ack = this->client_exchange<messages::kickass::KickAssTransactionSetOutputAck>(src);
+        auto ack = this->client_exchange<messages::kickasscoin::KickAssCoinTransactionSetOutputAck>(src);
         signer->step_set_output_ack(ack);
 
         // If BP is offloaded to host, another step with computed BP may be needed.
         auto offloaded_bp = signer->step_rsig(cur_dst);
         if (offloaded_bp){
-          auto bp_ack = this->client_exchange<messages::kickass::KickAssTransactionSetOutputAck>(offloaded_bp);
+          auto bp_ack = this->client_exchange<messages::kickasscoin::KickAssCoinTransactionSetOutputAck>(offloaded_bp);
           signer->step_set_rsig_ack(ack);
         }
 
@@ -634,21 +634,21 @@ namespace trezor {
 
       // Step: all outs set
       auto all_out_set = signer->step_all_outs_set();
-      auto ack_all_out_set = this->client_exchange<messages::kickass::KickAssTransactionAllOutSetAck>(all_out_set);
+      auto ack_all_out_set = this->client_exchange<messages::kickasscoin::KickAssCoinTransactionAllOutSetAck>(all_out_set);
       signer->step_all_outs_set_ack(ack_all_out_set, *this);
       EVENT_PROGRESS(7, 1, 1);
 
       // Step: sign each input
       for(size_t cur_src = 0; cur_src < num_sources; ++cur_src){
         auto src = signer->step_sign_input(cur_src);
-        auto ack_sign = this->client_exchange<messages::kickass::KickAssTransactionSignInputAck>(src);
+        auto ack_sign = this->client_exchange<messages::kickasscoin::KickAssCoinTransactionSignInputAck>(src);
         signer->step_sign_input_ack(ack_sign);
         EVENT_PROGRESS(8, cur_src, num_sources);
       }
 
       // Step: final
       auto final_msg = signer->step_final();
-      auto ack_final = this->client_exchange<messages::kickass::KickAssTransactionFinalAck>(final_msg);
+      auto ack_final = this->client_exchange<messages::kickasscoin::KickAssCoinTransactionFinalAck>(final_msg);
       signer->step_final_ack(ack_final);
       EVENT_PROGRESS(9, 1, 1);
 #undef EVENT_PROGRESS
@@ -678,7 +678,7 @@ namespace trezor {
       }
     }
 
-    void device_trezor::transaction_pre_check(std::shared_ptr<messages::kickass::KickAssTransactionInitRequest> init_msg)
+    void device_trezor::transaction_pre_check(std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionInitRequest> init_msg)
     {
       CHECK_AND_ASSERT_THROW_MES(init_msg, "TransactionInitRequest is empty");
       CHECK_AND_ASSERT_THROW_MES(init_msg->has_tsx_data(), "TransactionInitRequest has no transaction data");

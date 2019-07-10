@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -39,8 +39,8 @@
 #include "wallet_rpc_server_commands_defs.h"
 #include "wallet2.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "wallet.rpc"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "wallet.rpc"
 
 namespace tools
 {

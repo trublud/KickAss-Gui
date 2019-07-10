@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -256,10 +256,8 @@ namespace nodetool
 
   private:
     const std::vector<std::string> m_seed_nodes_list =
-    { "seeds.kickassseeds.se"
-    , "seeds.kickassseeds.ae.org"
-    , "seeds.kickassseeds.ch"
-    , "seeds.kickassseeds.li"
+    { "seed-switzer.zapto.org"
+    , "switzer.zapto.org"
     };
 
     bool islimitup=false;

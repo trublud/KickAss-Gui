@@ -1,6 +1,6 @@
-# Portions Copyright (c) 2017-2019, The KickAss Project
+# Portions Copyright (c) 2017-2019, The KickAssCoin Project
 # This file is based off of the https://code.google.com/archive/p/ios-cmake/
-# It has been altered for KickAss iOS development
+# It has been altered for KickAssCoin iOS development
 #
 #
 # Options:

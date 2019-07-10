@@ -32,8 +32,8 @@
 #include "enableable.h"
 #include "keyvalue_serialization_overloads.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "serialization"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "serialization"
 
 namespace epee
 {

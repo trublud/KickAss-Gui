@@ -1,0 +1,13 @@
+# Target labels
+ generate_translations_header
+# Source files and their labels
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/generate_translations_header
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/generate_translations_header.rule
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/generate_translations_header-complete.rule
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/generate_translations_header-prefix/src/generate_translations_header-stamp/generate_translations_header-install.rule
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/generate_translations_header-prefix/src/generate_translations_header-stamp/generate_translations_header-mkdir.rule
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/generate_translations_header-prefix/src/generate_translations_header-stamp/generate_translations_header-download.rule
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/generate_translations_header-prefix/src/generate_translations_header-stamp/generate_translations_header-update.rule
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/generate_translations_header-prefix/src/generate_translations_header-stamp/generate_translations_header-patch.rule
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/generate_translations_header-prefix/src/generate_translations_header-stamp/generate_translations_header-configure.rule
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/generate_translations_header-prefix/src/generate_translations_header-stamp/generate_translations_header-build.rule

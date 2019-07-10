@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The KickAss Project
+// Copyright (c) 2018, The KickAssCoin Project
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without modification, are
@@ -37,18 +37,18 @@
 /*! Calculates types and offset of struct field. Use in template arguments for
     `table::get_value`, `value_iterator::get_value`,
     `value_stream::make_iterator`, or `value_stream::make_range`. */
-#define KICKASS_FIELD(obj, field)                                     \
+#define KICKASSCOIN_FIELD(obj, field)                                     \
     obj , decltype(std::declval<obj>().field) , offsetof(obj, field)
 
 //! Expands to `lmdb::less` for the value `field` within `obj`.
-#define KICKASS_SORT_BY(obj, field)                              \
+#define KICKASSCOIN_SORT_BY(obj, field)                              \
     &::lmdb::less<                                              \
         lmdb::native_type<decltype(std::declval<obj>().field)>, \
         offsetof(obj, field)                                    \
     >
 
 //! Expands to `lmdb::compare` for the value `field` within `obj`.
-#define KICKASS_COMPARE(obj, field)           \
+#define KICKASSCOIN_COMPARE(obj, field)           \
     &::lmdb::compare<                        \
         decltype(std::declval<obj>().field), \
         offsetof(obj, field)                 \

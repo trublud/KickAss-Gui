@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -70,8 +70,8 @@
   #include <unistd.h>
 #endif
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "miner"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "miner"
 
 #define AUTODETECT_WINDOW 10 // seconds
 #define AUTODETECT_GAIN_THRESHOLD 1.02f  // 2%

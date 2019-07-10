@@ -1,4 +1,4 @@
-// Copyright (c) 2016, KickAss Research Labs
+// Copyright (c) 2016, KickAssCoin Research Labs
 //
 // Author: Shen Noether <shen.noether@gmx.com>
 // 
@@ -39,8 +39,8 @@
 using namespace crypto;
 using namespace std;
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "ringct"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "ringct"
 
 #define CHECK_AND_ASSERT_MES_L1(expr, ret, message) {if(!(expr)) {MCERROR("verify", message); return ret;}}
 

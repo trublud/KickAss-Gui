@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -68,7 +68,7 @@ const char * WALLET_PASS = "password";
 const char * WALLET_PASS2 = "password22";
 const char * WALLET_LANG = "English";
 
-std::string WALLETS_ROOT_DIR = "/var/kickass/testnet_pvt";
+std::string WALLETS_ROOT_DIR = "/var/kickasscoin/testnet_pvt";
 std::string TESTNET_WALLET1_NAME;
 std::string TESTNET_WALLET2_NAME;
 std::string TESTNET_WALLET3_NAME;
@@ -113,15 +113,15 @@ struct Utils
         boost::filesystem::remove_all(path);
     }
 
-    static void print_transaction(KickAss::TransactionInfo * t)
+    static void print_transaction(KickAssCoin::TransactionInfo * t)
     {
 
         std::cout << "d: "
-                  << (t->direction() == KickAss::TransactionInfo::Direction_In ? "in" : "out")
+                  << (t->direction() == KickAssCoin::TransactionInfo::Direction_In ? "in" : "out")
                   << ", pe: " << (t->isPending() ? "true" : "false")
                   << ", bh: " << t->blockHeight()
-                  << ", a: " << KickAss::Wallet::displayAmount(t->amount())
-                  << ", f: " << KickAss::Wallet::displayAmount(t->fee())
+                  << ", a: " << KickAssCoin::Wallet::displayAmount(t->amount())
+                  << ", f: " << KickAssCoin::Wallet::displayAmount(t->fee())
                   << ", h: " << t->hash()
                   << ", pid: " << t->paymentId()
                   << std::endl;
@@ -129,8 +129,8 @@ struct Utils
 
     static std::string get_wallet_address(const std::string &filename, const std::string &password)
     {
-        KickAss::WalletManager *wmgr = KickAss::WalletManagerFactory::getWalletManager();
-        KickAss::Wallet * w = wmgr->openWallet(filename, password, KickAss::NetworkType::TESTNET);
+        KickAssCoin::WalletManager *wmgr = KickAssCoin::WalletManagerFactory::getWalletManager();
+        KickAssCoin::Wallet * w = wmgr->openWallet(filename, password, KickAssCoin::NetworkType::TESTNET);
         std::string result = w->mainAddress();
         wmgr->closeWallet(w);
         return result;
@@ -140,14 +140,14 @@ struct Utils
 
 struct WalletManagerTest : public testing::Test
 {
-    KickAss::WalletManager * wmgr;
+    KickAssCoin::WalletManager * wmgr;
 
 
     WalletManagerTest()
     {
         std::cout << __FUNCTION__ << std::endl;
-        wmgr = KickAss::WalletManagerFactory::getWalletManager();
-        // KickAss::WalletManagerFactory::setLogLevel(KickAss::WalletManagerFactory::LogLevel_4);
+        wmgr = KickAssCoin::WalletManagerFactory::getWalletManager();
+        // KickAssCoin::WalletManagerFactory::setLogLevel(KickAssCoin::WalletManagerFactory::LogLevel_4);
         Utils::deleteWallet(WALLET_NAME);
         Utils::deleteDir(boost::filesystem::path(WALLET_NAME_WITH_DIR).parent_path().string());
     }
@@ -163,13 +163,13 @@ struct WalletManagerTest : public testing::Test
 
 struct WalletManagerMainnetTest : public testing::Test
 {
-    KickAss::WalletManager * wmgr;
+    KickAssCoin::WalletManager * wmgr;
 
 
     WalletManagerMainnetTest()
     {
         std::cout << __FUNCTION__ << std::endl;
-        wmgr = KickAss::WalletManagerFactory::getWalletManager();
+        wmgr = KickAssCoin::WalletManagerFactory::getWalletManager();
         Utils::deleteWallet(WALLET_NAME_MAINNET);
     }
 
@@ -183,11 +183,11 @@ struct WalletManagerMainnetTest : public testing::Test
 
 struct WalletTest1 : public testing::Test
 {
-    KickAss::WalletManager * wmgr;
+    KickAssCoin::WalletManager * wmgr;
 
     WalletTest1()
     {
-        wmgr = KickAss::WalletManagerFactory::getWalletManager();
+        wmgr = KickAssCoin::WalletManagerFactory::getWalletManager();
     }
 
 
@@ -196,11 +196,11 @@ struct WalletTest1 : public testing::Test
 
 struct WalletTest2 : public testing::Test
 {
-    KickAss::WalletManager * wmgr;
+    KickAssCoin::WalletManager * wmgr;
 
     WalletTest2()
     {
-        wmgr = KickAss::WalletManagerFactory::getWalletManager();
+        wmgr = KickAssCoin::WalletManagerFactory::getWalletManager();
     }
 
 };
@@ -208,8 +208,8 @@ struct WalletTest2 : public testing::Test
 TEST_F(WalletManagerTest, WalletManagerCreatesWallet)
 {
 
-    KickAss::Wallet * wallet = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAss::NetworkType::MAINNET);
-    ASSERT_TRUE(wallet->status() == KickAss::Wallet::Status_Ok);
+    KickAssCoin::Wallet * wallet = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_TRUE(wallet->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(!wallet->seed().empty());
     std::vector<std::string> words;
     std::string seed = wallet->seed();
@@ -225,11 +225,11 @@ TEST_F(WalletManagerTest, WalletManagerCreatesWallet)
 TEST_F(WalletManagerTest, WalletManagerOpensWallet)
 {
 
-    KickAss::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::string seed1 = wallet1->seed();
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
-    KickAss::Wallet * wallet2 = wmgr->openWallet(WALLET_NAME, WALLET_PASS, KickAss::NetworkType::MAINNET);
-    ASSERT_TRUE(wallet2->status() == KickAss::Wallet::Status_Ok);
+    KickAssCoin::Wallet * wallet2 = wmgr->openWallet(WALLET_NAME, WALLET_PASS, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_TRUE(wallet2->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet2->seed() == seed1);
     std::cout << "** seed: " << wallet2->seed() << std::endl;
 }
@@ -237,31 +237,31 @@ TEST_F(WalletManagerTest, WalletManagerOpensWallet)
 
 TEST_F(WalletManagerTest, WalletMaxAmountAsString)
 {
-    LOG_PRINT_L3("max amount: " << KickAss::Wallet::displayAmount(
-                     KickAss::Wallet::maximumAllowedAmount()));
+    LOG_PRINT_L3("max amount: " << KickAssCoin::Wallet::displayAmount(
+                     KickAssCoin::Wallet::maximumAllowedAmount()));
 
 }
 
 
 TEST_F(WalletManagerTest, WalletAmountFromString)
 {
-    uint64_t amount = KickAss::Wallet::amountFromString("18446740");
+    uint64_t amount = KickAssCoin::Wallet::amountFromString("18446740");
     ASSERT_TRUE(amount > 0);
-    amount = KickAss::Wallet::amountFromString("11000000000000");
+    amount = KickAssCoin::Wallet::amountFromString("11000000000000");
     ASSERT_FALSE(amount > 0);
-    amount = KickAss::Wallet::amountFromString("0.0");
+    amount = KickAssCoin::Wallet::amountFromString("0.0");
     ASSERT_FALSE(amount > 0);
-    amount = KickAss::Wallet::amountFromString("10.1");
+    amount = KickAssCoin::Wallet::amountFromString("10.1");
     ASSERT_TRUE(amount > 0);
 
 }
 
-void open_wallet_helper(KickAss::WalletManager *wmgr, KickAss::Wallet **wallet, const std::string &pass, boost::mutex *mutex)
+void open_wallet_helper(KickAssCoin::WalletManager *wmgr, KickAssCoin::Wallet **wallet, const std::string &pass, boost::mutex *mutex)
 {
     if (mutex)
         mutex->lock();
     LOG_PRINT_L3("opening wallet in thread: " << boost::this_thread::get_id());
-    *wallet = wmgr->openWallet(WALLET_NAME, pass, KickAss::NetworkType::TESTNET);
+    *wallet = wmgr->openWallet(WALLET_NAME, pass, KickAssCoin::NetworkType::TESTNET);
     LOG_PRINT_L3("wallet address: " << (*wallet)->mainAddress());
     LOG_PRINT_L3("wallet status: " << (*wallet)->status());
     LOG_PRINT_L3("closing wallet in thread: " << boost::this_thread::get_id());
@@ -277,23 +277,23 @@ void open_wallet_helper(KickAss::WalletManager *wmgr, KickAss::Wallet **wallet, 
 //    // create password protected wallet
 //    std::string wallet_pass = "password";
 //    std::string wrong_wallet_pass = "1111";
-//    KickAss::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, wallet_pass, WALLET_LANG, KickAss::NetworkType::TESTNET);
+//    KickAssCoin::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, wallet_pass, WALLET_LANG, KickAssCoin::NetworkType::TESTNET);
 //    std::string seed1 = wallet1->seed();
 //    ASSERT_TRUE(wmgr->closeWallet(wallet1));
 
-//    KickAss::Wallet *wallet2 = nullptr;
-//    KickAss::Wallet *wallet3 = nullptr;
+//    KickAssCoin::Wallet *wallet2 = nullptr;
+//    KickAssCoin::Wallet *wallet3 = nullptr;
 
 //    std::mutex mutex;
 //    std::thread thread1(open_wallet, wmgr, &wallet2, wrong_wallet_pass, &mutex);
 //    thread1.join();
-//    ASSERT_TRUE(wallet2->status() != KickAss::Wallet::Status_Ok);
+//    ASSERT_TRUE(wallet2->status() != KickAssCoin::Wallet::Status_Ok);
 //    ASSERT_TRUE(wmgr->closeWallet(wallet2));
 
 //    std::thread thread2(open_wallet, wmgr, &wallet3, wallet_pass, &mutex);
 //    thread2.join();
 
-//    ASSERT_TRUE(wallet3->status() == KickAss::Wallet::Status_Ok);
+//    ASSERT_TRUE(wallet3->status() == KickAssCoin::Wallet::Status_Ok);
 //    ASSERT_TRUE(wmgr->closeWallet(wallet3));
 //}
 
@@ -303,22 +303,22 @@ TEST_F(WalletManagerTest, WalletManagerOpensWalletWithPasswordAndReopen)
     // create password protected wallet
     std::string wallet_pass = "password";
     std::string wrong_wallet_pass = "1111";
-    KickAss::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, wallet_pass, WALLET_LANG, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, wallet_pass, WALLET_LANG, KickAssCoin::NetworkType::TESTNET);
     std::string seed1 = wallet1->seed();
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
 
-    KickAss::Wallet *wallet2 = nullptr;
-    KickAss::Wallet *wallet3 = nullptr;
+    KickAssCoin::Wallet *wallet2 = nullptr;
+    KickAssCoin::Wallet *wallet3 = nullptr;
     boost::mutex mutex;
 
     open_wallet_helper(wmgr, &wallet2, wrong_wallet_pass, nullptr);
     ASSERT_TRUE(wallet2 != nullptr);
-    ASSERT_TRUE(wallet2->status() != KickAss::Wallet::Status_Ok);
+    ASSERT_TRUE(wallet2->status() != KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wmgr->closeWallet(wallet2));
 
     open_wallet_helper(wmgr, &wallet3, wallet_pass, nullptr);
     ASSERT_TRUE(wallet3 != nullptr);
-    ASSERT_TRUE(wallet3->status() == KickAss::Wallet::Status_Ok);
+    ASSERT_TRUE(wallet3->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wmgr->closeWallet(wallet3));
 }
 
@@ -326,12 +326,12 @@ TEST_F(WalletManagerTest, WalletManagerOpensWalletWithPasswordAndReopen)
 TEST_F(WalletManagerTest, WalletManagerStoresWallet)
 {
 
-    KickAss::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::string seed1 = wallet1->seed();
     wallet1->store("");
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
-    KickAss::Wallet * wallet2 = wmgr->openWallet(WALLET_NAME, WALLET_PASS, KickAss::NetworkType::MAINNET);
-    ASSERT_TRUE(wallet2->status() == KickAss::Wallet::Status_Ok);
+    KickAssCoin::Wallet * wallet2 = wmgr->openWallet(WALLET_NAME, WALLET_PASS, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_TRUE(wallet2->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet2->seed() == seed1);
 }
 
@@ -339,45 +339,45 @@ TEST_F(WalletManagerTest, WalletManagerStoresWallet)
 TEST_F(WalletManagerTest, WalletManagerMovesWallet)
 {
 
-    KickAss::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::string WALLET_NAME_MOVED = std::string("/tmp/") + WALLET_NAME + ".moved";
     std::string seed1 = wallet1->seed();
     ASSERT_TRUE(wallet1->store(WALLET_NAME_MOVED));
 
-    KickAss::Wallet * wallet2 = wmgr->openWallet(WALLET_NAME_MOVED, WALLET_PASS, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet2 = wmgr->openWallet(WALLET_NAME_MOVED, WALLET_PASS, KickAssCoin::NetworkType::MAINNET);
     ASSERT_TRUE(wallet2->filename() == WALLET_NAME_MOVED);
     ASSERT_TRUE(wallet2->keysFilename() == WALLET_NAME_MOVED + ".keys");
-    ASSERT_TRUE(wallet2->status() == KickAss::Wallet::Status_Ok);
+    ASSERT_TRUE(wallet2->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet2->seed() == seed1);
 }
 
 
 TEST_F(WalletManagerTest, WalletManagerChangesPassword)
 {
-    KickAss::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::string seed1 = wallet1->seed();
     ASSERT_TRUE(wallet1->setPassword(WALLET_PASS2));
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
-    KickAss::Wallet * wallet2 = wmgr->openWallet(WALLET_NAME, WALLET_PASS2, KickAss::NetworkType::MAINNET);
-    ASSERT_TRUE(wallet2->status() == KickAss::Wallet::Status_Ok);
+    KickAssCoin::Wallet * wallet2 = wmgr->openWallet(WALLET_NAME, WALLET_PASS2, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_TRUE(wallet2->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet2->seed() == seed1);
     ASSERT_TRUE(wmgr->closeWallet(wallet2));
-    KickAss::Wallet * wallet3 = wmgr->openWallet(WALLET_NAME, WALLET_PASS, KickAss::NetworkType::MAINNET);
-    ASSERT_FALSE(wallet3->status() == KickAss::Wallet::Status_Ok);
+    KickAssCoin::Wallet * wallet3 = wmgr->openWallet(WALLET_NAME, WALLET_PASS, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_FALSE(wallet3->status() == KickAssCoin::Wallet::Status_Ok);
 }
 
 
 
 TEST_F(WalletManagerTest, WalletManagerRecoversWallet)
 {
-    KickAss::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::string seed1 = wallet1->seed();
     std::string address1 = wallet1->mainAddress();
     ASSERT_FALSE(address1.empty());
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
     Utils::deleteWallet(WALLET_NAME);
-    KickAss::Wallet * wallet2 = wmgr->recoveryWallet(WALLET_NAME, seed1, KickAss::NetworkType::MAINNET);
-    ASSERT_TRUE(wallet2->status() == KickAss::Wallet::Status_Ok);
+    KickAssCoin::Wallet * wallet2 = wmgr->recoveryWallet(WALLET_NAME, seed1, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_TRUE(wallet2->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet2->seed() == seed1);
     ASSERT_TRUE(wallet2->mainAddress() == address1);
     ASSERT_TRUE(wmgr->closeWallet(wallet2));
@@ -386,15 +386,15 @@ TEST_F(WalletManagerTest, WalletManagerRecoversWallet)
 
 TEST_F(WalletManagerTest, WalletManagerStoresWallet1)
 {
-    KickAss::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::string seed1 = wallet1->seed();
     std::string address1 = wallet1->mainAddress();
 
     ASSERT_TRUE(wallet1->store(""));
     ASSERT_TRUE(wallet1->store(WALLET_NAME_COPY));
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
-    KickAss::Wallet * wallet2 = wmgr->openWallet(WALLET_NAME_COPY, WALLET_PASS, KickAss::NetworkType::MAINNET);
-    ASSERT_TRUE(wallet2->status() == KickAss::Wallet::Status_Ok);
+    KickAssCoin::Wallet * wallet2 = wmgr->openWallet(WALLET_NAME_COPY, WALLET_PASS, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_TRUE(wallet2->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet2->seed() == seed1);
     ASSERT_TRUE(wallet2->mainAddress() == address1);
     ASSERT_TRUE(wmgr->closeWallet(wallet2));
@@ -403,15 +403,15 @@ TEST_F(WalletManagerTest, WalletManagerStoresWallet1)
 
 TEST_F(WalletManagerTest, WalletManagerStoresWallet2)
 {
-    KickAss::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::string seed1 = wallet1->seed();
     std::string address1 = wallet1->mainAddress();
 
     ASSERT_TRUE(wallet1->store(WALLET_NAME_WITH_DIR));
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
 
-    wallet1 = wmgr->openWallet(WALLET_NAME_WITH_DIR, WALLET_PASS, KickAss::NetworkType::MAINNET);
-    ASSERT_TRUE(wallet1->status() == KickAss::Wallet::Status_Ok);
+    wallet1 = wmgr->openWallet(WALLET_NAME_WITH_DIR, WALLET_PASS, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_TRUE(wallet1->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet1->seed() == seed1);
     ASSERT_TRUE(wallet1->mainAddress() == address1);
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
@@ -420,21 +420,21 @@ TEST_F(WalletManagerTest, WalletManagerStoresWallet2)
 
 TEST_F(WalletManagerTest, WalletManagerStoresWallet3)
 {
-    KickAss::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::string seed1 = wallet1->seed();
     std::string address1 = wallet1->mainAddress();
 
     ASSERT_FALSE(wallet1->store(WALLET_NAME_WITH_DIR_NON_WRITABLE));
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
 
-    wallet1 = wmgr->openWallet(WALLET_NAME_WITH_DIR_NON_WRITABLE, WALLET_PASS, KickAss::NetworkType::MAINNET);
-    ASSERT_FALSE(wallet1->status() == KickAss::Wallet::Status_Ok);
+    wallet1 = wmgr->openWallet(WALLET_NAME_WITH_DIR_NON_WRITABLE, WALLET_PASS, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_FALSE(wallet1->status() == KickAssCoin::Wallet::Status_Ok);
 
     // "close" always returns true;
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
 
-    wallet1 = wmgr->openWallet(WALLET_NAME, WALLET_PASS, KickAss::NetworkType::MAINNET);
-    ASSERT_TRUE(wallet1->status() == KickAss::Wallet::Status_Ok);
+    wallet1 = wmgr->openWallet(WALLET_NAME, WALLET_PASS, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_TRUE(wallet1->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet1->seed() == seed1);
     ASSERT_TRUE(wallet1->mainAddress() == address1);
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
@@ -444,20 +444,20 @@ TEST_F(WalletManagerTest, WalletManagerStoresWallet3)
 
 TEST_F(WalletManagerTest, WalletManagerStoresWallet4)
 {
-    KickAss::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->createWallet(WALLET_NAME, WALLET_PASS, WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::string seed1 = wallet1->seed();
     std::string address1 = wallet1->mainAddress();
 
     ASSERT_TRUE(wallet1->store(""));
-    ASSERT_TRUE(wallet1->status() == KickAss::Wallet::Status_Ok);
+    ASSERT_TRUE(wallet1->status() == KickAssCoin::Wallet::Status_Ok);
 
     ASSERT_TRUE(wallet1->store(""));
-    ASSERT_TRUE(wallet1->status() == KickAss::Wallet::Status_Ok);
+    ASSERT_TRUE(wallet1->status() == KickAssCoin::Wallet::Status_Ok);
 
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
 
-    wallet1 = wmgr->openWallet(WALLET_NAME, WALLET_PASS, KickAss::NetworkType::MAINNET);
-    ASSERT_TRUE(wallet1->status() == KickAss::Wallet::Status_Ok);
+    wallet1 = wmgr->openWallet(WALLET_NAME, WALLET_PASS, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_TRUE(wallet1->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet1->seed() == seed1);
     ASSERT_TRUE(wallet1->mainAddress() == address1);
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
@@ -479,16 +479,16 @@ TEST_F(WalletManagerTest, WalletManagerFindsWallet)
 
 TEST_F(WalletTest1, WalletGeneratesPaymentId)
 {
-    std::string payment_id = KickAss::Wallet::genPaymentId();
+    std::string payment_id = KickAssCoin::Wallet::genPaymentId();
     ASSERT_TRUE(payment_id.length() == 16);
 }
 
 
 TEST_F(WalletTest1, WalletGeneratesIntegratedAddress)
 {
-    std::string payment_id = KickAss::Wallet::genPaymentId();
+    std::string payment_id = KickAssCoin::Wallet::genPaymentId();
 
-    KickAss::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     std::string integrated_address = wallet1->integratedAddress(payment_id);
     ASSERT_TRUE(integrated_address.length() == 106);
 }
@@ -496,14 +496,14 @@ TEST_F(WalletTest1, WalletGeneratesIntegratedAddress)
 
 TEST_F(WalletTest1, WalletShowsBalance)
 {
-    KickAss::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     ASSERT_TRUE(wallet1->balance(0) > 0);
     ASSERT_TRUE(wallet1->unlockedBalance(0) > 0);
 
     uint64_t balance1 = wallet1->balance(0);
     uint64_t unlockedBalance1 = wallet1->unlockedBalance(0);
     ASSERT_TRUE(wmgr->closeWallet(wallet1));
-    KickAss::Wallet * wallet2 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet2 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
 
     ASSERT_TRUE(balance1 == wallet2->balance(0));
     std::cout << "wallet balance: " << wallet2->balance(0) << std::endl;
@@ -514,7 +514,7 @@ TEST_F(WalletTest1, WalletShowsBalance)
 
 TEST_F(WalletTest1, WalletReturnsCurrentBlockHeight)
 {
-    KickAss::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     ASSERT_TRUE(wallet1->blockChainHeight() > 0);
     wmgr->closeWallet(wallet1);
 }
@@ -522,14 +522,14 @@ TEST_F(WalletTest1, WalletReturnsCurrentBlockHeight)
 
 TEST_F(WalletTest1, WalletReturnsDaemonBlockHeight)
 {
-    KickAss::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     // wallet not connected to daemon
     ASSERT_TRUE(wallet1->daemonBlockChainHeight() == 0);
-    ASSERT_TRUE(wallet1->status() != KickAss::Wallet::Status_Ok);
+    ASSERT_TRUE(wallet1->status() != KickAssCoin::Wallet::Status_Ok);
     ASSERT_FALSE(wallet1->errorString().empty());
     wmgr->closeWallet(wallet1);
 
-    wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     // wallet connected to daemon
     wallet1->init(TESTNET_DAEMON_ADDRESS, 0);
     ASSERT_TRUE(wallet1->daemonBlockChainHeight() > 0);
@@ -542,7 +542,7 @@ TEST_F(WalletTest1, WalletRefresh)
 {
 
     std::cout << "Opening wallet: " << CURRENT_SRC_WALLET << std::endl;
-    KickAss::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     // make sure testnet daemon is running
     std::cout << "connecting to daemon: " << TESTNET_DAEMON_ADDRESS << std::endl;
     ASSERT_TRUE(wallet1->init(TESTNET_DAEMON_ADDRESS, 0));
@@ -552,12 +552,12 @@ TEST_F(WalletTest1, WalletRefresh)
 
 TEST_F(WalletTest1, WalletConvertsToString)
 {
-    std::string strAmount = KickAss::Wallet::displayAmount(AMOUNT_5XMR);
-    ASSERT_TRUE(AMOUNT_5XMR == KickAss::Wallet::amountFromString(strAmount));
+    std::string strAmount = KickAssCoin::Wallet::displayAmount(AMOUNT_5XMR);
+    ASSERT_TRUE(AMOUNT_5XMR == KickAssCoin::Wallet::amountFromString(strAmount));
 
-    ASSERT_TRUE(AMOUNT_5XMR == KickAss::Wallet::amountFromDouble(5.0));
-    ASSERT_TRUE(AMOUNT_10XMR == KickAss::Wallet::amountFromDouble(10.0));
-    ASSERT_TRUE(AMOUNT_1XMR == KickAss::Wallet::amountFromDouble(1.0));
+    ASSERT_TRUE(AMOUNT_5XMR == KickAssCoin::Wallet::amountFromDouble(5.0));
+    ASSERT_TRUE(AMOUNT_10XMR == KickAssCoin::Wallet::amountFromDouble(10.0));
+    ASSERT_TRUE(AMOUNT_1XMR == KickAssCoin::Wallet::amountFromDouble(1.0));
 
 }
 
@@ -566,25 +566,25 @@ TEST_F(WalletTest1, WalletConvertsToString)
 TEST_F(WalletTest1, WalletTransaction)
 
 {
-    KickAss::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     // make sure testnet daemon is running
     ASSERT_TRUE(wallet1->init(TESTNET_DAEMON_ADDRESS, 0));
     ASSERT_TRUE(wallet1->refresh());
     uint64_t balance = wallet1->balance(0);
-    ASSERT_TRUE(wallet1->status() == KickAss::PendingTransaction::Status_Ok);
+    ASSERT_TRUE(wallet1->status() == KickAssCoin::PendingTransaction::Status_Ok);
 
     std::string recepient_address = Utils::get_wallet_address(CURRENT_DST_WALLET, TESTNET_WALLET_PASS);
     const int MIXIN_COUNT = 4;
 
 
-    KickAss::PendingTransaction * transaction = wallet1->createTransaction(recepient_address,
+    KickAssCoin::PendingTransaction * transaction = wallet1->createTransaction(recepient_address,
                                                                              PAYMENT_ID_EMPTY,
                                                                              AMOUNT_10XMR,
                                                                              MIXIN_COUNT,
-                                                                             KickAss::PendingTransaction::Priority_Medium,
+                                                                             KickAssCoin::PendingTransaction::Priority_Medium,
                                                                              0,
                                                                              std::set<uint32_t>{});
-    ASSERT_TRUE(transaction->status() == KickAss::PendingTransaction::Status_Ok);
+    ASSERT_TRUE(transaction->status() == KickAssCoin::PendingTransaction::Status_Ok);
     wallet1->refresh();
 
     ASSERT_TRUE(wallet1->balance(0) == balance);
@@ -608,26 +608,26 @@ TEST_F(WalletTest1, WalletTransactionWithMixin)
 
     std::string payment_id = "";
 
-    KickAss::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
 
 
     // make sure testnet daemon is running
     ASSERT_TRUE(wallet1->init(TESTNET_DAEMON_ADDRESS, 0));
     ASSERT_TRUE(wallet1->refresh());
     uint64_t balance = wallet1->balance(0);
-    ASSERT_TRUE(wallet1->status() == KickAss::PendingTransaction::Status_Ok);
+    ASSERT_TRUE(wallet1->status() == KickAssCoin::PendingTransaction::Status_Ok);
 
     std::string recepient_address = Utils::get_wallet_address(CURRENT_DST_WALLET, TESTNET_WALLET_PASS);
     for (auto mixin : mixins) {
         std::cerr << "Transaction mixin count: " << mixin << std::endl;
 	
-        KickAss::PendingTransaction * transaction = wallet1->createTransaction(
-                    recepient_address, payment_id, AMOUNT_5XMR, mixin, KickAss::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
+        KickAssCoin::PendingTransaction * transaction = wallet1->createTransaction(
+                    recepient_address, payment_id, AMOUNT_5XMR, mixin, KickAssCoin::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
 
         std::cerr << "Transaction status: " << transaction->status() << std::endl;
-        std::cerr << "Transaction fee: " << KickAss::Wallet::displayAmount(transaction->fee()) << std::endl;
+        std::cerr << "Transaction fee: " << KickAssCoin::Wallet::displayAmount(transaction->fee()) << std::endl;
         std::cerr << "Transaction error: " << transaction->errorString() << std::endl;
-        ASSERT_TRUE(transaction->status() == KickAss::PendingTransaction::Status_Ok);
+        ASSERT_TRUE(transaction->status() == KickAssCoin::PendingTransaction::Status_Ok);
         wallet1->disposeTransaction(transaction);
     }
 
@@ -642,34 +642,34 @@ TEST_F(WalletTest1, WalletTransactionWithPriority)
 
     std::string payment_id = "";
 
-    KickAss::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
 
     // make sure testnet daemon is running
     ASSERT_TRUE(wallet1->init(TESTNET_DAEMON_ADDRESS, 0));
     ASSERT_TRUE(wallet1->refresh());
     uint64_t balance = wallet1->balance(0);
-    ASSERT_TRUE(wallet1->status() == KickAss::PendingTransaction::Status_Ok);
+    ASSERT_TRUE(wallet1->status() == KickAssCoin::PendingTransaction::Status_Ok);
 
     std::string recepient_address = Utils::get_wallet_address(CURRENT_DST_WALLET, TESTNET_WALLET_PASS);
     uint32_t mixin = 2;
     uint64_t fee   = 0;
 
-    std::vector<KickAss::PendingTransaction::Priority> priorities =  {
-         KickAss::PendingTransaction::Priority_Low,
-         KickAss::PendingTransaction::Priority_Medium,
-         KickAss::PendingTransaction::Priority_High
+    std::vector<KickAssCoin::PendingTransaction::Priority> priorities =  {
+         KickAssCoin::PendingTransaction::Priority_Low,
+         KickAssCoin::PendingTransaction::Priority_Medium,
+         KickAssCoin::PendingTransaction::Priority_High
     };
 
     for (auto it = priorities.begin(); it != priorities.end(); ++it) {
         std::cerr << "Transaction priority: " << *it << std::endl;
 	
-        KickAss::PendingTransaction * transaction = wallet1->createTransaction(
+        KickAssCoin::PendingTransaction * transaction = wallet1->createTransaction(
                     recepient_address, payment_id, AMOUNT_5XMR, mixin, *it, 0, std::set<uint32_t>{});
         std::cerr << "Transaction status: " << transaction->status() << std::endl;
-        std::cerr << "Transaction fee: " << KickAss::Wallet::displayAmount(transaction->fee()) << std::endl;
+        std::cerr << "Transaction fee: " << KickAssCoin::Wallet::displayAmount(transaction->fee()) << std::endl;
         std::cerr << "Transaction error: " << transaction->errorString() << std::endl;
         ASSERT_TRUE(transaction->fee() > fee);
-        ASSERT_TRUE(transaction->status() == KickAss::PendingTransaction::Status_Ok);
+        ASSERT_TRUE(transaction->status() == KickAssCoin::PendingTransaction::Status_Ok);
         fee = transaction->fee();
         wallet1->disposeTransaction(transaction);
     }
@@ -682,11 +682,11 @@ TEST_F(WalletTest1, WalletTransactionWithPriority)
 
 TEST_F(WalletTest1, WalletHistory)
 {
-    KickAss::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet1 = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     // make sure testnet daemon is running
     ASSERT_TRUE(wallet1->init(TESTNET_DAEMON_ADDRESS, 0));
     ASSERT_TRUE(wallet1->refresh());
-    KickAss::TransactionHistory * history = wallet1->history();
+    KickAssCoin::TransactionHistory * history = wallet1->history();
     history->refresh();
     ASSERT_TRUE(history->count() > 0);
 
@@ -700,11 +700,11 @@ TEST_F(WalletTest1, WalletHistory)
 TEST_F(WalletTest1, WalletTransactionAndHistory)
 {
     return;
-    KickAss::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     // make sure testnet daemon is running
     ASSERT_TRUE(wallet_src->init(TESTNET_DAEMON_ADDRESS, 0));
     ASSERT_TRUE(wallet_src->refresh());
-    KickAss::TransactionHistory * history = wallet_src->history();
+    KickAssCoin::TransactionHistory * history = wallet_src->history();
     history->refresh();
     ASSERT_TRUE(history->count() > 0);
     size_t count1 = history->count();
@@ -718,11 +718,11 @@ TEST_F(WalletTest1, WalletTransactionAndHistory)
     std::string wallet4_addr = Utils::get_wallet_address(CURRENT_DST_WALLET, TESTNET_WALLET_PASS);
 
 
-    KickAss::PendingTransaction * tx = wallet_src->createTransaction(wallet4_addr,
+    KickAssCoin::PendingTransaction * tx = wallet_src->createTransaction(wallet4_addr,
                                                                        PAYMENT_ID_EMPTY,
-                                                                       AMOUNT_10XMR * 5, 1, KickAss::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
+                                                                       AMOUNT_10XMR * 5, 1, KickAssCoin::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
 
-    ASSERT_TRUE(tx->status() == KickAss::PendingTransaction::Status_Ok);
+    ASSERT_TRUE(tx->status() == KickAssCoin::PendingTransaction::Status_Ok);
     ASSERT_TRUE(tx->commit());
     history = wallet_src->history();
     history->refresh();
@@ -739,11 +739,11 @@ TEST_F(WalletTest1, WalletTransactionAndHistory)
 TEST_F(WalletTest1, WalletTransactionWithPaymentId)
 {
 
-    KickAss::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     // make sure testnet daemon is running
     ASSERT_TRUE(wallet_src->init(TESTNET_DAEMON_ADDRESS, 0));
     ASSERT_TRUE(wallet_src->refresh());
-    KickAss::TransactionHistory * history = wallet_src->history();
+    KickAssCoin::TransactionHistory * history = wallet_src->history();
     history->refresh();
     ASSERT_TRUE(history->count() > 0);
     size_t count1 = history->count();
@@ -756,15 +756,15 @@ TEST_F(WalletTest1, WalletTransactionWithPaymentId)
 
     std::string wallet4_addr = Utils::get_wallet_address(CURRENT_DST_WALLET, TESTNET_WALLET_PASS);
 
-    std::string payment_id = KickAss::Wallet::genPaymentId();
+    std::string payment_id = KickAssCoin::Wallet::genPaymentId();
     ASSERT_TRUE(payment_id.length() == 16);
 
 
-    KickAss::PendingTransaction * tx = wallet_src->createTransaction(wallet4_addr,
+    KickAssCoin::PendingTransaction * tx = wallet_src->createTransaction(wallet4_addr,
                                                                        payment_id,
-                                                                       AMOUNT_1XMR, 1, KickAss::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
+                                                                       AMOUNT_1XMR, 1, KickAssCoin::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
 
-    ASSERT_TRUE(tx->status() == KickAss::PendingTransaction::Status_Ok);
+    ASSERT_TRUE(tx->status() == KickAssCoin::PendingTransaction::Status_Ok);
     ASSERT_TRUE(tx->commit());
     history = wallet_src->history();
     history->refresh();
@@ -785,10 +785,10 @@ TEST_F(WalletTest1, WalletTransactionWithPaymentId)
 }
 
 
-struct MyWalletListener : public KickAss::WalletListener
+struct MyWalletListener : public KickAssCoin::WalletListener
 {
 
-    KickAss::Wallet * wallet;
+    KickAssCoin::Wallet * wallet;
     uint64_t total_tx;
     uint64_t total_rx;
     boost::mutex  mutex;
@@ -805,7 +805,7 @@ struct MyWalletListener : public KickAss::WalletListener
 
 
 
-    MyWalletListener(KickAss::Wallet * wallet)
+    MyWalletListener(KickAssCoin::Wallet * wallet)
         : total_tx(0), total_rx(0)
     {
         reset();
@@ -881,7 +881,7 @@ struct MyWalletListener : public KickAss::WalletListener
 TEST_F(WalletTest2, WalletCallBackRefreshedSync)
 {
 
-    KickAss::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     MyWalletListener * wallet_src_listener = new MyWalletListener(wallet_src);
     ASSERT_TRUE(wallet_src->init(TESTNET_DAEMON_ADDRESS, 0));
     ASSERT_TRUE(wallet_src_listener->refresh_triggered);
@@ -898,7 +898,7 @@ TEST_F(WalletTest2, WalletCallBackRefreshedSync)
 TEST_F(WalletTest2, WalletCallBackRefreshedAsync)
 {
 
-    KickAss::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     MyWalletListener * wallet_src_listener = new MyWalletListener(wallet_src);
 
     boost::chrono::seconds wait_for = boost::chrono::seconds(20);
@@ -920,26 +920,26 @@ TEST_F(WalletTest2, WalletCallBackRefreshedAsync)
 TEST_F(WalletTest2, WalletCallbackSent)
 {
 
-    KickAss::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     // make sure testnet daemon is running
     ASSERT_TRUE(wallet_src->init(TESTNET_DAEMON_ADDRESS, 0));
     ASSERT_TRUE(wallet_src->refresh());
     MyWalletListener * wallet_src_listener = new MyWalletListener(wallet_src);
     uint64_t balance = wallet_src->balance(0);
     std::cout << "** Balance: " << wallet_src->displayAmount(wallet_src->balance(0)) <<  std::endl;
-    KickAss::Wallet * wallet_dst = wmgr->openWallet(CURRENT_DST_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet_dst = wmgr->openWallet(CURRENT_DST_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
 
     uint64_t amount = AMOUNT_1XMR * 5;
-    std::cout << "** Sending " << KickAss::Wallet::displayAmount(amount) << " to " << wallet_dst->mainAddress();
+    std::cout << "** Sending " << KickAssCoin::Wallet::displayAmount(amount) << " to " << wallet_dst->mainAddress();
 
 
-    KickAss::PendingTransaction * tx = wallet_src->createTransaction(wallet_dst->mainAddress(),
+    KickAssCoin::PendingTransaction * tx = wallet_src->createTransaction(wallet_dst->mainAddress(),
                                                                        PAYMENT_ID_EMPTY,
-                                                                       amount, 1, KickAss::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
-    std::cout << "** Committing transaction: " << KickAss::Wallet::displayAmount(tx->amount())
-              << " with fee: " << KickAss::Wallet::displayAmount(tx->fee());
+                                                                       amount, 1, KickAssCoin::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
+    std::cout << "** Committing transaction: " << KickAssCoin::Wallet::displayAmount(tx->amount())
+              << " with fee: " << KickAssCoin::Wallet::displayAmount(tx->fee());
 
-    ASSERT_TRUE(tx->status() == KickAss::PendingTransaction::Status_Ok);
+    ASSERT_TRUE(tx->status() == KickAssCoin::PendingTransaction::Status_Ok);
     ASSERT_TRUE(tx->commit());
 
     boost::chrono::seconds wait_for = boost::chrono::seconds(60*3);
@@ -959,13 +959,13 @@ TEST_F(WalletTest2, WalletCallbackSent)
 TEST_F(WalletTest2, WalletCallbackReceived)
 {
 
-    KickAss::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet_src = wmgr->openWallet(CURRENT_SRC_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     // make sure testnet daemon is running
     ASSERT_TRUE(wallet_src->init(TESTNET_DAEMON_ADDRESS, 0));
     ASSERT_TRUE(wallet_src->refresh());
     std::cout << "** Balance src1: " << wallet_src->displayAmount(wallet_src->balance(0)) <<  std::endl;
 
-    KickAss::Wallet * wallet_dst = wmgr->openWallet(CURRENT_DST_WALLET, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet_dst = wmgr->openWallet(CURRENT_DST_WALLET, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     ASSERT_TRUE(wallet_dst->init(TESTNET_DAEMON_ADDRESS, 0));
     ASSERT_TRUE(wallet_dst->refresh());
     uint64_t balance = wallet_dst->balance(0);
@@ -973,15 +973,15 @@ TEST_F(WalletTest2, WalletCallbackReceived)
     std::unique_ptr<MyWalletListener> wallet_dst_listener (new MyWalletListener(wallet_dst));
 
     uint64_t amount = AMOUNT_1XMR * 5;
-    std::cout << "** Sending " << KickAss::Wallet::displayAmount(amount) << " to " << wallet_dst->mainAddress();
-    KickAss::PendingTransaction * tx = wallet_src->createTransaction(wallet_dst->mainAddress(),
+    std::cout << "** Sending " << KickAssCoin::Wallet::displayAmount(amount) << " to " << wallet_dst->mainAddress();
+    KickAssCoin::PendingTransaction * tx = wallet_src->createTransaction(wallet_dst->mainAddress(),
                                                                        PAYMENT_ID_EMPTY,
-                                                                       amount, 1, KickAss::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
+                                                                       amount, 1, KickAssCoin::PendingTransaction::Priority_Medium, 0, std::set<uint32_t>{});
 
-    std::cout << "** Committing transaction: " << KickAss::Wallet::displayAmount(tx->amount())
-              << " with fee: " << KickAss::Wallet::displayAmount(tx->fee());
+    std::cout << "** Committing transaction: " << KickAssCoin::Wallet::displayAmount(tx->amount())
+              << " with fee: " << KickAssCoin::Wallet::displayAmount(tx->fee());
 
-    ASSERT_TRUE(tx->status() == KickAss::PendingTransaction::Status_Ok);
+    ASSERT_TRUE(tx->status() == KickAssCoin::PendingTransaction::Status_Ok);
     ASSERT_TRUE(tx->commit());
 
     boost::chrono::seconds wait_for = boost::chrono::seconds(60*4);
@@ -1006,7 +1006,7 @@ TEST_F(WalletTest2, WalletCallbackReceived)
 TEST_F(WalletTest2, WalletCallbackNewBlock)
 {
 
-    KickAss::Wallet * wallet_src = wmgr->openWallet(TESTNET_WALLET5_NAME, TESTNET_WALLET_PASS, KickAss::NetworkType::TESTNET);
+    KickAssCoin::Wallet * wallet_src = wmgr->openWallet(TESTNET_WALLET5_NAME, TESTNET_WALLET_PASS, KickAssCoin::NetworkType::TESTNET);
     // make sure testnet daemon is running
     ASSERT_TRUE(wallet_src->init(TESTNET_DAEMON_ADDRESS, 0));
     ASSERT_TRUE(wallet_src->refresh());
@@ -1033,7 +1033,7 @@ TEST_F(WalletTest2, WalletCallbackNewBlock)
 TEST_F(WalletManagerMainnetTest, CreateOpenAndRefreshWalletMainNetSync)
 {
 
-    KickAss::Wallet * wallet = wmgr->createWallet(WALLET_NAME_MAINNET, "", WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet = wmgr->createWallet(WALLET_NAME_MAINNET, "", WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::unique_ptr<MyWalletListener> wallet_listener (new MyWalletListener(wallet));
     wallet->init(MAINNET_DAEMON_ADDRESS, 0);
     std::cerr << "TEST: waiting on refresh lock...\n";
@@ -1052,7 +1052,7 @@ TEST_F(WalletManagerMainnetTest, CreateAndRefreshWalletMainNetAsync)
     // supposing 120 seconds should be enough for fast refresh
     int SECONDS_TO_REFRESH = 120;
 
-    KickAss::Wallet * wallet = wmgr->createWallet(WALLET_NAME_MAINNET, "", WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet = wmgr->createWallet(WALLET_NAME_MAINNET, "", WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::unique_ptr<MyWalletListener> wallet_listener (new MyWalletListener(wallet));
 
     boost::chrono::seconds wait_for = boost::chrono::seconds(SECONDS_TO_REFRESH);
@@ -1062,7 +1062,7 @@ TEST_F(WalletManagerMainnetTest, CreateAndRefreshWalletMainNetAsync)
     std::cerr << "TEST: waiting on refresh lock...\n";
     wallet_listener->cv_refresh.wait_for(lock, wait_for);
     std::cerr << "TEST: refresh lock acquired...\n";
-    ASSERT_TRUE(wallet->status() == KickAss::Wallet::Status_Ok);
+    ASSERT_TRUE(wallet->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet_listener->refresh_triggered);
     ASSERT_TRUE(wallet->connected());
     ASSERT_TRUE(wallet->blockChainHeight() == wallet->daemonBlockChainHeight());
@@ -1075,9 +1075,9 @@ TEST_F(WalletManagerMainnetTest, OpenAndRefreshWalletMainNetAsync)
 
     // supposing 120 seconds should be enough for fast refresh
     int SECONDS_TO_REFRESH = 120;
-    KickAss::Wallet * wallet = wmgr->createWallet(WALLET_NAME_MAINNET, "", WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet = wmgr->createWallet(WALLET_NAME_MAINNET, "", WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     wmgr->closeWallet(wallet);
-    wallet = wmgr->openWallet(WALLET_NAME_MAINNET, "", KickAss::NetworkType::MAINNET);
+    wallet = wmgr->openWallet(WALLET_NAME_MAINNET, "", KickAssCoin::NetworkType::MAINNET);
 
     std::unique_ptr<MyWalletListener> wallet_listener (new MyWalletListener(wallet));
 
@@ -1088,7 +1088,7 @@ TEST_F(WalletManagerMainnetTest, OpenAndRefreshWalletMainNetAsync)
     std::cerr << "TEST: waiting on refresh lock...\n";
     wallet_listener->cv_refresh.wait_for(lock, wait_for);
     std::cerr << "TEST: refresh lock acquired...\n";
-    ASSERT_TRUE(wallet->status() == KickAss::Wallet::Status_Ok);
+    ASSERT_TRUE(wallet->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet_listener->refresh_triggered);
     ASSERT_TRUE(wallet->connected());
     ASSERT_TRUE(wallet->blockChainHeight() == wallet->daemonBlockChainHeight());
@@ -1102,7 +1102,7 @@ TEST_F(WalletManagerMainnetTest, RecoverAndRefreshWalletMainNetAsync)
 
     // supposing 120 seconds should be enough for fast refresh
     int SECONDS_TO_REFRESH = 120;
-    KickAss::Wallet * wallet = wmgr->createWallet(WALLET_NAME_MAINNET, "", WALLET_LANG, KickAss::NetworkType::MAINNET);
+    KickAssCoin::Wallet * wallet = wmgr->createWallet(WALLET_NAME_MAINNET, "", WALLET_LANG, KickAssCoin::NetworkType::MAINNET);
     std::string seed = wallet->seed();
     std::string address = wallet->mainAddress();
     wmgr->closeWallet(wallet);
@@ -1111,8 +1111,8 @@ TEST_F(WalletManagerMainnetTest, RecoverAndRefreshWalletMainNetAsync)
     Utils::deleteWallet(WALLET_NAME_MAINNET);
     // ..and recovering wallet from seed
 
-    wallet = wmgr->recoveryWallet(WALLET_NAME_MAINNET, seed, KickAss::NetworkType::MAINNET);
-    ASSERT_TRUE(wallet->status() == KickAss::Wallet::Status_Ok);
+    wallet = wmgr->recoveryWallet(WALLET_NAME_MAINNET, seed, KickAssCoin::NetworkType::MAINNET);
+    ASSERT_TRUE(wallet->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_TRUE(wallet->mainAddress() == address);
     std::unique_ptr<MyWalletListener> wallet_listener (new MyWalletListener(wallet));
     boost::chrono::seconds wait_for = boost::chrono::seconds(SECONDS_TO_REFRESH);
@@ -1125,7 +1125,7 @@ TEST_F(WalletManagerMainnetTest, RecoverAndRefreshWalletMainNetAsync)
     // as it needs much more than 120 seconds for mainnet
 
     wallet_listener->cv_refresh.wait_for(lock, wait_for);
-    ASSERT_TRUE(wallet->status() == KickAss::Wallet::Status_Ok);
+    ASSERT_TRUE(wallet->status() == KickAssCoin::Wallet::Status_Ok);
     ASSERT_FALSE(wallet_listener->refresh_triggered);
     ASSERT_TRUE(wallet->connected());
     ASSERT_FALSE(wallet->blockChainHeight() == wallet->daemonBlockChainHeight());
@@ -1173,7 +1173,7 @@ int main(int argc, char** argv)
     CURRENT_DST_WALLET = TESTNET_WALLET1_NAME;
 
     ::testing::InitGoogleTest(&argc, argv);
-    KickAss::WalletManagerFactory::setLogLevel(KickAss::WalletManagerFactory::LogLevel_Max);
+    KickAssCoin::WalletManagerFactory::setLogLevel(KickAssCoin::WalletManagerFactory::LogLevel_Max);
     return RUN_ALL_TESTS();
     CATCH_ENTRY_L0("main", 1);
 }

@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -34,13 +34,13 @@ if (WIN32 OR STATIC)
   add_definitions(-DMINIUPNP_STATICLIB)
 endif ()
 
-function (kickass_private_headers group)
+function (kickasscoin_private_headers group)
   source_group("${group}\\Private"
     FILES
       ${ARGN})
 endfunction ()
 
-function (kickass_install_headers subdir)
+function (kickasscoin_install_headers subdir)
   install(
     FILES       ${ARGN}
     DESTINATION "include/${subdir}"
@@ -58,7 +58,7 @@ function (enable_stack_trace target)
   endif()
 endfunction()
 
-function (kickass_add_executable name)
+function (kickasscoin_add_executable name)
   source_group("${name}"
     FILES
       ${ARGN})
@@ -77,31 +77,31 @@ function (kickass_add_executable name)
   enable_stack_trace("${name}")
 endfunction ()
 
-function (kickass_add_library name)
-    kickass_add_library_with_deps(NAME "${name}" SOURCES ${ARGN})
+function (kickasscoin_add_library name)
+    kickasscoin_add_library_with_deps(NAME "${name}" SOURCES ${ARGN})
 endfunction()
 
-function (kickass_add_library_with_deps)
-  cmake_parse_arguments(KICKASS_ADD_LIBRARY "" "NAME" "DEPENDS;SOURCES" ${ARGN})
-  source_group("${KICKASS_ADD_LIBRARY_NAME}" FILES ${KICKASS_ADD_LIBRARY_SOURCES})
+function (kickasscoin_add_library_with_deps)
+  cmake_parse_arguments(KICKASSCOIN_ADD_LIBRARY "" "NAME" "DEPENDS;SOURCES" ${ARGN})
+  source_group("${KICKASSCOIN_ADD_LIBRARY_NAME}" FILES ${KICKASSCOIN_ADD_LIBRARY_SOURCES})
 
   # Define a ("virtual") object library and an actual library that links those
   # objects together. The virtual libraries can be arbitrarily combined to link
   # any subset of objects into one library archive. This is used for releasing
   # libwallet, which combines multiple components.
-  set(objlib obj_${KICKASS_ADD_LIBRARY_NAME})
-  add_library(${objlib} OBJECT ${KICKASS_ADD_LIBRARY_SOURCES})
-  add_library("${KICKASS_ADD_LIBRARY_NAME}" $<TARGET_OBJECTS:${objlib}>)
-  if (KICKASS_ADD_LIBRARY_DEPENDS)
-    add_dependencies(${objlib} ${KICKASS_ADD_LIBRARY_DEPENDS})
+  set(objlib obj_${KICKASSCOIN_ADD_LIBRARY_NAME})
+  add_library(${objlib} OBJECT ${KICKASSCOIN_ADD_LIBRARY_SOURCES})
+  add_library("${KICKASSCOIN_ADD_LIBRARY_NAME}" $<TARGET_OBJECTS:${objlib}>)
+  if (KICKASSCOIN_ADD_LIBRARY_DEPENDS)
+    add_dependencies(${objlib} ${KICKASSCOIN_ADD_LIBRARY_DEPENDS})
   endif()
-  set_property(TARGET "${KICKASS_ADD_LIBRARY_NAME}" PROPERTY FOLDER "libs")
+  set_property(TARGET "${KICKASSCOIN_ADD_LIBRARY_NAME}" PROPERTY FOLDER "libs")
   target_compile_definitions(${objlib}
-    PRIVATE $<TARGET_PROPERTY:${KICKASS_ADD_LIBRARY_NAME},INTERFACE_COMPILE_DEFINITIONS>)
+    PRIVATE $<TARGET_PROPERTY:${KICKASSCOIN_ADD_LIBRARY_NAME},INTERFACE_COMPILE_DEFINITIONS>)
 endfunction ()
 
 include(Version)
-kickass_add_library(version SOURCES ${CMAKE_BINARY_DIR}/version.cpp DEPENDS genversion)
+kickasscoin_add_library(version SOURCES ${CMAKE_BINARY_DIR}/version.cpp DEPENDS genversion)
 
 add_subdirectory(common)
 add_subdirectory(crypto)

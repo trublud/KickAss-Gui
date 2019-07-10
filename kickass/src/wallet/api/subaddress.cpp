@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -34,7 +34,7 @@
 
 #include <vector>
 
-namespace KickAss {
+namespace KickAssCoin {
   
 Subaddress::~Subaddress() {}
   

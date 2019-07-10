@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -32,8 +32,8 @@
 
 #include "bootstrap_file.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "bcutil"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "bcutil"
 
 namespace po = boost::program_options;
 
@@ -43,7 +43,7 @@ using namespace epee;
 namespace
 {
   // This number was picked by taking the leading 4 bytes from this output:
-  // echo KickAss bootstrap file | sha1sum
+  // echo KickAssCoin bootstrap file | sha1sum
   const uint32_t blockchain_raw_magic = 0x28721586;
   const uint32_t header_size = 1024;
 

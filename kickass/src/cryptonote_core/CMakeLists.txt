@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -43,9 +43,9 @@ set(cryptonote_core_private_headers
   tx_sanity_check.h
   cryptonote_tx_utils.h)
 
-kickass_private_headers(cryptonote_core
+kickasscoin_private_headers(cryptonote_core
   ${cryptonote_core_private_headers})
-kickass_add_library(cryptonote_core
+kickasscoin_add_library(cryptonote_core
   ${cryptonote_core_sources}
   ${cryptonote_core_headers}
   ${cryptonote_core_private_headers})

@@ -38,8 +38,8 @@
 
 #pragma comment(lib, "Ws2_32.lib")
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "net"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "net"
 
 namespace epee 
 {

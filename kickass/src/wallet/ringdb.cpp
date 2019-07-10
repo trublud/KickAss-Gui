@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The KickAss Project
+// Copyright (c) 2018, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -36,8 +36,8 @@
 #include "wallet_errors.h"
 #include "ringdb.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "wallet.ringdb"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "wallet.ringdb"
 
 static const char zerokey[8] = {0};
 static const MDB_val zerokeyval = { sizeof(zerokey), (void *)zerokey };

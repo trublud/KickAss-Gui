@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -77,9 +77,9 @@ set(crypto_private_headers
   CryptonightR_JIT.h
   CryptonightR_template.h)
 
-kickass_private_headers(cncrypto
+kickasscoin_private_headers(cncrypto
   ${crypto_private_headers})
-kickass_add_library(cncrypto
+kickasscoin_add_library(cncrypto
   ${crypto_sources}
   ${crypto_headers}
   ${crypto_private_headers})

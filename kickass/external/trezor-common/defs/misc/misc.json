@@ -28,14 +28,14 @@
         "blockchain_link": {}
     },
     {
-        "name": "KickAss",
+        "name": "KickAssCoin",
         "shortcut": "XMR",
         "slip44": 128,
         "curve": "ed25519",
         "decimals": 12,
         "links": {
-            "Homepage": "https://getkickass.org",
-            "Github": "https://github.com/kickass-project/kickass"
+            "Homepage": "https://getkickasscoin.org",
+            "Github": "https://github.com/kickasscoin-project/kickasscoin"
         },
         "wallet": {},
         "blockchain_link": {}

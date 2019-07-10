@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -27,8 +27,8 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#ifndef KICKASS_DEVICE_TREZOR_H
-#define KICKASS_DEVICE_TREZOR_H
+#ifndef KICKASSCOIN_DEVICE_TREZOR_H
+#define KICKASSCOIN_DEVICE_TREZOR_H
 
 #include "trezor.hpp"
 #include "device/device.hpp"
@@ -68,7 +68,7 @@ namespace trezor {
       size_t m_num_transations_to_sign;
 
       void transaction_versions_check(const ::tools::wallet2::unsigned_tx_set & unsigned_tx, hw::tx_aux_data & aux_data);
-      void transaction_pre_check(std::shared_ptr<messages::kickass::KickAssTransactionInitRequest> init_msg);
+      void transaction_pre_check(std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionInitRequest> init_msg);
       void transaction_check(const protocol::tx::TData & tdata, const hw::tx_aux_data & aux_data);
       void device_state_reset_unsafe() override;
       void live_refresh_start_unsafe();
@@ -118,14 +118,14 @@ namespace trezor {
       /**
        * Get address. Throws.
        */
-      std::shared_ptr<messages::kickass::KickAssAddress> get_address(
+      std::shared_ptr<messages::kickasscoin::KickAssCoinAddress> get_address(
           const boost::optional<std::vector<uint32_t>> & path = boost::none,
           const boost::optional<cryptonote::network_type> & network_type = boost::none);
 
       /**
        * Get watch key from device. Throws.
        */
-      std::shared_ptr<messages::kickass::KickAssWatchKey> get_view_key(
+      std::shared_ptr<messages::kickasscoin::KickAssCoinWatchKey> get_view_key(
           const boost::optional<std::vector<uint32_t>> & path = boost::none,
           const boost::optional<cryptonote::network_type> & network_type = boost::none);
 
@@ -206,4 +206,4 @@ namespace trezor {
 
 }
 }
-#endif //KICKASS_DEVICE_TREZOR_H
+#endif //KICKASSCOIN_DEVICE_TREZOR_H

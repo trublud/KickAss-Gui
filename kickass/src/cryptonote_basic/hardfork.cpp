@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -33,8 +33,8 @@
 #include "blockchain_db/blockchain_db.h"
 #include "hardfork.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "hardfork"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "hardfork"
 
 using namespace cryptonote;
 

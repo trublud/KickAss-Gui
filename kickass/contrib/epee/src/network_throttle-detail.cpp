@@ -1,8 +1,8 @@
 /// @file
-/// @author rfree (current maintainer in kickass.cc project)
+/// @author rfree (current maintainer in kickasscoin.cc project)
 /// @brief implementaion for throttling of connection (count and rate-limit speed etc)
 
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -60,8 +60,8 @@
 // TODO:
 #include "net/network_throttle-detail.hpp"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "net.throttle"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "net.throttle"
 
 // ################################################################################################
 // ################################################################################################

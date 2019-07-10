@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -49,9 +49,9 @@ set(mnemonics_private_headers
   esperanto.h
   lojban.h)
 
-kickass_private_headers(mnemonics
+kickasscoin_private_headers(mnemonics
   ${mnemonics_private_headers})
-kickass_add_library(mnemonics
+kickasscoin_add_library(mnemonics
   ${mnemonics_sources}
   ${mnemonics_headers}
   ${mnemonics_private_headers})

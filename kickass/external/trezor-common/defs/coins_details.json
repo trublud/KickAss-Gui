@@ -28171,11 +28171,11 @@
         },
         "misc:XMR": {
             "links": {
-                "Github": "https://github.com/kickass-project/kickass",
-                "Homepage": "https://getkickass.org"
+                "Github": "https://github.com/kickasscoin-project/kickasscoin",
+                "Homepage": "https://getkickasscoin.org"
             },
             "marketcap_usd": 732073046,
-            "name": "KickAss",
+            "name": "KickAssCoin",
             "shortcut": "XMR",
             "t1_enabled": "no",
             "t2_enabled": "yes",

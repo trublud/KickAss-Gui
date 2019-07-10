@@ -1,4 +1,4 @@
-# Copyright (c) 2018 The KickAss Project
+# Copyright (c) 2018 The KickAssCoin Project
 # 
 # All rights reserved.
 # 

@@ -34,20 +34,20 @@ try:
 except:
   tests = DEFAULT_TESTS
 
-N_KICKASSDS = 1
+N_KICKASSCOINDS = 1
 N_WALLETS = 4
 
-kickassd_base = [builddir + "/bin/kickassd", "--regtest", "--fixed-difficulty", "1", "--offline", "--no-igd", "--p2p-bind-port", "kickassd_p2p_port", "--rpc-bind-port", "kickassd_rpc_port", "--zmq-rpc-bind-port", "kickassd_zmq_port", "--non-interactive", "--disable-dns-checkpoints", "--check-updates", "disabled", "--rpc-ssl", "disabled", "--log-level", "1"]
-wallet_base = [builddir + "/bin/kickass-wallet-rpc", "--wallet-dir", builddir + "/functional-tests-directory", "--rpc-bind-port", "wallet_port", "--disable-rpc-login", "--rpc-ssl", "disabled", "--daemon-ssl", "disabled", "--daemon-port", "18180", "--log-level", "1"]
+kickasscoind_base = [builddir + "/bin/kickasscoind", "--regtest", "--fixed-difficulty", "1", "--offline", "--no-igd", "--p2p-bind-port", "kickasscoind_p2p_port", "--rpc-bind-port", "kickasscoind_rpc_port", "--zmq-rpc-bind-port", "kickasscoind_zmq_port", "--non-interactive", "--disable-dns-checkpoints", "--check-updates", "disabled", "--rpc-ssl", "disabled", "--log-level", "1"]
+wallet_base = [builddir + "/bin/kickasscoin-wallet-rpc", "--wallet-dir", builddir + "/functional-tests-directory", "--rpc-bind-port", "wallet_port", "--disable-rpc-login", "--rpc-ssl", "disabled", "--daemon-ssl", "disabled", "--daemon-port", "18180", "--log-level", "1"]
 
 command_lines = []
 processes = []
 outputs = []
 ports = []
 
-for i in range(N_KICKASSDS):
-  command_lines.append([str(18180+i) if x == "kickassd_rpc_port" else str(18280+i) if x == "kickassd_p2p_port" else str(18380+i) if x == "kickassd_zmq_port" else x for x in kickassd_base])
-  outputs.append(open(builddir + '/tests/functional_tests/kickassd' + str(i) + '.log', 'a+'))
+for i in range(N_KICKASSCOINDS):
+  command_lines.append([str(18180+i) if x == "kickasscoind_rpc_port" else str(18280+i) if x == "kickasscoind_p2p_port" else str(18380+i) if x == "kickasscoind_zmq_port" else x for x in kickasscoind_base])
+  outputs.append(open(builddir + '/tests/functional_tests/kickasscoind' + str(i) + '.log', 'a+'))
   ports.append(18180+i)
 
 for i in range(N_WALLETS):

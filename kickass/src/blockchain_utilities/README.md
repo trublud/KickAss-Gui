@@ -1,6 +1,6 @@
-# KickAss Blockchain Utilities
+# KickAssCoin Blockchain Utilities
 
-Copyright (c) 2014-2019, The KickAss Project
+Copyright (c) 2014-2019, The KickAssCoin Project
 
 ## Introduction
 
@@ -12,16 +12,16 @@ See also each utility's "--help" option.
 
 ### Export an existing blockchain database
 
-`$ kickass-blockchain-export`
+`$ kickasscoin-blockchain-export`
 
-This loads the existing blockchain and exports it to `$KICKASS_DATA_DIR/export/blockchain.raw`
+This loads the existing blockchain and exports it to `$KICKASSCOIN_DATA_DIR/export/blockchain.raw`
 
 ### Import the exported file
 
-`$ kickass-blockchain-import`
+`$ kickasscoin-blockchain-import`
 
-This imports blocks from `$KICKASS_DATA_DIR/export/blockchain.raw` (exported using the
-`kickass-blockchain-export` tool as described above) into the current database.
+This imports blocks from `$KICKASSCOIN_DATA_DIR/export/blockchain.raw` (exported using the
+`kickasscoin-blockchain-export` tool as described above) into the current database.
 
 Defaults: `--batch on`, `--batch size 20000`, `--verify on`
 
@@ -30,14 +30,14 @@ Batch size refers to number of blocks and can be adjusted for performance based 
 Verification should only be turned off if importing from a trusted blockchain.
 
 If you encounter an error like "resizing not supported in batch mode", you can just re-run
-the `kickass-blockchain-import` command again, and it will restart from where it left off.
+the `kickasscoin-blockchain-import` command again, and it will restart from where it left off.
 
 ```bash
 ## use default settings to import blockchain.raw into database
-$ kickass-blockchain-import
+$ kickasscoin-blockchain-import
 
 ## fast import with large batch size, database mode "fastest", verification off
-$ kickass-blockchain-import --batch-size 20000 --database lmdb#fastest --verify off
+$ kickasscoin-blockchain-import --batch-size 20000 --database lmdb#fastest --verify off
 
 ```
 
@@ -80,9 +80,9 @@ LMDB flags (more than one may be specified):
 ## Examples:
 
 ```bash
-$ kickass-blockchain-import --database lmdb#fastest
+$ kickasscoin-blockchain-import --database lmdb#fastest
 
-$ kickass-blockchain-import --database lmdb#nosync
+$ kickasscoin-blockchain-import --database lmdb#nosync
 
-$ kickass-blockchain-import --database lmdb#nosync,nometasync
+$ kickasscoin-blockchain-import --database lmdb#nosync,nometasync
 ```

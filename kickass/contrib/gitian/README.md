@@ -1,9 +1,9 @@
 Gitian building
 ================
 
-*Setup instructions for a Gitian build of KickAss.*
+*Setup instructions for a Gitian build of KickAssCoin.*
 
-Gitian is the deterministic build process that is used to build the KickAss CLI
+Gitian is the deterministic build process that is used to build the KickAssCoin CLI
 executables. It provides a way to be reasonably sure that the
 executables are really built from the git source. It also makes sure that
 the same, tested dependencies are used and statically built into the executable.
@@ -97,7 +97,7 @@ Initial Gitian Setup
 The `gitian-build.py` script will checkout different release tags, so it's best to copy it to the top level directory:
 
 ```bash
-cp kickass/contrib/gitian/gitian-build.py .
+cp kickasscoin/contrib/gitian/gitian-build.py .
 ```
 
 Setup the required environment, you only need to do this once:
@@ -120,7 +120,7 @@ fork the gitian.sigs repository and clone it on your host machine,
 or pass the signed assert file back to your build machine.
 
 ```bash
-git clone git@github.com:kickass-project/gitian.sigs.git
+git clone git@github.com:kickasscoin-project/gitian.sigs.git
 git remote add fluffypony git@github.com:fluffypony/gitian.sigs.git
 ```
 
@@ -141,13 +141,13 @@ If you do detached, offline signing, you need to copy these uncommited changes t
 ```bash
 export NAME=fluffypony
 export VERSION=v0.14.0
-gpg --output $VERSION-linux/$NAME/kickass-linux-$VERSION-build.assert.sig --detach-sign $VERSION-linux/$NAME/kickass-linux-$VERSION-build.assert
-gpg --output $VERSION-osx-unsigned/$NAME/kickass-osx-$VERSION-build.assert.sig --detach-sign $VERSION-osx-unsigned/$NAME/kickass-osx-$VERSION-build.assert
-gpg --output $VERSION-win-unsigned/$NAME/kickass-win-$VERSION-build.assert.sig --detach-sign $VERSION-win-unsigned/$NAME/kickass-win-$VERSION-build.assert
+gpg --output $VERSION-linux/$NAME/kickasscoin-linux-$VERSION-build.assert.sig --detach-sign $VERSION-linux/$NAME/kickasscoin-linux-$VERSION-build.assert
+gpg --output $VERSION-osx-unsigned/$NAME/kickasscoin-osx-$VERSION-build.assert.sig --detach-sign $VERSION-osx-unsigned/$NAME/kickasscoin-osx-$VERSION-build.assert
+gpg --output $VERSION-win-unsigned/$NAME/kickasscoin-win-$VERSION-build.assert.sig --detach-sign $VERSION-win-unsigned/$NAME/kickasscoin-win-$VERSION-build.assert
 ```
 
 Make a pull request (both the `.assert` and `.assert.sig` files) to the
-[kickass-project/gitian.sigs](https://github.com/kickass-project/gitian.sigs/) repository:
+[kickasscoin-project/gitian.sigs](https://github.com/kickasscoin-project/gitian.sigs/) repository:
 
 ```bash
 git checkout -b v0.14.0
@@ -156,9 +156,9 @@ git push --set-upstream $NAME v0.14.0
 ```
 
 ```bash
-gpg --detach-sign ${VERSION}-linux/${SIGNER}/kickass-linux-*-build.assert
-gpg --detach-sign ${VERSION}-win-unsigned/${SIGNER}/kickass-win-*-build.assert
-gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/kickass-osx-*-build.assert
+gpg --detach-sign ${VERSION}-linux/${SIGNER}/kickasscoin-linux-*-build.assert
+gpg --detach-sign ${VERSION}-win-unsigned/${SIGNER}/kickasscoin-win-*-build.assert
+gpg --detach-sign ${VERSION}-osx-unsigned/${SIGNER}/kickasscoin-osx-*-build.assert
 ```
 
 More Build Options
@@ -166,7 +166,7 @@ More Build Options
 
 You can choose your own remote and commit hash by running for example:
 ```bash
-./gitian-build.py --detach-sign --no-commit --url https://github.com/kickassmooo-kickass/bitkickass -b kickassmooo 1f5680c8db8f4cc7acc04a04c724b832003440fd
+./gitian-build.py --detach-sign --no-commit --url https://github.com/kickasscoinmooo-kickasscoin/bitkickasscoin -b kickasscoinmooo 1f5680c8db8f4cc7acc04a04c724b832003440fd
 ```
 
 Note that you won't be able to build commits authored before the gitian scripts

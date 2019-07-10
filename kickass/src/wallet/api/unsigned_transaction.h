@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -35,7 +35,7 @@
 #include <vector>
 
 
-namespace KickAss {
+namespace KickAssCoin {
 
 class WalletImpl;
 class UnsignedTransactionImpl : public UnsignedTransaction
@@ -72,4 +72,4 @@ private:
 
 }
 
-namespace Bitkickass = KickAss;
+namespace bitkickasscoin = KickAssCoin;

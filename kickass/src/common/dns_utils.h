@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -109,7 +109,7 @@ public:
    * @brief Gets a DNS address from OpenAlias format
    *
    * If the address looks good, but contains one @ symbol, replace that with a .
-   * e.g. donate@getkickass.org becomes donate.getkickass.org
+   * e.g. donate@getkickasscoin.org becomes donate.getkickasscoin.org
    *
    * @param oa_addr  OpenAlias address
    *

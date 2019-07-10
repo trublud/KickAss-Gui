@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -27,8 +27,8 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#ifndef KICKASS_PROTOCOL_H
-#define KICKASS_PROTOCOL_H
+#ifndef KICKASSCOIN_PROTOCOL_H
+#define KICKASSCOIN_PROTOCOL_H
 
 #include "trezor_defs.hpp"
 #include "device/device_cold.hpp"
@@ -108,60 +108,60 @@ namespace chacha {
 // Cold Key image sync
 namespace ki {
 
-  using KickAssTransferDetails = messages::kickass::KickAssKeyImageSyncStepRequest_KickAssTransferDetails;
-  using KickAssSubAddressIndicesList = messages::kickass::KickAssKeyImageExportInitRequest_KickAssSubAddressIndicesList;
-  using KickAssExportedKeyImage = messages::kickass::KickAssKeyImageSyncStepAck_KickAssExportedKeyImage;
+  using KickAssCoinTransferDetails = messages::kickasscoin::KickAssCoinKeyImageSyncStepRequest_KickAssCoinTransferDetails;
+  using KickAssCoinSubAddressIndicesList = messages::kickasscoin::KickAssCoinKeyImageExportInitRequest_KickAssCoinSubAddressIndicesList;
+  using KickAssCoinExportedKeyImage = messages::kickasscoin::KickAssCoinKeyImageSyncStepAck_KickAssCoinExportedKeyImage;
   using exported_key_image = hw::device_cold::exported_key_image;
 
   /**
-   * Converts transfer details to the KickAssTransferDetails required for KI sync
+   * Converts transfer details to the KickAssCoinTransferDetails required for KI sync
    */
   bool key_image_data(wallet_shim * wallet,
                       const std::vector<tools::wallet2::transfer_details> & transfers,
-                      std::vector<KickAssTransferDetails> & res);
+                      std::vector<KickAssCoinTransferDetails> & res);
 
   /**
-   * Computes a hash over KickAssTransferDetails. Commitment used in the KI sync.
+   * Computes a hash over KickAssCoinTransferDetails. Commitment used in the KI sync.
    */
-  std::string compute_hash(const KickAssTransferDetails & rr);
+  std::string compute_hash(const KickAssCoinTransferDetails & rr);
 
   /**
    * Generates KI sync request with commitments computed.
    */
-  void generate_commitment(std::vector<KickAssTransferDetails> & mtds,
+  void generate_commitment(std::vector<KickAssCoinTransferDetails> & mtds,
                            const std::vector<tools::wallet2::transfer_details> & transfers,
-                           std::shared_ptr<messages::kickass::KickAssKeyImageExportInitRequest> & req);
+                           std::shared_ptr<messages::kickasscoin::KickAssCoinKeyImageExportInitRequest> & req);
 
   /**
    * Processes Live refresh step response, parses KI, checks the signature
    */
   void live_refresh_ack(const ::crypto::secret_key & view_key_priv,
                         const ::crypto::public_key& out_key,
-                        const std::shared_ptr<messages::kickass::KickAssLiveRefreshStepAck> & ack,
+                        const std::shared_ptr<messages::kickasscoin::KickAssCoinLiveRefreshStepAck> & ack,
                         ::cryptonote::keypair& in_ephemeral,
                         ::crypto::key_image& ki);
 }
 
 // Cold transaction signing
 namespace tx {
-  using TsxData = messages::kickass::KickAssTransactionInitRequest_KickAssTransactionData;
-  using KickAssTransactionDestinationEntry = messages::kickass::KickAssTransactionDestinationEntry;
-  using KickAssAccountPublicAddress = messages::kickass::KickAssTransactionDestinationEntry_KickAssAccountPublicAddress;
-  using KickAssTransactionSourceEntry = messages::kickass::KickAssTransactionSourceEntry;
-  using KickAssMultisigKLRki = messages::kickass::KickAssTransactionSourceEntry_KickAssMultisigKLRki;
-  using KickAssOutputEntry = messages::kickass::KickAssTransactionSourceEntry_KickAssOutputEntry;
-  using KickAssRctKey = messages::kickass::KickAssTransactionSourceEntry_KickAssOutputEntry_KickAssRctKeyPublic;
-  using KickAssRsigData = messages::kickass::KickAssTransactionRsigData;
+  using TsxData = messages::kickasscoin::KickAssCoinTransactionInitRequest_KickAssCoinTransactionData;
+  using KickAssCoinTransactionDestinationEntry = messages::kickasscoin::KickAssCoinTransactionDestinationEntry;
+  using KickAssCoinAccountPublicAddress = messages::kickasscoin::KickAssCoinTransactionDestinationEntry_KickAssCoinAccountPublicAddress;
+  using KickAssCoinTransactionSourceEntry = messages::kickasscoin::KickAssCoinTransactionSourceEntry;
+  using KickAssCoinMultisigKLRki = messages::kickasscoin::KickAssCoinTransactionSourceEntry_KickAssCoinMultisigKLRki;
+  using KickAssCoinOutputEntry = messages::kickasscoin::KickAssCoinTransactionSourceEntry_KickAssCoinOutputEntry;
+  using KickAssCoinRctKey = messages::kickasscoin::KickAssCoinTransactionSourceEntry_KickAssCoinOutputEntry_KickAssCoinRctKeyPublic;
+  using KickAssCoinRsigData = messages::kickasscoin::KickAssCoinTransactionRsigData;
 
   using tx_construction_data = tools::wallet2::tx_construction_data;
   using unsigned_tx_set = tools::wallet2::unsigned_tx_set;
 
-  void translate_address(KickAssAccountPublicAddress * dst, const cryptonote::account_public_address * src);
-  void translate_dst_entry(KickAssTransactionDestinationEntry * dst, const cryptonote::tx_destination_entry * src);
-  void translate_src_entry(KickAssTransactionSourceEntry * dst, const cryptonote::tx_source_entry * src);
-  void translate_klrki(KickAssMultisigKLRki * dst, const rct::multisig_kLRki * src);
-  void translate_rct_key(KickAssRctKey * dst, const rct::ctkey * src);
-  std::string hash_addr(const KickAssAccountPublicAddress * addr, boost::optional<uint64_t> amount = boost::none, boost::optional<bool> is_subaddr = boost::none);
+  void translate_address(KickAssCoinAccountPublicAddress * dst, const cryptonote::account_public_address * src);
+  void translate_dst_entry(KickAssCoinTransactionDestinationEntry * dst, const cryptonote::tx_destination_entry * src);
+  void translate_src_entry(KickAssCoinTransactionSourceEntry * dst, const cryptonote::tx_source_entry * src);
+  void translate_klrki(KickAssCoinMultisigKLRki * dst, const rct::multisig_kLRki * src);
+  void translate_rct_key(KickAssCoinRctKey * dst, const rct::ctkey * src);
+  std::string hash_addr(const KickAssCoinAccountPublicAddress * addr, boost::optional<uint64_t> amount = boost::none, boost::optional<bool> is_subaddr = boost::none);
   std::string hash_addr(const std::string & spend_key, const std::string & view_key, boost::optional<uint64_t> amount = boost::none, boost::optional<bool> is_subaddr = boost::none);
   std::string hash_addr(const ::crypto::public_key * spend_key, const ::crypto::public_key * view_key, boost::optional<uint64_t> amount = boost::none, boost::optional<bool> is_subaddr = boost::none);
   ::crypto::secret_key compute_enc_key(const ::crypto::secret_key & private_view_key, const std::string & aux, const std::string & salt);
@@ -179,7 +179,7 @@ namespace tx {
     unsigned rsig_type;
     int bp_version;
     std::vector<uint64_t> grouping_vct;
-    std::shared_ptr<KickAssRsigData> rsig_param;
+    std::shared_ptr<KickAssCoinRsigData> rsig_param;
     size_t cur_input_idx;
     size_t cur_output_idx;
     size_t cur_batch_idx;
@@ -229,42 +229,42 @@ namespace tx {
     void extract_payment_id();
     void compute_integrated_indices(TsxData * tsx_data);
     bool should_compute_bp_now() const;
-    void compute_bproof(messages::kickass::KickAssTransactionRsigData & rsig_data);
+    void compute_bproof(messages::kickasscoin::KickAssCoinTransactionRsigData & rsig_data);
     void process_bproof(rct::Bulletproof & bproof);
 
   public:
     Signer(wallet_shim * wallet2, const unsigned_tx_set * unsigned_tx, size_t tx_idx = 0, hw::tx_aux_data * aux_data = nullptr);
 
-    std::shared_ptr<messages::kickass::KickAssTransactionInitRequest> step_init();
-    void step_init_ack(std::shared_ptr<const messages::kickass::KickAssTransactionInitAck> ack);
+    std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionInitRequest> step_init();
+    void step_init_ack(std::shared_ptr<const messages::kickasscoin::KickAssCoinTransactionInitAck> ack);
 
-    std::shared_ptr<messages::kickass::KickAssTransactionSetInputRequest> step_set_input(size_t idx);
-    void step_set_input_ack(std::shared_ptr<const messages::kickass::KickAssTransactionSetInputAck> ack);
+    std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionSetInputRequest> step_set_input(size_t idx);
+    void step_set_input_ack(std::shared_ptr<const messages::kickasscoin::KickAssCoinTransactionSetInputAck> ack);
 
     void sort_ki();
-    std::shared_ptr<messages::kickass::KickAssTransactionInputsPermutationRequest> step_permutation();
-    void step_permutation_ack(std::shared_ptr<const messages::kickass::KickAssTransactionInputsPermutationAck> ack);
+    std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionInputsPermutationRequest> step_permutation();
+    void step_permutation_ack(std::shared_ptr<const messages::kickasscoin::KickAssCoinTransactionInputsPermutationAck> ack);
 
-    std::shared_ptr<messages::kickass::KickAssTransactionInputViniRequest> step_set_vini_input(size_t idx);
-    void step_set_vini_input_ack(std::shared_ptr<const messages::kickass::KickAssTransactionInputViniAck> ack);
+    std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionInputViniRequest> step_set_vini_input(size_t idx);
+    void step_set_vini_input_ack(std::shared_ptr<const messages::kickasscoin::KickAssCoinTransactionInputViniAck> ack);
 
-    std::shared_ptr<messages::kickass::KickAssTransactionAllInputsSetRequest> step_all_inputs_set();
-    void step_all_inputs_set_ack(std::shared_ptr<const messages::kickass::KickAssTransactionAllInputsSetAck> ack);
+    std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionAllInputsSetRequest> step_all_inputs_set();
+    void step_all_inputs_set_ack(std::shared_ptr<const messages::kickasscoin::KickAssCoinTransactionAllInputsSetAck> ack);
 
-    std::shared_ptr<messages::kickass::KickAssTransactionSetOutputRequest> step_set_output(size_t idx);
-    void step_set_output_ack(std::shared_ptr<const messages::kickass::KickAssTransactionSetOutputAck> ack);
+    std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionSetOutputRequest> step_set_output(size_t idx);
+    void step_set_output_ack(std::shared_ptr<const messages::kickasscoin::KickAssCoinTransactionSetOutputAck> ack);
 
-    std::shared_ptr<messages::kickass::KickAssTransactionSetOutputRequest> step_rsig(size_t idx);
-    void step_set_rsig_ack(std::shared_ptr<const messages::kickass::KickAssTransactionSetOutputAck> ack);
+    std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionSetOutputRequest> step_rsig(size_t idx);
+    void step_set_rsig_ack(std::shared_ptr<const messages::kickasscoin::KickAssCoinTransactionSetOutputAck> ack);
 
-    std::shared_ptr<messages::kickass::KickAssTransactionAllOutSetRequest> step_all_outs_set();
-    void step_all_outs_set_ack(std::shared_ptr<const messages::kickass::KickAssTransactionAllOutSetAck> ack, hw::device &hwdev);
+    std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionAllOutSetRequest> step_all_outs_set();
+    void step_all_outs_set_ack(std::shared_ptr<const messages::kickasscoin::KickAssCoinTransactionAllOutSetAck> ack, hw::device &hwdev);
 
-    std::shared_ptr<messages::kickass::KickAssTransactionSignInputRequest> step_sign_input(size_t idx);
-    void step_sign_input_ack(std::shared_ptr<const messages::kickass::KickAssTransactionSignInputAck> ack);
+    std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionSignInputRequest> step_sign_input(size_t idx);
+    void step_sign_input_ack(std::shared_ptr<const messages::kickasscoin::KickAssCoinTransactionSignInputAck> ack);
 
-    std::shared_ptr<messages::kickass::KickAssTransactionFinalRequest> step_final();
-    void step_final_ack(std::shared_ptr<const messages::kickass::KickAssTransactionFinalAck> ack);
+    std::shared_ptr<messages::kickasscoin::KickAssCoinTransactionFinalRequest> step_final();
+    void step_final_ack(std::shared_ptr<const messages::kickasscoin::KickAssCoinTransactionFinalAck> ack);
 
     std::string store_tx_aux_info();
 
@@ -312,14 +312,14 @@ namespace tx {
   // TX Key decryption
   void load_tx_key_data(hw::device_cold::tx_key_data_t & res, const std::string & data);
 
-  std::shared_ptr<messages::kickass::KickAssGetTxKeyRequest> get_tx_key(
+  std::shared_ptr<messages::kickasscoin::KickAssCoinGetTxKeyRequest> get_tx_key(
       const hw::device_cold::tx_key_data_t & tx_data);
 
   void get_tx_key_ack(
       std::vector<::crypto::secret_key> & tx_keys,
       const std::string & tx_prefix_hash,
       const ::crypto::secret_key & view_key_priv,
-      std::shared_ptr<const messages::kickass::KickAssGetTxKeyAck> ack
+      std::shared_ptr<const messages::kickasscoin::KickAssCoinGetTxKeyAck> ack
   );
 }
 
@@ -328,4 +328,4 @@ namespace tx {
 }
 
 
-#endif //KICKASS_PROTOCOL_H
+#endif //KICKASSCOIN_PROTOCOL_H

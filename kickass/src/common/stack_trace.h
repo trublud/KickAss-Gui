@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2019, The KickAss Project
+// Copyright (c) 2016-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -26,8 +26,8 @@
 // STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#ifndef KICKASS_EXCEPTION_H
-#define KICKASS_EXCEPTION_H
+#ifndef KICKASSCOIN_EXCEPTION_H
+#define KICKASSCOIN_EXCEPTION_H
 
 #include <string>
 

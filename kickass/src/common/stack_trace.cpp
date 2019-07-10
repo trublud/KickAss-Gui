@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2019, The KickAss Project
+// Copyright (c) 2016-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -46,14 +46,14 @@
 #include "common/stack_trace.h"
 #include "misc_log_ex.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "stacktrace"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "stacktrace"
 
 #define ST_LOG(x) \
   do { \
     auto elpp = ELPP; \
     if (elpp) { \
-      CINFO(el::base::Writer,el::base::DispatchAction::FileOnlyLog,KICKASS_DEFAULT_LOG_CATEGORY) << x; \
+      CINFO(el::base::Writer,el::base::DispatchAction::FileOnlyLog,KICKASSCOIN_DEFAULT_LOG_CATEGORY) << x; \
     } \
     else { \
       std::cout << x << std::endl; \

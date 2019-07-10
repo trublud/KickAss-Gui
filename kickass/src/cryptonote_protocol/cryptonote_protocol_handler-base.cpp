@@ -1,8 +1,8 @@
 /// @file
-/// @author rfree (current maintainer in kickass.cc project)
+/// @author rfree (current maintainer in kickasscoin.cc project)
 /// @brief This is the place to implement our handlers for protocol network actions, e.g. for ratelimit for download-requests
 
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -52,8 +52,8 @@
 
 #include "cryptonote_core/cryptonote_core.h" // e.g. for the send_stop_signal()
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "net.cn"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "net.cn"
 
 // ################################################################################################
 // ################################################################################################

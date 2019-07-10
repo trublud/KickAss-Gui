@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -44,8 +44,8 @@
 #include "wallet/api/unsigned_transaction.h"
 #include "wallet/api/pending_transaction.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "debugtools.objectsizes"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "debugtools.objectsizes"
 
 class size_logger
 {
@@ -110,12 +110,12 @@ int main(int argc, char* argv[])
   SL(tools::wallet2::unsigned_tx_set);
   SL(tools::wallet2::signed_tx_set);
 
-  SL(KickAss::WalletImpl);
-  SL(KickAss::AddressBookRow);
-  SL(KickAss::TransactionInfoImpl);
-  SL(KickAss::TransactionHistoryImpl);
-  SL(KickAss::PendingTransactionImpl);
-  SL(KickAss::UnsignedTransactionImpl);
+  SL(KickAssCoin::WalletImpl);
+  SL(KickAssCoin::AddressBookRow);
+  SL(KickAssCoin::TransactionInfoImpl);
+  SL(KickAssCoin::TransactionHistoryImpl);
+  SL(KickAssCoin::PendingTransactionImpl);
+  SL(KickAssCoin::UnsignedTransactionImpl);
 
   return 0;
 }

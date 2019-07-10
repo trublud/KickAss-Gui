@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -30,7 +30,7 @@ set(cn_deserialize_sources
   cn_deserialize.cpp
   )
 
-kickass_add_executable(cn_deserialize
+kickasscoin_add_executable(cn_deserialize
   ${cn_deserialize_sources}
   ${cn_deserialize_private_headers})
 
@@ -46,14 +46,14 @@ target_link_libraries(cn_deserialize
 
 set_property(TARGET cn_deserialize
 	PROPERTY
-	OUTPUT_NAME "kickass-utils-deserialize")
+	OUTPUT_NAME "kickasscoin-utils-deserialize")
 
 
 set(object_sizes_sources
   object_sizes.cpp
   )
 
-kickass_add_executable(object_sizes
+kickasscoin_add_executable(object_sizes
   ${object_sizes_sources}
   ${object_sizes_private_headers})
 
@@ -67,5 +67,5 @@ target_link_libraries(object_sizes
 
 set_property(TARGET object_sizes
 	PROPERTY
-	OUTPUT_NAME "kickass-utils-object-sizes")
+	OUTPUT_NAME "kickasscoin-utils-object-sizes")
 

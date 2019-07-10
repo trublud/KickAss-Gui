@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -58,9 +58,9 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
   add_definitions(-DDEBUG_TMPDIR_LOG=1)
 endif()
 
-kickass_private_headers(daemonizer
+kickasscoin_private_headers(daemonizer
   ${daemonizer_private_headers})
-kickass_add_library(daemonizer
+kickasscoin_add_library(daemonizer
   ${daemonizer_sources}
   ${daemonizer_headers}
   ${daemonizer_private_headers})

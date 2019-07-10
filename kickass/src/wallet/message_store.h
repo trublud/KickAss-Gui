@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The KickAss Project
+// Copyright (c) 2018, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -45,8 +45,8 @@
 #include "wipeable_string.h"
 #include "message_transporter.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "wallet.mms"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "wallet.mms"
 #define AUTO_CONFIG_TOKEN_BYTES 4
 #define AUTO_CONFIG_TOKEN_PREFIX "mms"
 
@@ -121,8 +121,8 @@ namespace mms
   {
     std::string label;
     std::string transport_address;
-    bool kickass_address_known;
-    cryptonote::account_public_address kickass_address;
+    bool kickasscoin_address_known;
+    cryptonote::account_public_address kickasscoin_address;
     bool me;
     uint32_t index;
     std::string auto_config_token;
@@ -133,8 +133,8 @@ namespace mms
 
     authorized_signer()
     {
-      kickass_address_known = false;
-      memset(&kickass_address, 0, sizeof(cryptonote::account_public_address));
+      kickasscoin_address_known = false;
+      memset(&kickasscoin_address, 0, sizeof(cryptonote::account_public_address));
       me = false;
       index = 0;
       auto_config_public_key = crypto::null_pkey;
@@ -162,7 +162,7 @@ namespace mms
   {
     std::string label;
     std::string transport_address;
-    cryptonote::account_public_address kickass_address;
+    cryptonote::account_public_address kickasscoin_address;
   };
 
   // Overal .mms file structure, with the "message_store" object serialized to and
@@ -221,10 +221,10 @@ namespace mms
                     uint32_t index,
                     const boost::optional<std::string> &label,
                     const boost::optional<std::string> &transport_address,
-                    const boost::optional<cryptonote::account_public_address> kickass_address);
+                    const boost::optional<cryptonote::account_public_address> kickasscoin_address);
 
     const authorized_signer &get_signer(uint32_t index) const;
-    bool get_signer_index_by_kickass_address(const cryptonote::account_public_address &kickass_address, uint32_t &index) const;
+    bool get_signer_index_by_kickasscoin_address(const cryptonote::account_public_address &kickasscoin_address, uint32_t &index) const;
     bool get_signer_index_by_label(const std::string label, uint32_t &index) const;
     const std::vector<authorized_signer> &get_all_signers() const { return m_signers; };
     bool signer_config_complete() const;
@@ -379,8 +379,8 @@ namespace boost
     {
       a & x.label;
       a & x.transport_address;
-      a & x.kickass_address_known;
-      a & x.kickass_address;
+      a & x.kickasscoin_address_known;
+      a & x.kickasscoin_address;
       a & x.me;
       a & x.index;
       if (ver < 1)
@@ -399,7 +399,7 @@ namespace boost
     {
       a & x.label;
       a & x.transport_address;
-      a & x.kickass_address;
+      a & x.kickasscoin_address;
     }
 
     template <class Archive>

@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -88,9 +88,9 @@ set(common_private_headers
   timings.h
   combinator.h)
 
-kickass_private_headers(common
+kickasscoin_private_headers(common
   ${common_private_headers})
-kickass_add_library(common
+kickasscoin_add_library(common
   ${common_sources}
   ${common_headers}
   ${common_private_headers}
@@ -110,5 +110,5 @@ target_link_libraries(common
     ${OPENSSL_LIBRARIES}
     ${EXTRA_LIBRARIES})
 
-#kickass_install_headers(common
+#kickasscoin_install_headers(common
 #  ${common_headers})

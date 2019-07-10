@@ -1,0 +1,215 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_48c20/fast"
+/usr/bin/make -f CMakeFiles/cmTC_48c20.dir/build.make CMakeFiles/cmTC_48c20.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_48c20.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_48c20.dir/CheckSymbolExists.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_48c20
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48c20.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_48c20.dir/CheckSymbolExists.c.o  -o cmTC_48c20 
+CMakeFiles/cmTC_48c20.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_48c20.dir/build.make:97: recipe for target 'cmTC_48c20' failed
+make[1]: *** [cmTC_48c20] Error 1
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_48c20/fast' failed
+make: *** [cmTC_48c20/fast] Error 2
+
+File /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function memset_s exists in the c failed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_daeb5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_daeb5.dir/build.make CMakeFiles/cmTC_daeb5.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_daeb5.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pthread -DCHECK_FUNCTION_EXISTS=memset_s   -o CMakeFiles/cmTC_daeb5.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_daeb5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_daeb5.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -DCHECK_FUNCTION_EXISTS=memset_s    -rdynamic CMakeFiles/cmTC_daeb5.dir/CheckFunctionExists.c.o  -o cmTC_daeb5  -L/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/string.h -Wl,-rpath,/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/string.h -lc 
+CMakeFiles/cmTC_daeb5.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `memset_s'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_daeb5.dir/build.make:97: recipe for target 'cmTC_daeb5' failed
+make[1]: *** [cmTC_daeb5] Error 1
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_daeb5/fast' failed
+make: *** [cmTC_daeb5/fast] Error 2
+
+
+Performing C SOURCE FILE Test _fcf_protection=full_c failed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_638ea/fast"
+/usr/bin/make -f CMakeFiles/cmTC_638ea.dir/build.make CMakeFiles/cmTC_638ea.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_638ea.dir/src.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -D_fcf_protection=full_c   -fcf-protection=full -o CMakeFiles/cmTC_638ea.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-fcf-protection=full'; did you mean '-fstack-protector-all'?
+CMakeFiles/cmTC_638ea.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_638ea.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_638ea.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_638ea/fast' failed
+make: *** [cmTC_638ea/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test _fcf_protection=full_cxx failed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c1cc1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c1cc1.dir/build.make CMakeFiles/cmTC_c1cc1.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c1cc1.dir/src.cxx.o
+/usr/bin/c++    -pthread -maes -march=native -fno-strict-aliasing -D_fcf_protection=full_cxx   -fcf-protection=full -o CMakeFiles/cmTC_c1cc1.dir/src.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-fcf-protection=full'; did you mean '-fstack-protector-all'?
+CMakeFiles/cmTC_c1cc1.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_c1cc1.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_c1cc1.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c1cc1/fast' failed
+make: *** [cmTC_c1cc1/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test _fstack_clash_protection_c failed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3cc1f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3cc1f.dir/build.make CMakeFiles/cmTC_3cc1f.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3cc1f.dir/src.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -D_fstack_clash_protection_c   -fstack-clash-protection -o CMakeFiles/cmTC_3cc1f.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-fstack-clash-protection'; did you mean '-fstack-protector'?
+CMakeFiles/cmTC_3cc1f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_3cc1f.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_3cc1f.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3cc1f/fast' failed
+make: *** [cmTC_3cc1f/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test _fstack_clash_protection_cxx failed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c56f8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c56f8.dir/build.make CMakeFiles/cmTC_c56f8.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c56f8.dir/src.cxx.o
+/usr/bin/c++    -pthread -maes -march=native -fno-strict-aliasing -D_fstack_clash_protection_cxx   -fstack-clash-protection -o CMakeFiles/cmTC_c56f8.dir/src.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-fstack-clash-protection'; did you mean '-fstack-protector'?
+CMakeFiles/cmTC_c56f8.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_c56f8.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_c56f8.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c56f8/fast' failed
+make: *** [cmTC_c56f8/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Determining if the -Wl,-z,noexecheap linker flag is supported failed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ad8c8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ad8c8.dir/build.make CMakeFiles/cmTC_ad8c8.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ad8c8.dir/CheckLinkerFlag.c.o
+/usr/bin/cc   -Wl,-z,noexecheap    -Wl,-z,noexecheap -o CMakeFiles/cmTC_ad8c8.dir/CheckLinkerFlag.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/cmake/CheckLinkerFlag.c
+Linking C executable cmTC_ad8c8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad8c8.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,-z,noexecheap     -rdynamic CMakeFiles/cmTC_ad8c8.dir/CheckLinkerFlag.c.o  -o cmTC_ad8c8 
+/usr/bin/ld: warning: -z noexecheap ignored.
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test _fcf_protection=full_c failed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d9810/fast"
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_d9810.dir/build.make CMakeFiles/cmTC_d9810.dir/build
+make[2]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d9810.dir/src.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -D_fcf_protection=full_c   -fcf-protection=full -o CMakeFiles/cmTC_d9810.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-fcf-protection=full'; did you mean '-fstack-protector-all'?
+CMakeFiles/cmTC_d9810.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d9810.dir/src.c.o' failed
+make[2]: *** [CMakeFiles/cmTC_d9810.dir/src.c.o] Error 1
+make[2]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d9810/fast' failed
+make[1]: *** [cmTC_d9810/fast] Error 2
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test _fcf_protection=full_cxx failed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_006f7/fast"
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_006f7.dir/build.make CMakeFiles/cmTC_006f7.dir/build
+make[2]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_006f7.dir/src.cxx.o
+/usr/bin/c++    -pthread -maes -march=native -fno-strict-aliasing -D_fcf_protection=full_cxx   -fcf-protection=full -o CMakeFiles/cmTC_006f7.dir/src.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-fcf-protection=full'; did you mean '-fstack-protector-all'?
+CMakeFiles/cmTC_006f7.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_006f7.dir/src.cxx.o' failed
+make[2]: *** [CMakeFiles/cmTC_006f7.dir/src.cxx.o] Error 1
+make[2]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_006f7/fast' failed
+make[1]: *** [cmTC_006f7/fast] Error 2
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test _fcf_protection=full_c failed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_42ba5/fast"
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_42ba5.dir/build.make CMakeFiles/cmTC_42ba5.dir/build
+make[2]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_42ba5.dir/src.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -D_fcf_protection=full_c   -fcf-protection=full -o CMakeFiles/cmTC_42ba5.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-fcf-protection=full'; did you mean '-fstack-protector-all'?
+CMakeFiles/cmTC_42ba5.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_42ba5.dir/src.c.o' failed
+make[2]: *** [CMakeFiles/cmTC_42ba5.dir/src.c.o] Error 1
+make[2]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_42ba5/fast' failed
+make[1]: *** [cmTC_42ba5/fast] Error 2
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test _fcf_protection=full_cxx failed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_00c67/fast"
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_00c67.dir/build.make CMakeFiles/cmTC_00c67.dir/build
+make[2]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_00c67.dir/src.cxx.o
+/usr/bin/c++    -pthread -maes -march=native -fno-strict-aliasing -D_fcf_protection=full_cxx   -fcf-protection=full -o CMakeFiles/cmTC_00c67.dir/src.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-fcf-protection=full'; did you mean '-fstack-protector-all'?
+CMakeFiles/cmTC_00c67.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_00c67.dir/src.cxx.o' failed
+make[2]: *** [CMakeFiles/cmTC_00c67.dir/src.cxx.o] Error 1
+make[2]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_00c67/fast' failed
+make[1]: *** [cmTC_00c67/fast] Error 2
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }

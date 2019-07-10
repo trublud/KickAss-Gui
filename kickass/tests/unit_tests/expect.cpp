@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The KickAss Project
+// Copyright (c) 2018, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -818,98 +818,98 @@ TEST(Expect, EqualNoCopies)
 TEST(Expect, Macros) {
     EXPECT_TRUE(
         [] () -> ::common_error {
-            KICKASS_PRECOND(true);
+            KICKASSCOIN_PRECOND(true);
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidErrorCode
     );
     EXPECT_TRUE(
         [] () -> ::common_error {
-            KICKASS_PRECOND(false);
+            KICKASSCOIN_PRECOND(false);
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidArgument
     );
     EXPECT_TRUE(
         [] () -> std::error_code {
-            KICKASS_PRECOND(true);
+            KICKASSCOIN_PRECOND(true);
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidErrorCode
     );
     EXPECT_TRUE(
         [] () -> std::error_code {
-            KICKASS_PRECOND(false);
+            KICKASSCOIN_PRECOND(false);
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidArgument
     );
     EXPECT_TRUE(
         [] () -> expect<void> {
-            KICKASS_PRECOND(true);
+            KICKASSCOIN_PRECOND(true);
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidErrorCode
     );
     EXPECT_TRUE(
         [] () -> expect<void> {
-            KICKASS_PRECOND(false);
+            KICKASSCOIN_PRECOND(false);
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidArgument
     );
     EXPECT_TRUE(
         [] () -> expect<int> {
-            KICKASS_PRECOND(true);
+            KICKASSCOIN_PRECOND(true);
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidErrorCode
     );
     EXPECT_TRUE(
         [] () -> expect<int> {
-            KICKASS_PRECOND(false);
+            KICKASSCOIN_PRECOND(false);
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidArgument
     );
 
     EXPECT_TRUE(
         [] () -> std::error_code {
-            KICKASS_CHECK(expect<void>{});
+            KICKASSCOIN_CHECK(expect<void>{});
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidErrorCode
     );
     EXPECT_TRUE(
         [] () -> std::error_code {
-            KICKASS_CHECK(expect<void>{common_error::kInvalidArgument});
+            KICKASSCOIN_CHECK(expect<void>{common_error::kInvalidArgument});
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidArgument
     );
     EXPECT_TRUE(
         [] () -> expect<void> {
-            KICKASS_CHECK(expect<void>{});
+            KICKASSCOIN_CHECK(expect<void>{});
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidErrorCode
     );
     EXPECT_TRUE(
         [] () -> expect<void> {
-            KICKASS_CHECK(expect<void>{common_error::kInvalidArgument});
+            KICKASSCOIN_CHECK(expect<void>{common_error::kInvalidArgument});
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidArgument
     );
     EXPECT_TRUE(
         [] () -> expect<int> {
-            KICKASS_CHECK(expect<void>{});
+            KICKASSCOIN_CHECK(expect<void>{});
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidErrorCode
     );
     EXPECT_TRUE(
         [] () -> expect<int> {
-            KICKASS_CHECK(expect<void>{common_error::kInvalidArgument});
+            KICKASSCOIN_CHECK(expect<void>{common_error::kInvalidArgument});
             return {common_error::kInvalidErrorCode};
         } () == common_error::kInvalidArgument
     );
 
-    EXPECT_NO_THROW(KICKASS_UNWRAP(success()));
-    EXPECT_NO_THROW(KICKASS_UNWRAP(expect<void>{}));
-    EXPECT_NO_THROW(KICKASS_UNWRAP(expect<int>{0}));
+    EXPECT_NO_THROW(KICKASSCOIN_UNWRAP(success()));
+    EXPECT_NO_THROW(KICKASSCOIN_UNWRAP(expect<void>{}));
+    EXPECT_NO_THROW(KICKASSCOIN_UNWRAP(expect<int>{0}));
     EXPECT_THROW(
-        KICKASS_UNWRAP(expect<void>{common_error::kInvalidArgument}), std::system_error
+        KICKASSCOIN_UNWRAP(expect<void>{common_error::kInvalidArgument}), std::system_error
     );
     EXPECT_THROW(
-        KICKASS_UNWRAP(expect<int>{common_error::kInvalidArgument}), std::system_error
+        KICKASSCOIN_UNWRAP(expect<int>{common_error::kInvalidArgument}), std::system_error
     );
 }
 

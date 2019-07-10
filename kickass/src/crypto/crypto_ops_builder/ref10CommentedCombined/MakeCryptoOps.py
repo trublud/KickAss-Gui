@@ -1,7 +1,7 @@
 #assumes you have gnu sed, osx sed might need slight syntax changeo
 #c.f. https://unix.stackexchange.com/questions/112023/how-can-i-replace-a-string-in-a-files
 
-#written by shen-noether kickass research labs
+#written by shen-noether kickasscoin research labs
 
 import os #for copying and sed etc.
 import glob #for copy files
@@ -15,7 +15,7 @@ print("maybe someone smart can replace the sed with perl..")
 a = ""
 
 license = textwrap.dedent("""\
-    // Copyright (c) 2014-2019, The KickAss Project
+    // Copyright (c) 2014-2019, The KickAssCoin Project
     // 
     // All rights reserved.
     // 
@@ -168,36 +168,36 @@ if a == "m":
     print(fe_comments)
     fe = glob.glob("fe*.c")
     for g in fe:
-        os.system("cp "+g+" "+g.replace("fe", "fe.kickass."))
-    qhasmToC("fe_pow22523.c", "pow22523.h", "fe.kickass._pow22523.c")
-    qhasmToC("fe_invert.c", "pow225521.h", "fe.kickass._invert.c")
-    os.system("rm fe.kickass._isnonzero.c") #since it's modified, it's in xmrSpecificOld
-    os.system("cat fe.kickass.*.c | grep -v '^#include' > fe.kickass.c")
+        os.system("cp "+g+" "+g.replace("fe", "fe.kickasscoin."))
+    qhasmToC("fe_pow22523.c", "pow22523.h", "fe.kickasscoin._pow22523.c")
+    qhasmToC("fe_invert.c", "pow225521.h", "fe.kickasscoin._invert.c")
+    os.system("rm fe.kickasscoin._isnonzero.c") #since it's modified, it's in xmrSpecificOld
+    os.system("cat fe.kickasscoin.*.c | grep -v '^#include' > fe.kickasscoin.c")
 
     #sc things
     print("\nmaking sc.c")
     print(sc_comments)
     #so you don't get multiple "loads"
-    os.system("tail -n +24 sc_reduce.c > sc.kickass._reduce.c") #also good on linux
-    os.system("tail -n +24 sc_muladd.c > sc.kickass._muladd.c")
-    os.system("tail -n +31 sc_sub.xmr.c > sc.kickass._sub.xmr.c") #careful with the tails if you change these files!
-    os.system("cat sc.kickass.*.c | grep -v '^#include' > sc.kickass.c")
+    os.system("tail -n +24 sc_reduce.c > sc.kickasscoin._reduce.c") #also good on linux
+    os.system("tail -n +24 sc_muladd.c > sc.kickasscoin._muladd.c")
+    os.system("tail -n +31 sc_sub.xmr.c > sc.kickasscoin._sub.xmr.c") #careful with the tails if you change these files!
+    os.system("cat sc.kickasscoin.*.c | grep -v '^#include' > sc.kickasscoin.c")
 
     #ge stuff
     print("making ge.c")
     ge = glob.glob("ge*.c")
     for g in ge:
-        os.system("cp "+g+" "+g.replace("ge", "ge.kickass."))
+        os.system("cp "+g+" "+g.replace("ge", "ge.kickasscoin."))
     print(ge_comments)
     #need to substitute the below lines for their .h files in the appropriate places
-    qhasmToC("ge_add.c", "ge_add.h", "ge.kickass._add.c")
-    qhasmToC("ge_madd.c", "ge_madd.h", "ge.kickass._madd.c")
-    qhasmToC("ge_sub.c", "ge_sub.h", "ge.kickass._sub.c")
-    qhasmToC("ge_msub.c", "ge_msub.h", "ge.kickass._msub.c")
-    qhasmToC("ge_p2_dbl.c", "ge_p2_dbl.h", "ge.kickass._p2_dbl.c")
-    qhasmToC("ge_frombytes.c", "d.h", "ge.kickass._frombytes.c")
-    qhasmToC("ge.kickass._frombytes.c", "sqrtm1.h", "ge.kickass._frombytes.c")
-    qhasmToC("ge_p3_to_cached.c", "d2.h", "ge.kickass._p3_to_cached.c")
+    qhasmToC("ge_add.c", "ge_add.h", "ge.kickasscoin._add.c")
+    qhasmToC("ge_madd.c", "ge_madd.h", "ge.kickasscoin._madd.c")
+    qhasmToC("ge_sub.c", "ge_sub.h", "ge.kickasscoin._sub.c")
+    qhasmToC("ge_msub.c", "ge_msub.h", "ge.kickasscoin._msub.c")
+    qhasmToC("ge_p2_dbl.c", "ge_p2_dbl.h", "ge.kickasscoin._p2_dbl.c")
+    qhasmToC("ge_frombytes.c", "d.h", "ge.kickasscoin._frombytes.c")
+    qhasmToC("ge.kickasscoin._frombytes.c", "sqrtm1.h", "ge.kickasscoin._frombytes.c")
+    qhasmToC("ge_p3_to_cached.c", "d2.h", "ge.kickasscoin._p3_to_cached.c")
 
 
 
@@ -205,11 +205,11 @@ if a == "m":
     #note, base2.h is a large file!
     #also in ge_scalarmult_base ge_precomp base needs base.h included
 
-    qhasmToC("ge_double_scalarmult.c", "base2.h", "ge.kickass._double_scalarmult.c")
-    qhasmToC("ge_scalarmult_base.c", "base.h", "ge.kickass._scalarmult_base.c")
-    #qhasmToC("ge.kickass._scalarmult_base.c", "base.h", "ge.kickass._scalarmult_base.c")
-    os.system("sed -i 's/ cmov/ ge_precomp_cmov/g' ge.kickass._scalarmult_base.c")
-    os.system("cat ge.kickass.*.c | grep -v '^#include' > ge.kickass.c")
+    qhasmToC("ge_double_scalarmult.c", "base2.h", "ge.kickasscoin._double_scalarmult.c")
+    qhasmToC("ge_scalarmult_base.c", "base.h", "ge.kickasscoin._scalarmult_base.c")
+    #qhasmToC("ge.kickasscoin._scalarmult_base.c", "base.h", "ge.kickasscoin._scalarmult_base.c")
+    os.system("sed -i 's/ cmov/ ge_precomp_cmov/g' ge.kickasscoin._scalarmult_base.c")
+    os.system("cat ge.kickasscoin.*.c | grep -v '^#include' > ge.kickasscoin.c")
 
 
     print("making crypto-ops.c")
@@ -217,30 +217,30 @@ if a == "m":
     #sqrtm1 things
 
     #comments
-    with open("fe.kickass.comments", "w") as text_file:
+    with open("fe.kickasscoin.comments", "w") as text_file:
             text_file.write(fe_comments)
-    with open("ge.kickass.comments", "w") as text_file:
+    with open("ge.kickasscoin.comments", "w") as text_file:
             text_file.write(ge_comments)
-    with open("sc.kickass.comments", "w") as text_file:
+    with open("sc.kickasscoin.comments", "w") as text_file:
             text_file.write(sc_comments)
-    with open("xmr.kickass.comments", "w") as text_file:
+    with open("xmr.kickasscoin.comments", "w") as text_file:
             text_file.write(xmr_comments)
-    with open("xmr.kickass.predeclarations", "w") as text_file:
+    with open("xmr.kickasscoin.predeclarations", "w") as text_file:
             text_file.write(predeclarations)
 
 
     #license
-    with open("kickass.license", "w") as text_file:
+    with open("kickasscoin.license", "w") as text_file:
             text_file.write(license)
 
     #crypto-ops.c includes
-    with open("crypto-ops.kickass.includes", "w") as text_file:
+    with open("crypto-ops.kickasscoin.includes", "w") as text_file:
         text_file.write(crypto_ops_includes)
 
     #note you may have duplicates of load_3, load_4 and possibly some other functions ... 
-    os.system("cat kickass.license crypto-ops.kickass.includes xmr.kickass.predeclarations fe.kickass.comments fe.kickass.c sc.kickass.comments sc.kickass.c ge.kickass.comments ge.kickass.c xmr.kickass.comments xmrSpecificOld.c > crypto-ops.c")
+    os.system("cat kickasscoin.license crypto-ops.kickasscoin.includes xmr.kickasscoin.predeclarations fe.kickasscoin.comments fe.kickasscoin.c sc.kickasscoin.comments sc.kickasscoin.c ge.kickasscoin.comments ge.kickasscoin.c xmr.kickasscoin.comments xmrSpecificOld.c > crypto-ops.c")
 
-    #kickass specific header files
+    #kickasscoin specific header files
     #print("making crypto-ops-tmp.h")
     #os.system("cat fe.h ge.h sc.h |grep -v crypto_sign_ed25519 |grep -v fe.h > crypto-ops-tmp.h")
     #we'll just use the old header crypto-ops.h
@@ -252,10 +252,10 @@ if a == "m":
     os.system("sed -i 's/crypto_uint64/uint64_t/g' crypto-ops.c")
 
     #cleaning up 
-    os.system("rm *kickass*")
+    os.system("rm *kickasscoin*")
 
-    #kickass specific c files
+    #kickasscoin specific c files
 if a == "c":
     #turn the directory back into ref10
-    os.system("rm *kickass*")
+    os.system("rm *kickasscoin*")
     os.system("rm crypto-ops.c")

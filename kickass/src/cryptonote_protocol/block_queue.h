@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -37,8 +37,8 @@
 #include <boost/thread/recursive_mutex.hpp>
 #include <boost/uuid/uuid.hpp>
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "cn.block_queue"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "cn.block_queue"
 
 namespace cryptonote
 {

@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-# Simulate a maximal block attack on the KickAss network
+# Simulate a maximal block attack on the KickAssCoin network
 # This uses the scheme proposed by ArticMine
 # Written by Sarang Nother
-# Copyright (c) 2019 The KickAss Project
+# Copyright (c) 2019 The KickAssCoin Project
 from __future__ import print_function
 import sys
 import math

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -64,8 +64,8 @@
 #include <miniupnp/miniupnpc/upnpcommands.h>
 #include <miniupnp/miniupnpc/upnperrors.h>
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "net.p2p"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "net.p2p"
 
 #define NET_MAKE_IP(b1,b2,b3,b4)  ((LPARAM)(((DWORD)(b1)<<24)+((DWORD)(b2)<<16)+((DWORD)(b3)<<8)+((DWORD)(b4))))
 
@@ -448,30 +448,22 @@ namespace nodetool
     std::set<std::string> full_addrs;
     if (nettype == cryptonote::TESTNET)
     {
-      full_addrs.insert("212.83.175.67:28080");
-      full_addrs.insert("5.9.100.248:28080");
-      full_addrs.insert("163.172.182.165:28080");
-      full_addrs.insert("195.154.123.123:28080");
-      full_addrs.insert("212.83.172.165:28080");
+        full_addrs.insert("seed-switzer.zapto.org:31976");
+      full_addrs.insert("switzer.zapto.org:31976");
     }
     else if (nettype == cryptonote::STAGENET)
     {
-      full_addrs.insert("162.210.173.150:38080");
-      full_addrs.insert("162.210.173.151:38080");
+    full_addrs.insert("seed-switzer.zapto.org:41976");
+      full_addrs.insert("switzer.zapto.org:41976");
     }
     else if (nettype == cryptonote::FAKECHAIN)
     {
     }
     else
     {
-      full_addrs.insert("107.152.130.98:18080");
-      full_addrs.insert("212.83.175.67:18080");
-      full_addrs.insert("5.9.100.248:18080");
-      full_addrs.insert("163.172.182.165:18080");
-      full_addrs.insert("161.67.132.39:18080");
-      full_addrs.insert("198.74.231.92:18080");
-      full_addrs.insert("195.154.123.123:18080");
-      full_addrs.insert("212.83.172.165:18080");
+      full_addrs.insert("seed-switzer.zapto.org:21976");
+      full_addrs.insert("switzer.zapto.org:21976");
+     
     }
     return full_addrs;
   }
@@ -1721,7 +1713,7 @@ namespace nodetool
     }
     rsp.connections_count = get_connections_count();
     rsp.incoming_connections_count = rsp.connections_count - get_outgoing_connections_count();
-    rsp.version = KICKASS_VERSION_FULL;
+    rsp.version = KICKASSCOIN_VERSION_FULL;
     rsp.os_version = tools::get_os_version_string();
     m_payload_handler.get_stat_info(rsp.payload_info);
     return 1;

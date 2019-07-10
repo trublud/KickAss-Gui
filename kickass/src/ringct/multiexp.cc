@@ -1,4 +1,4 @@
-// Copyright (c) 2017, The KickAss Project
+// Copyright (c) 2017, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -38,8 +38,8 @@ extern "C"
 #include "rctOps.h"
 #include "multiexp.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "multiexp"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "multiexp"
 
 //#define MULTIEXP_PERF(x) x
 #define MULTIEXP_PERF(x)

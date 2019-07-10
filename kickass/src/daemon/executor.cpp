@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -35,12 +35,12 @@
 
 #include <string>
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "daemon"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "daemon"
 
 namespace daemonize
 {
-  std::string const t_executor::NAME = "KickAss Daemon";
+  std::string const t_executor::NAME = "KickAssCoin Daemon";
 
   void t_executor::init_options(
       boost::program_options::options_description & configurable_options
@@ -58,7 +58,7 @@ namespace daemonize
       boost::program_options::variables_map const & vm
     )
   {
-    LOG_PRINT_L0("KickAss '" << KICKASS_RELEASE_NAME << "' (v" << KICKASS_VERSION_FULL << ") Daemonised");
+    LOG_PRINT_L0("KickAssCoin '" << KICKASSCOIN_RELEASE_NAME << "' (v" << KICKASSCOIN_VERSION_FULL << ") Daemonised");
     return t_daemon{vm, public_rpc_port};
   }
 

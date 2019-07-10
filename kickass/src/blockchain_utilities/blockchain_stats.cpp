@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -37,8 +37,8 @@
 #include "blockchain_db/db_types.h"
 #include "version.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "bcutil"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "bcutil"
 
 namespace po = boost::program_options;
 using namespace epee;
@@ -107,12 +107,12 @@ int main(int argc, char* argv[])
 
   if (command_line::get_arg(vm, command_line::arg_help))
   {
-    std::cout << "KickAss '" << KICKASS_RELEASE_NAME << "' (v" << KICKASS_VERSION_FULL << ")" << ENDL << ENDL;
+    std::cout << "KickAssCoin '" << KICKASSCOIN_RELEASE_NAME << "' (v" << KICKASSCOIN_VERSION_FULL << ")" << ENDL << ENDL;
     std::cout << desc_options << std::endl;
     return 1;
   }
 
-  mlog_configure(mlog_get_default_log_path("kickass-blockchain-stats.log"), true);
+  mlog_configure(mlog_get_default_log_path("kickasscoin-blockchain-stats.log"), true);
   if (!command_line::is_arg_defaulted(vm, arg_log_level))
     mlog_set_log(command_line::get_arg(vm, arg_log_level).c_str());
   else
@@ -179,7 +179,7 @@ int main(int argc, char* argv[])
 /*
  * The default output can be plotted with GnuPlot using these commands:
 set key autotitle columnhead
-set title "KickAss Blockchain Growth"
+set title "KickAssCoin Blockchain Growth"
 set timefmt "%Y-%m-%d"
 set xdata time
 set xrange ["2014-04-17":*]

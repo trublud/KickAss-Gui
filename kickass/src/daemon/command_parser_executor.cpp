@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -31,8 +31,8 @@
 #include "version.h"
 #include "daemon/command_parser_executor.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "daemon"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "daemon"
 
 namespace daemonize {
 
@@ -758,7 +758,7 @@ bool t_command_parser_executor::pop_blocks(const std::vector<std::string>& args)
 
 bool t_command_parser_executor::version(const std::vector<std::string>& args)
 {
-  std::cout << "KickAss '" << KICKASS_RELEASE_NAME << "' (v" << KICKASS_VERSION_FULL << ")" << std::endl;
+  std::cout << "KickAssCoin '" << KICKASSCOIN_RELEASE_NAME << "' (v" << KICKASSCOIN_VERSION_FULL << ")" << std::endl;
   return true;
 }
 
@@ -768,10 +768,10 @@ bool t_command_parser_executor::prune_blockchain(const std::vector<std::string>&
 
   if (args.empty() || args[0] != "confirm")
   {
-    std::cout << "Warning: pruning from within kickassd will not shrink the database file size." << std::endl;
+    std::cout << "Warning: pruning from within kickasscoind will not shrink the database file size." << std::endl;
     std::cout << "Instead, parts of the file will be marked as free, so the file will not grow" << std::endl;
     std::cout << "until that newly free space is used up. If you want a smaller file size now," << std::endl;
-    std::cout << "exit kickassd and run kickass-blockchain-prune (you will temporarily need more" << std::endl;
+    std::cout << "exit kickasscoind and run kickasscoin-blockchain-prune (you will temporarily need more" << std::endl;
     std::cout << "disk space for the database conversion though). If you are OK with the database" << std::endl;
     std::cout << "file keeping the same size, re-run this command with the \"confirm\" parameter." << std::endl;
     return true;

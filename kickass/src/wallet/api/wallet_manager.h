@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -33,7 +33,7 @@
 #include "net/http_client.h"
 #include <string>
 
-namespace KickAss {
+namespace KickAssCoin {
 
 class WalletManagerImpl : public WalletManager
 {
@@ -102,4 +102,4 @@ private:
 
 } // namespace
 
-namespace Bitkickass = KickAss;
+namespace bitkickasscoin = KickAssCoin;

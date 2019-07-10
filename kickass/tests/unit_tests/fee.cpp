@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -110,11 +110,11 @@ namespace
   TEST_F(fee, double_at_full)
   {
     static const uint64_t block_rewards[] = {
-      20000000000000ull, // 20 kickass
+      20000000000000ull, // 20 kickasscoin
       13000000000000ull,
       1000000000000ull,
-      600000000000ull, // .6 kickass, minimum reward per block at 2min
-      300000000000ull, // .3 kickass, minimum reward per block at 1min
+      600000000000ull, // .6 kickasscoin, minimum reward per block at 2min
+      300000000000ull, // .3 kickasscoin, minimum reward per block at 1min
     };
     static const uint64_t median_block_weights[] = {
       CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2,

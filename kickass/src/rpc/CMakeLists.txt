@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -68,29 +68,29 @@ set(daemon_rpc_server_private_headers
   zmq_server.h)
 
 
-kickass_private_headers(rpc
+kickasscoin_private_headers(rpc
   ${rpc_private_headers})
 
-kickass_private_headers(daemon_rpc_server
+kickasscoin_private_headers(daemon_rpc_server
   ${daemon_rpc_server_private_headers})
 
 
-kickass_add_library(rpc_base
+kickasscoin_add_library(rpc_base
   ${rpc_base_sources}
   ${rpc_base_headers}
   ${rpc_base_private_headers})
 
-kickass_add_library(rpc
+kickasscoin_add_library(rpc
   ${rpc_sources}
   ${rpc_headers}
   ${rpc_private_headers})
 
-kickass_add_library(daemon_messages
+kickasscoin_add_library(daemon_messages
   ${daemon_messages_sources}
   ${daemon_messages_headers}
   ${daemon_messages_private_headers})
 
-kickass_add_library(daemon_rpc_server
+kickasscoin_add_library(daemon_rpc_server
   ${daemon_rpc_server_sources}
   ${daemon_rpc_server_headers}
   ${daemon_rpc_server_private_headers})

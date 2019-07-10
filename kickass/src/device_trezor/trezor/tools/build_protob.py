@@ -28,7 +28,7 @@ try:
         "messages.proto",
         "messages-common.proto",
         "messages-management.proto",
-        "messages-kickass.proto",
+        "messages-kickasscoin.proto",
     ]
 
     if args.debug_msg:

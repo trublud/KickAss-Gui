@@ -37,8 +37,8 @@
 #include "http_protocol_handler.h"
 #include "net/http_server_handlers_map2.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "net.http"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "net.http"
 
 namespace epee
 {

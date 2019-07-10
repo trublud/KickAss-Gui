@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The KickAss Project
+// Copyright (c) 2018, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -44,9 +44,9 @@ namespace mms
 
 struct transport_message_t
 {
-  cryptonote::account_public_address source_kickass_address;
+  cryptonote::account_public_address source_kickasscoin_address;
   std::string source_transport_address;
-  cryptonote::account_public_address destination_kickass_address;
+  cryptonote::account_public_address destination_kickasscoin_address;
   std::string destination_transport_address;
   crypto::chacha_iv iv;
   crypto::public_key encryption_public_key;
@@ -61,9 +61,9 @@ struct transport_message_t
   std::string transport_id;
 
   BEGIN_KV_SERIALIZE_MAP()
-    KV_SERIALIZE(source_kickass_address)
+    KV_SERIALIZE(source_kickasscoin_address)
     KV_SERIALIZE(source_transport_address)
-    KV_SERIALIZE(destination_kickass_address)
+    KV_SERIALIZE(destination_kickasscoin_address)
     KV_SERIALIZE(destination_transport_address)
     KV_SERIALIZE_VAL_POD_AS_BLOB(iv)
     KV_SERIALIZE_VAL_POD_AS_BLOB(encryption_public_key)

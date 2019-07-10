@@ -1,0 +1,3 @@
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/translations/CMakeFiles/rebuild_cache.dir
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/translations/CMakeFiles/generate_translations_header.dir
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/translations/CMakeFiles/edit_cache.dir

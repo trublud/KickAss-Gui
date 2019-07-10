@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -27,8 +27,8 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#ifndef KICKASS_DEVICE_COLD_H
-#define KICKASS_DEVICE_COLD_H
+#ifndef KICKASSCOIN_DEVICE_COLD_H
+#define KICKASSCOIN_DEVICE_COLD_H
 
 #include "wallet/wallet2.h"
 #include <boost/optional/optional.hpp>
@@ -164,4 +164,4 @@ namespace hw {
   };
 }
 
-#endif //KICKASS_DEVICE_COLD_H
+#endif //KICKASSCOIN_DEVICE_COLD_H

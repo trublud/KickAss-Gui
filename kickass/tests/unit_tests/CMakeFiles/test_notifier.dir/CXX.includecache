@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/tests/unit_tests/test_notifier.cpp
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+errno.h
+-
+

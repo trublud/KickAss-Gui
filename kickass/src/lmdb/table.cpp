@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The KickAss Project
+// Copyright (c) 2018, The KickAssCoin Project
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without modification, are
@@ -30,14 +30,14 @@ namespace lmdb
 {
     expect<MDB_dbi> table::open(MDB_txn& write_txn) const noexcept
     {
-        KICKASS_PRECOND(name != nullptr);
+        KICKASSCOIN_PRECOND(name != nullptr);
 
         MDB_dbi out;
-        KICKASS_LMDB_CHECK(mdb_dbi_open(&write_txn, name, flags, &out));
+        KICKASSCOIN_LMDB_CHECK(mdb_dbi_open(&write_txn, name, flags, &out));
         if (key_cmp && !(flags & MDB_INTEGERKEY))
-            KICKASS_LMDB_CHECK(mdb_set_compare(&write_txn, out, key_cmp));
+            KICKASSCOIN_LMDB_CHECK(mdb_set_compare(&write_txn, out, key_cmp));
         if (value_cmp && !(flags & MDB_INTEGERDUP))
-            KICKASS_LMDB_CHECK(mdb_set_dupsort(&write_txn, out, value_cmp));
+            KICKASSCOIN_LMDB_CHECK(mdb_set_dupsort(&write_txn, out, value_cmp));
         return out;
     }
 }

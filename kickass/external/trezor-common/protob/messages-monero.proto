@@ -1,16 +1,16 @@
 syntax = "proto2";
-package hw.trezor.messages.kickass;
+package hw.trezor.messages.kickasscoin;
 
 // Sugar for easier handling in Java
 option java_package = "com.satoshilabs.trezor.lib.protobuf";
-option java_outer_classname = "TrezorMessageKickAss";
+option java_outer_classname = "TrezorMessageKickAssCoin";
 
 /**
- * Structure representing KickAss transaction source entry, UTXO
+ * Structure representing KickAssCoin transaction source entry, UTXO
  * @embed
  */
-message KickAssTransactionSourceEntry {
-    repeated KickAssOutputEntry outputs = 1;  // all outputs including decoys (forms the ring)
+message KickAssCoinTransactionSourceEntry {
+    repeated KickAssCoinOutputEntry outputs = 1;  // all outputs including decoys (forms the ring)
     optional uint64 real_output = 2;  // index denoting which item in `outputs` is our real output (not a decoy)
     optional bytes real_out_tx_key = 3;  // tx key located in the real output's tx
     repeated bytes real_out_additional_tx_keys = 4;  // additional tx keys if applicable
@@ -18,16 +18,16 @@ message KickAssTransactionSourceEntry {
     optional uint64 amount = 6;
     optional bool rct = 7;  // is RingCT used (true for newer UTXOs)
     optional bytes mask = 8;
-    optional KickAssMultisigKLRki multisig_kLRki = 9;
-    message KickAssOutputEntry {
+    optional KickAssCoinMultisigKLRki multisig_kLRki = 9;
+    message KickAssCoinOutputEntry {
         optional uint64 idx = 1;
-        optional KickAssRctKeyPublic key = 2;
-        message KickAssRctKeyPublic {
+        optional KickAssCoinRctKeyPublic key = 2;
+        message KickAssCoinRctKeyPublic {
             optional bytes dest = 1;
             optional bytes commitment = 2;
         }
     }
-    message KickAssMultisigKLRki {
+    message KickAssCoinMultisigKLRki {
         optional bytes K = 1;
         optional bytes L = 2;
         optional bytes R = 3;
@@ -36,19 +36,19 @@ message KickAssTransactionSourceEntry {
 }
 
 /**
- * Structure representing KickAss transaction destination entry
+ * Structure representing KickAssCoin transaction destination entry
  * @embed
  */
-message KickAssTransactionDestinationEntry {
+message KickAssCoinTransactionDestinationEntry {
     optional uint64 amount = 1;
-    optional KickAssAccountPublicAddress addr = 2;
+    optional KickAssCoinAccountPublicAddress addr = 2;
     optional bool is_subaddress = 3;
     optional bytes original = 4;
     optional bool is_integrated = 5;
     /**
-     * Structure representing KickAss public address
+     * Structure representing KickAssCoin public address
      */
-    message KickAssAccountPublicAddress {
+    message KickAssCoinAccountPublicAddress {
         optional bytes spend_public_key = 1;
         optional bytes view_public_key = 2;
     }
@@ -58,7 +58,7 @@ message KickAssTransactionDestinationEntry {
  * Range sig parameters / data.
  * @embed
  */
-message KickAssTransactionRsigData {
+message KickAssCoinTransactionRsigData {
     optional uint32 rsig_type = 1;  // range signature (aka proof) type
     optional uint32 offload_type = 2;
     repeated uint64 grouping = 3;  // aggregation scheme for BP
@@ -72,10 +72,10 @@ message KickAssTransactionRsigData {
 /**
  * Request: Ask device for public address derived from seed and address_n
  * @start
- * @next KickAssAddress
+ * @next KickAssCoinAddress
  * @next Failure
  */
-message KickAssGetAddress {
+message KickAssCoinGetAddress {
     repeated uint32 address_n = 1;          // BIP-32 path to derive the key from master node
     optional bool show_display = 2;         // Optionally show on display before sending the result
     optional uint32 network_type = 3;       // Main-net / testnet / stagenet
@@ -84,58 +84,58 @@ message KickAssGetAddress {
 }
 
 /**
- * Response: Contains KickAss watch-only credentials derived from device private seed
+ * Response: Contains KickAssCoin watch-only credentials derived from device private seed
  * @end
  */
-message KickAssAddress {
+message KickAssCoinAddress {
     optional bytes address = 1;
 }
 
 /**
  * Request: Ask device for watch only credentials
  * @start
- * @next KickAssWatchKey
+ * @next KickAssCoinWatchKey
  * @next Failure
  */
-message KickAssGetWatchKey {
+message KickAssCoinGetWatchKey {
     repeated uint32 address_n = 1;          // BIP-32 path to derive the key from master node
     optional uint32 network_type = 2;       // Main-net / testnet / stagenet
 }
 
 /**
- * Response: Contains KickAss watch-only credentials derived from device private seed
+ * Response: Contains KickAssCoin watch-only credentials derived from device private seed
  * @end
  */
-message KickAssWatchKey {
+message KickAssCoinWatchKey {
     optional bytes watch_key = 1;
     optional bytes address = 2;
 }
 
 /**
- * Request: Sub request of KickAssTransactionSign. Initializes transaction signing.
+ * Request: Sub request of KickAssCoinTransactionSign. Initializes transaction signing.
  * @start
- * @next KickAssTransactionInitAck
+ * @next KickAssCoinTransactionInitAck
  */
-message KickAssTransactionInitRequest {
+message KickAssCoinTransactionInitRequest {
     optional uint32 version = 1;
     repeated uint32 address_n = 2;
     optional uint32 network_type = 3;       // Main-net / testnet / stagenet
-    optional KickAssTransactionData tsx_data = 4;
+    optional KickAssCoinTransactionData tsx_data = 4;
     /**
-     * Structure representing KickAss initial transaction information
+     * Structure representing KickAssCoin initial transaction information
      */
-    message KickAssTransactionData {
+    message KickAssCoinTransactionData {
         optional uint32 version = 1;
         optional bytes payment_id = 2;
         optional uint64 unlock_time = 3;
-        repeated KickAssTransactionDestinationEntry outputs = 4;
-        optional KickAssTransactionDestinationEntry change_dts = 5;
+        repeated KickAssCoinTransactionDestinationEntry outputs = 4;
+        optional KickAssCoinTransactionDestinationEntry change_dts = 5;
         optional uint32 num_inputs = 6;
         optional uint32 mixin = 7;
         optional uint64 fee = 8;
         optional uint32 account = 9;
         repeated uint32 minor_indices = 10;
-        optional KickAssTransactionRsigData rsig_data = 11;
+        optional KickAssCoinTransactionRsigData rsig_data = 11;
         repeated uint32 integrated_indices = 12;
         optional uint32 client_version = 13;  // connected client version
     }
@@ -143,27 +143,27 @@ message KickAssTransactionInitRequest {
 
 /**
  * Response: Response to transaction signing initialization.
- * @next KickAssTransactionSetInputRequest
+ * @next KickAssCoinTransactionSetInputRequest
  */
-message KickAssTransactionInitAck {
+message KickAssCoinTransactionInitAck {
     repeated bytes hmacs = 1;
-    optional KickAssTransactionRsigData rsig_data = 2;
+    optional KickAssCoinTransactionRsigData rsig_data = 2;
 }
 
 /**
- * Request: Sub request of KickAssTransactionSign. Sends one UTXO to device
- * @next KickAssTransactionSetInputAck
+ * Request: Sub request of KickAssCoinTransactionSign. Sends one UTXO to device
+ * @next KickAssCoinTransactionSetInputAck
  */
-message KickAssTransactionSetInputRequest {
-    optional KickAssTransactionSourceEntry src_entr = 1;
+message KickAssCoinTransactionSetInputRequest {
+    optional KickAssCoinTransactionSourceEntry src_entr = 1;
 }
 
 /**
  * Response: Response to setting UTXO for signature. Contains sealed values needed for further protocol steps.
- * @next KickAssTransactionSetInputAck
- * @next KickAssTransactionInputsPermutationRequest
+ * @next KickAssCoinTransactionSetInputAck
+ * @next KickAssCoinTransactionInputsPermutationRequest
  */
-message KickAssTransactionSetInputAck {
+message KickAssCoinTransactionSetInputAck {
     optional bytes vini = 1;      // xmrtypes.TxinToKey
     optional bytes vini_hmac = 2;
     optional bytes pseudo_out = 3;
@@ -173,26 +173,26 @@ message KickAssTransactionSetInputAck {
 }
 
 /**
- * Request: Sub request of KickAssTransactionSign. Permutation on key images.
- * @next KickAssTransactionInputsPermutationAck
+ * Request: Sub request of KickAssCoinTransactionSign. Permutation on key images.
+ * @next KickAssCoinTransactionInputsPermutationAck
  */
-message KickAssTransactionInputsPermutationRequest {
+message KickAssCoinTransactionInputsPermutationRequest {
     repeated uint32 perm = 1;
 }
 
 /**
  * Response: Response to setting permutation on key images
- * @next KickAssTransactionInputViniRequest
+ * @next KickAssCoinTransactionInputViniRequest
  */
-message KickAssTransactionInputsPermutationAck {
+message KickAssCoinTransactionInputsPermutationAck {
 }
 
 /**
- * Request: Sub request of KickAssTransactionSign. Sends one UTXO to device together with sealed values.
- * @next KickAssTransactionInputViniAck
+ * Request: Sub request of KickAssCoinTransactionSign. Sends one UTXO to device together with sealed values.
+ * @next KickAssCoinTransactionInputViniAck
  */
-message KickAssTransactionInputViniRequest {
-    optional KickAssTransactionSourceEntry src_entr = 1; 
+message KickAssCoinTransactionInputViniRequest {
+    optional KickAssCoinTransactionSourceEntry src_entr = 1; 
     optional bytes vini = 2;      // xmrtypes.TxinToKey
     optional bytes vini_hmac = 3;
     optional bytes pseudo_out = 4;
@@ -201,73 +201,73 @@ message KickAssTransactionInputViniRequest {
 
 /**
  * Response: Response to setting UTXO to the device
- * @next KickAssTransactionInputViniRequest
- * @next KickAssTransactionAllInputsSetRequest
+ * @next KickAssCoinTransactionInputViniRequest
+ * @next KickAssCoinTransactionAllInputsSetRequest
  */
-message KickAssTransactionInputViniAck {
+message KickAssCoinTransactionInputViniAck {
 }
 
 /**
- * Request: Sub request of KickAssTransactionSign. Sent after all inputs have been sent. Useful for rangeisg offloading.
- * @next KickAssTransactionAllInputsSetAck
+ * Request: Sub request of KickAssCoinTransactionSign. Sent after all inputs have been sent. Useful for rangeisg offloading.
+ * @next KickAssCoinTransactionAllInputsSetAck
  */
-message KickAssTransactionAllInputsSetRequest {
+message KickAssCoinTransactionAllInputsSetRequest {
 }
 
 /**
  * Response: Response to after all inputs have been set.
- * @next KickAssTransactionSetOutputRequest
+ * @next KickAssCoinTransactionSetOutputRequest
  */
-message KickAssTransactionAllInputsSetAck {
-    optional KickAssTransactionRsigData rsig_data = 1;
+message KickAssCoinTransactionAllInputsSetAck {
+    optional KickAssCoinTransactionRsigData rsig_data = 1;
 }
 
 /**
- * Request: Sub request of KickAssTransactionSign. Sends one transaction destination to device (HMACed)
- * @next KickAssTransactionSetOutputAck
+ * Request: Sub request of KickAssCoinTransactionSign. Sends one transaction destination to device (HMACed)
+ * @next KickAssCoinTransactionSetOutputAck
  */
-message KickAssTransactionSetOutputRequest {
-    optional KickAssTransactionDestinationEntry dst_entr = 1;
+message KickAssCoinTransactionSetOutputRequest {
+    optional KickAssCoinTransactionDestinationEntry dst_entr = 1;
     optional bytes dst_entr_hmac = 2;
-    optional KickAssTransactionRsigData rsig_data = 3;
+    optional KickAssCoinTransactionRsigData rsig_data = 3;
     optional bool is_offloaded_bp = 4;  // Extra message, with offloaded BP.
 }
 
 /**
  * Response: Response to setting transaction destination. Contains sealed values needed for further protocol steps.
- * @next KickAssTransactionSetOutputRequest
- * @next KickAssTransactionAllOutSetRequest
+ * @next KickAssCoinTransactionSetOutputRequest
+ * @next KickAssCoinTransactionAllOutSetRequest
  */
-message KickAssTransactionSetOutputAck {
+message KickAssCoinTransactionSetOutputAck {
     optional bytes tx_out = 1;  // xmrtypes.TxOut
     optional bytes vouti_hmac = 2;
-    optional KickAssTransactionRsigData rsig_data = 3;
+    optional KickAssCoinTransactionRsigData rsig_data = 3;
     optional bytes out_pk = 4;
     optional bytes ecdh_info = 5;
 }
 
 /**
- * Request: Sub request of KickAssTransactionSign. Sent after all outputs are sent.
- * @next KickAssTransactionAllOutSetAck
+ * Request: Sub request of KickAssCoinTransactionSign. Sent after all outputs are sent.
+ * @next KickAssCoinTransactionAllOutSetAck
  */
-message KickAssTransactionAllOutSetRequest {
-    optional KickAssTransactionRsigData rsig_data = 1;
+message KickAssCoinTransactionAllOutSetRequest {
+    optional KickAssCoinTransactionRsigData rsig_data = 1;
 }
 
 /**
  * Response: After all outputs are sent the initial RCT signature fields are sent.
- * @next KickAssTransactionSignInputRequest
+ * @next KickAssCoinTransactionSignInputRequest
  */
-message KickAssTransactionAllOutSetAck {
+message KickAssCoinTransactionAllOutSetAck {
     optional bytes extra = 1;
     optional bytes tx_prefix_hash = 2;
-    optional KickAssRingCtSig rv = 4;  // xmrtypes.RctSig
+    optional KickAssCoinRingCtSig rv = 4;  // xmrtypes.RctSig
     optional bytes full_message_hash = 5;
 
     /*
-     * Structure represents initial fields of the KickAss RCT signature
+     * Structure represents initial fields of the KickAssCoin RCT signature
      */
-    message KickAssRingCtSig {
+    message KickAssCoinRingCtSig {
         optional uint64 txn_fee = 1;
         optional bytes message = 2;
         optional uint32 rv_type = 3;
@@ -275,11 +275,11 @@ message KickAssTransactionAllOutSetAck {
 }
 
 /**
- * Request: Sub request of KickAssTransactionSign. Sends UTXO for the signing.
- * @next KickAssTransactionSignInputAck
+ * Request: Sub request of KickAssCoinTransactionSign. Sends UTXO for the signing.
+ * @next KickAssCoinTransactionSignInputAck
  */
-message KickAssTransactionSignInputRequest {
-    optional KickAssTransactionSourceEntry src_entr = 1;
+message KickAssCoinTransactionSignInputRequest {
+    optional KickAssCoinTransactionSourceEntry src_entr = 1;
     optional bytes vini = 2;     // xmrtypes.TxinToKey
     optional bytes vini_hmac = 3;
     optional bytes pseudo_out = 4;
@@ -290,26 +290,26 @@ message KickAssTransactionSignInputRequest {
 
 /**
  * Response: Contains full MG signature of the UTXO + multisig data if applicable.
- * @next KickAssTransactionSignInputRequest
- * @next KickAssTransactionFinalRequest
+ * @next KickAssCoinTransactionSignInputRequest
+ * @next KickAssCoinTransactionFinalRequest
  */
-message KickAssTransactionSignInputAck {
+message KickAssCoinTransactionSignInputAck {
     optional bytes signature = 1;
     optional bytes pseudo_out = 2;  // updated pseudo-out after mask correction
 }
 
 /**
- * Request: Sub request of KickAssTransactionSign. Final message of the procol after all UTXOs are signed
- * @next KickAssTransactionFinalAck
+ * Request: Sub request of KickAssCoinTransactionSign. Final message of the procol after all UTXOs are signed
+ * @next KickAssCoinTransactionFinalAck
  */
-message KickAssTransactionFinalRequest {
+message KickAssCoinTransactionFinalRequest {
 }
 
 /**
  * Response: Contains transaction metadata and encryption keys needed for further transaction operations (e.g. multisig, send proof).
  * @end
  */
-message KickAssTransactionFinalAck {
+message KickAssCoinTransactionFinalAck {
     optional bytes cout_key = 1;
     optional bytes salt = 2;
     optional bytes rand_mult = 3;
@@ -317,20 +317,20 @@ message KickAssTransactionFinalAck {
 }
 
 /**
- * Request: Sub request of KickAssKeyImageSync. Initializing key image sync.
+ * Request: Sub request of KickAssCoinKeyImageSync. Initializing key image sync.
  * @start
- * @next KickAssKeyImageExportInitAck
+ * @next KickAssCoinKeyImageExportInitAck
  */
-message KickAssKeyImageExportInitRequest {
+message KickAssCoinKeyImageExportInitRequest {
     optional uint64 num = 1;
     optional bytes hash = 2;
     repeated uint32 address_n = 3;               // BIP-32 path to derive the key from master node
     optional uint32 network_type = 4;            // Main-net / testnet / stagenet
-    repeated KickAssSubAddressIndicesList subs = 5;
+    repeated KickAssCoinSubAddressIndicesList subs = 5;
     /**
-     * Structure representing KickAss list of sub-addresses
+     * Structure representing KickAssCoin list of sub-addresses
      */
-    message KickAssSubAddressIndicesList {
+    message KickAssCoinSubAddressIndicesList {
         optional uint32 account = 1;
         repeated uint32 minor_indices = 2;
     }
@@ -338,21 +338,21 @@ message KickAssKeyImageExportInitRequest {
 
 /**
  * Response: Response to key image sync initialization.
- * @next KickAssKeyImageSyncStepRequest
+ * @next KickAssCoinKeyImageSyncStepRequest
  */
-message KickAssKeyImageExportInitAck {
+message KickAssCoinKeyImageExportInitAck {
 }
 
 /**
- * Request: Sub request of KickAssKeyImageSync. Contains batch of the UTXO to export key image for.
- * @next KickAssKeyImageSyncStepAck
+ * Request: Sub request of KickAssCoinKeyImageSync. Contains batch of the UTXO to export key image for.
+ * @next KickAssCoinKeyImageSyncStepAck
  */
-message KickAssKeyImageSyncStepRequest {
-    repeated KickAssTransferDetails tdis = 1;
+message KickAssCoinKeyImageSyncStepRequest {
+    repeated KickAssCoinTransferDetails tdis = 1;
     /**
-     * Structure representing KickAss UTXO for key image sync
+     * Structure representing KickAssCoin UTXO for key image sync
      */
-    message KickAssTransferDetails {
+    message KickAssCoinTransferDetails {
         optional bytes out_key = 1;
         optional bytes tx_pub_key = 2;
         repeated bytes additional_tx_pub_keys = 3;
@@ -362,40 +362,40 @@ message KickAssKeyImageSyncStepRequest {
 
 /**
  * Response: Response to key image sync step. Contains encrypted exported key image.
- * @next KickAssKeyImageSyncStepRequest
- * @next KickAssKeyImageSyncFinalRequest
+ * @next KickAssCoinKeyImageSyncStepRequest
+ * @next KickAssCoinKeyImageSyncFinalRequest
  */
-message KickAssKeyImageSyncStepAck {
-    repeated KickAssExportedKeyImage kis = 1;
+message KickAssCoinKeyImageSyncStepAck {
+    repeated KickAssCoinExportedKeyImage kis = 1;
     /**
-     * Structure representing KickAss encrypted exported key image
+     * Structure representing KickAssCoin encrypted exported key image
      */
-    message KickAssExportedKeyImage {
+    message KickAssCoinExportedKeyImage {
         optional bytes iv = 1;
         optional bytes blob = 3;
     }
 }
 
 /**
- * Request: Sub request of KickAssKeyImageSync. Final message of the sync protocol.
- * @next KickAssKeyImageSyncFinalAck
+ * Request: Sub request of KickAssCoinKeyImageSync. Final message of the sync protocol.
+ * @next KickAssCoinKeyImageSyncFinalAck
  */
-message KickAssKeyImageSyncFinalRequest {
+message KickAssCoinKeyImageSyncFinalRequest {
 }
 
 /**
  * Response: Response to key image sync step. Contains encryption keys for exported key images.
  * @end
  */
-message KickAssKeyImageSyncFinalAck {
+message KickAssCoinKeyImageSyncFinalAck {
     optional bytes enc_key = 1;
 }
 
 /**
  * Request: Decrypt tx private keys blob
- * @next KickAssGetTxKeyAck
+ * @next KickAssCoinGetTxKeyAck
  */
-message KickAssGetTxKeyRequest {
+message KickAssCoinGetTxKeyRequest {
     repeated uint32 address_n = 1;          // BIP-32 path to derive the key from master node
     optional uint32 network_type = 2;       // Main-net / testnet / stagenet
 
@@ -411,7 +411,7 @@ message KickAssGetTxKeyRequest {
  * Response: Response with the re-encrypted private keys and derivations blob under view key
  * @end
  */
-message KickAssGetTxKeyAck {
+message KickAssCoinGetTxKeyAck {
     optional bytes salt = 1;
     optional bytes tx_keys = 2;
     optional bytes tx_derivations = 3;
@@ -419,27 +419,27 @@ message KickAssGetTxKeyAck {
 
 /**
  * Request: Starts live refresh flow. Asks user permission, switches state
- * @next KickAssLiveRefreshStartAck
+ * @next KickAssCoinLiveRefreshStartAck
  */
-message KickAssLiveRefreshStartRequest {
+message KickAssCoinLiveRefreshStartRequest {
     repeated uint32 address_n = 1;          // BIP-32 path to derive the key from master node
     optional uint32 network_type = 2;       // Main-net / testnet / stagenet
 }
 
 /**
  * Response after user gave permission
- * @next KickAssLiveRefreshStepRequest
- * @next KickAssLiveRefreshFinalRequest
+ * @next KickAssCoinLiveRefreshStepRequest
+ * @next KickAssCoinLiveRefreshFinalRequest
  */
-message KickAssLiveRefreshStartAck {
+message KickAssCoinLiveRefreshStartAck {
 
 }
 
 /**
  * Request: Request to compute a single key image during live sync
- * @next KickAssLiveRefreshStepAck
+ * @next KickAssCoinLiveRefreshStepAck
  */
-message KickAssLiveRefreshStepRequest {
+message KickAssCoinLiveRefreshStepRequest {
     optional bytes out_key = 1;
     optional bytes recv_deriv = 2;
     optional uint64 real_out_idx = 3;
@@ -449,19 +449,19 @@ message KickAssLiveRefreshStepRequest {
 
 /**
  * Response: Response with the encrypted key image + signature
- * @next KickAssLiveRefreshStepRequest
- * @next KickAssLiveRefreshFinishedRequest
+ * @next KickAssCoinLiveRefreshStepRequest
+ * @next KickAssCoinLiveRefreshFinishedRequest
  */
-message KickAssLiveRefreshStepAck {
+message KickAssCoinLiveRefreshStepAck {
     optional bytes salt = 1;
     optional bytes key_image = 2;
 }
 
 /**
  * Request: Request terminating live refresh mode.
- * @next KickAssLiveRefreshFinishedAck
+ * @next KickAssCoinLiveRefreshFinishedAck
  */
-message KickAssLiveRefreshFinalRequest {
+message KickAssCoinLiveRefreshFinalRequest {
 
 }
 
@@ -469,16 +469,16 @@ message KickAssLiveRefreshFinalRequest {
  * Response: Response on termination of live refresh mode.
  * @end
  */
-message KickAssLiveRefreshFinalAck {
+message KickAssCoinLiveRefreshFinalAck {
 
 }
 
 /**
- * Request: Universal KickAss protocol implementation diagnosis request.
+ * Request: Universal KickAssCoin protocol implementation diagnosis request.
  * @start
- * @next DebugKickAssDiagAck
+ * @next DebugKickAssCoinDiagAck
  */
-message DebugKickAssDiagRequest {
+message DebugKickAssCoinDiagRequest {
     optional uint64 ins = 1;
     optional uint64 p1 = 2;
     optional uint64 p2 = 3;
@@ -488,10 +488,10 @@ message DebugKickAssDiagRequest {
 }
 
 /**
- * Response: Response to KickAss diagnosis protocol.
+ * Response: Response to KickAssCoin diagnosis protocol.
  * @end
  */
-message DebugKickAssDiagAck {
+message DebugKickAssCoinDiagAck {
     optional uint64 ins = 1;
     optional uint64 p1 = 2;
     optional uint64 p2 = 3;

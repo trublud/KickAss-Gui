@@ -1,8 +1,8 @@
 /// @file
-/// @author rfree (current maintainer/user in kickass.cc project - most of code is from CryptoNote)
+/// @author rfree (current maintainer/user in kickasscoin.cc project - most of code is from CryptoNote)
 /// @brief This is the original cryptonote protocol network-events handler, modified by us
 
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 

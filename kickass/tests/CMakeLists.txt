@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 # 
 # All rights reserved.
 # 
@@ -74,8 +74,8 @@ file(COPY
   data/wallet_9svHk1.keys
   data/wallet_9svHk1
   data/outputs
-  data/unsigned_kickass_tx
-  data/signed_kickass_tx
+  data/unsigned_kickasscoin_tx
+  data/signed_kickasscoin_tx
   DESTINATION data)
 
 add_subdirectory(core_tests)

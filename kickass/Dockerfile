@@ -188,25 +188,25 @@ RUN set -ex && \
     rm -rf /var/lib/apt
 COPY --from=builder /src/build/release/bin /usr/local/bin/
 
-# Create kickass user
-RUN adduser --system --group --disabled-password kickass && \
-	mkdir -p /wallet /home/kickass/.bitkickass && \
-	chown -R kickass:kickass /home/kickass/.bitkickass && \
-	chown -R kickass:kickass /wallet
+# Create kickasscoin user
+RUN adduser --system --group --disabled-password kickasscoin && \
+	mkdir -p /wallet /home/kickasscoin/.bitkickasscoin && \
+	chown -R kickasscoin:kickasscoin /home/kickasscoin/.bitkickasscoin && \
+	chown -R kickasscoin:kickasscoin /wallet
 
 # Contains the blockchain
-VOLUME /home/kickass/.bitkickass
+VOLUME /home/kickasscoin/.bitkickasscoin
 
 # Generate your wallet via accessing the container and run:
 # cd /wallet
-# kickass-wallet-cli
+# kickasscoin-wallet-cli
 VOLUME /wallet
 
 EXPOSE 18080
 EXPOSE 18081
 
-# switch to user kickass
-USER kickass
+# switch to user kickasscoin
+USER kickasscoin
 
-ENTRYPOINT ["kickassd", "--p2p-bind-ip=0.0.0.0", "--p2p-bind-port=18080", "--rpc-bind-ip=0.0.0.0", "--rpc-bind-port=18081", "--non-interactive", "--confirm-external-bind"]
+ENTRYPOINT ["kickasscoind", "--p2p-bind-ip=0.0.0.0", "--p2p-bind-port=18080", "--rpc-bind-ip=0.0.0.0", "--rpc-bind-port=18081", "--non-interactive", "--confirm-external-bind"]
 

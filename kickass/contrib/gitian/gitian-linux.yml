@@ -1,5 +1,5 @@
 ---
-name: "kickass-linux-0.14"
+name: "kickasscoin-linux-0.14"
 enable_cache: true
 suites:
 - "bionic"
@@ -43,8 +43,8 @@ packages:
 - "libprotobuf-dev"
 - "python3-zmq"
 remotes:
-- "url": "https://github.com/kickass-project/kickass.git"
-  "dir": "kickass"
+- "url": "https://github.com/kickasscoin-project/kickasscoin.git"
+  "dir": "kickasscoin"
 files: []
 script: |
 
@@ -130,7 +130,7 @@ script: |
   done
 
   git config --global core.abbrev 9
-  cd kickass
+  cd kickasscoin
   BASEPREFIX=`pwd`/contrib/depends
   # Build dependencies for each host
   for i in $HOSTS; do
@@ -155,7 +155,7 @@ script: |
     mkdir build && cd build
     cmake .. -DCMAKE_TOOLCHAIN_FILE=${BASEPREFIX}/${i}/share/toolchain.cmake -DBACKCOMPAT=ON
     make ${MAKEOPTS}
-    DISTNAME=kickass-${i}
+    DISTNAME=kickasscoin-${i}
     mv bin ${DISTNAME}
     find ${DISTNAME}/ | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ${OUTDIR}/${DISTNAME}.tar.gz
     cd ..

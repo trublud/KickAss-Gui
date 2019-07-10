@@ -32,8 +32,8 @@
 #include "serializeble_struct_helper.h"
 #include "int-util.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "net"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "net"
 
 namespace epee
 {

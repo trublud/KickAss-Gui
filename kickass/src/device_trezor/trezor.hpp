@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -27,8 +27,8 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#ifndef KICKASS_TREZOR_HPP
-#define KICKASS_TREZOR_HPP
+#ifndef KICKASSCOIN_TREZOR_HPP
+#define KICKASSCOIN_TREZOR_HPP
 
 #include "trezor/trezor_defs.hpp"
 
@@ -37,8 +37,8 @@
 #include "trezor/messages/messages.pb.h"
 #include "trezor/messages/messages-common.pb.h"
 #include "trezor/messages/messages-management.pb.h"
-#include "trezor/messages/messages-kickass.pb.h"
+#include "trezor/messages/messages-kickasscoin.pb.h"
 #include "trezor/protocol.hpp"
 #endif
 
-#endif //KICKASS_TREZOR_HPP
+#endif //KICKASSCOIN_TREZOR_HPP

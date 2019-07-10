@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -87,8 +87,8 @@ using namespace std;
 using namespace crypto;
 using namespace cryptonote;
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "wallet.wallet2"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "wallet.wallet2"
 
 // used to choose when to stop adding outputs to a tx
 #define APPROXIMATE_INPUT_BYTES 80
@@ -100,12 +100,12 @@ using namespace cryptonote;
 #define CHACHA8_KEY_TAIL 0x8c
 #define CACHE_KEY_TAIL 0x8d
 
-#define UNSIGNED_TX_PREFIX "KickAss unsigned tx set\004"
-#define SIGNED_TX_PREFIX "KickAss signed tx set\004"
-#define MULTISIG_UNSIGNED_TX_PREFIX "KickAss multisig unsigned tx set\001"
+#define UNSIGNED_TX_PREFIX "KickAssCoin unsigned tx set\004"
+#define SIGNED_TX_PREFIX "KickAssCoin signed tx set\004"
+#define MULTISIG_UNSIGNED_TX_PREFIX "KickAssCoin multisig unsigned tx set\001"
 
 #define RECENT_OUTPUT_RATIO (0.5) // 50% of outputs are from the recent zone
-#define RECENT_OUTPUT_DAYS (1.8) // last 1.8 day makes up the recent zone (taken from kickasslink.pdf, Miller et al)
+#define RECENT_OUTPUT_DAYS (1.8) // last 1.8 day makes up the recent zone (taken from kickasscoinlink.pdf, Miller et al)
 #define RECENT_OUTPUT_ZONE ((time_t)(RECENT_OUTPUT_DAYS * 86400))
 #define RECENT_OUTPUT_BLOCKS (RECENT_OUTPUT_DAYS * 720)
 
@@ -116,11 +116,11 @@ using namespace cryptonote;
 #define SUBADDRESS_LOOKAHEAD_MAJOR 50
 #define SUBADDRESS_LOOKAHEAD_MINOR 200
 
-#define KEY_IMAGE_EXPORT_FILE_MAGIC "KickAss key image export\003"
+#define KEY_IMAGE_EXPORT_FILE_MAGIC "KickAssCoin key image export\003"
 
-#define MULTISIG_EXPORT_FILE_MAGIC "KickAss multisig export\001"
+#define MULTISIG_EXPORT_FILE_MAGIC "KickAssCoin multisig export\001"
 
-#define OUTPUT_EXPORT_FILE_MAGIC "KickAss output export\004"
+#define OUTPUT_EXPORT_FILE_MAGIC "KickAssCoin output export\004"
 
 #define SEGREGATION_FORK_HEIGHT 99999999
 #define TESTNET_SEGREGATION_FORK_HEIGHT 99999999
@@ -143,7 +143,7 @@ namespace
   std::string get_default_ringdb_path()
   {
     boost::filesystem::path dir = tools::get_default_data_dir();
-    // remove .bitkickass, replace with .shared-ringdb
+    // remove .bitkickasscoin, replace with .shared-ringdb
     dir = dir.remove_filename();
     dir /= ".shared-ringdb";
     return dir.string();
@@ -1674,8 +1674,8 @@ void wallet2::scan_output(const cryptonote::transaction &tx, bool miner_tx, cons
     if (!m_encrypt_keys_after_refresh)
     {
       boost::optional<epee::wipeable_string> pwd = m_callback->on_get_password(pool ? "output found in pool" : "output received");
-      THROW_WALLET_EXCEPTION_IF(!pwd, error::password_needed, tr("Password is needed to compute key image for incoming kickass"));
-      THROW_WALLET_EXCEPTION_IF(!verify_password(*pwd), error::password_needed, tr("Invalid password: password is needed to compute key image for incoming kickass"));
+      THROW_WALLET_EXCEPTION_IF(!pwd, error::password_needed, tr("Password is needed to compute key image for incoming kickasscoin"));
+      THROW_WALLET_EXCEPTION_IF(!verify_password(*pwd), error::password_needed, tr("Invalid password: password is needed to compute key image for incoming kickasscoin"));
       decrypt_keys(*pwd);
       m_encrypt_keys_after_refresh = *pwd;
     }
@@ -3068,8 +3068,8 @@ void wallet2::refresh(bool trusted_daemon, uint64_t start_height, uint64_t & blo
 
   if(m_light_wallet) {
 
-    // MyKickAss get_address_info needs to be called occasionally to trigger wallet sync.
-    // This call is not really needed for other purposes and can be removed if mykickass changes their backend.
+    // MyKickAssCoin get_address_info needs to be called occasionally to trigger wallet sync.
+    // This call is not really needed for other purposes and can be removed if mykickasscoin changes their backend.
     tools::COMMAND_RPC_GET_ADDRESS_INFO::response res;
 
     // Get basic info
@@ -6080,7 +6080,7 @@ void wallet2::commit_tx(pending_tx& ptx)
     bool r = invoke_http_json("/submit_raw_tx", oreq, ores, rpc_timeout, "POST");
     m_daemon_rpc_mutex.unlock();
     THROW_WALLET_EXCEPTION_IF(!r, error::no_connection_to_daemon, "submit_raw_tx");
-    // MyKickAss and OpenKickAss use different status strings
+    // MyKickAssCoin and OpenKickAssCoin use different status strings
     THROW_WALLET_EXCEPTION_IF(ores.status != "OK" && ores.status != "success" , error::tx_rejected, ptx.tx, get_rpc_status(ores.status), ores.error);
   }
   else
@@ -7402,7 +7402,7 @@ void wallet2::light_wallet_get_outs(std::vector<std::vector<tools::wallet2::get_
   size_t light_wallet_requested_outputs_count = (size_t)((fake_outputs_count + 1) * 1.5 + 1);
   
   // Amounts to ask for
-  // MyKickAss api handle amounts and fees as strings
+  // MyKickAssCoin api handle amounts and fees as strings
   for(size_t idx: selected_transfers) {
     const uint64_t ask_amount = m_transfers[idx].is_rct() ? 0 : m_transfers[idx].amount();
     std::ostringstream amount_ss;
@@ -7913,7 +7913,7 @@ void wallet2::get_outs(std::vector<std::vector<tools::wallet2::get_outs_entry>> 
           [](const get_outputs_out &a, const get_outputs_out &b) { return a.index < b.index; });
     }
 
-    if (ELPP->vRegistry()->allowed(el::Level::Debug, KICKASS_DEFAULT_LOG_CATEGORY))
+    if (ELPP->vRegistry()->allowed(el::Level::Debug, KICKASSCOIN_DEFAULT_LOG_CATEGORY))
     {
       std::map<uint64_t, std::set<uint64_t>> outs;
       for (const auto &i: req.outputs)
@@ -8640,7 +8640,7 @@ bool wallet2::light_wallet_login(bool &new_address)
   m_daemon_rpc_mutex.lock();
   bool connected = invoke_http_json("/login", request, response, rpc_timeout, "POST");
   m_daemon_rpc_mutex.unlock();
-  // MyKickAss doesn't send any status message. OpenKickAss does. 
+  // MyKickAssCoin doesn't send any status message. OpenKickAssCoin does. 
   m_light_wallet_connected  = connected && (response.status.empty() || response.status == "success");
   new_address = response.new_address;
   MDEBUG("Status: " << response.status);
@@ -8681,9 +8681,9 @@ void wallet2::light_wallet_get_unspent_outs()
   oreq.amount = "0";
   oreq.address = get_account().get_public_address_str(m_nettype);
   oreq.view_key = string_tools::pod_to_hex(get_account().get_keys().m_view_secret_key);
-  // openKickAss specific
+  // openKickAssCoin specific
   oreq.dust_threshold = boost::lexical_cast<std::string>(::config::DEFAULT_DUST_THRESHOLD);
-  // below are required by openKickAss api - but are not used.
+  // below are required by openKickAssCoin api - but are not used.
   oreq.mixin = 0;
   oreq.use_dust = true;
 
@@ -8854,7 +8854,7 @@ void wallet2::light_wallet_get_address_txs()
   bool r = invoke_http_json("/get_address_txs", ireq, ires, rpc_timeout, "POST");
   m_daemon_rpc_mutex.unlock();
   THROW_WALLET_EXCEPTION_IF(!r, error::no_connection_to_daemon, "get_address_txs");
-  //OpenKickAss sends status=success, Mykickass doesn't. 
+  //OpenKickAssCoin sends status=success, Mykickasscoin doesn't. 
   THROW_WALLET_EXCEPTION_IF((!ires.status.empty() && ires.status != "success"), error::no_connection_to_daemon, "get_address_txs");
 
   
@@ -9022,7 +9022,7 @@ void wallet2::light_wallet_get_address_txs()
 
   // Calculate wallet balance
   m_light_wallet_balance = ires.total_received-wallet_total_sent;
-  // MyKickAss doesn't send unlocked balance
+  // MyKickAssCoin doesn't send unlocked balance
   if(ires.total_received_unlocked > 0)
     m_light_wallet_unlocked_balance = ires.total_received_unlocked-wallet_total_sent;
   else
@@ -9071,7 +9071,7 @@ bool wallet2::light_wallet_key_image_is_ours(const crypto::key_image& key_image,
   crypto::key_image calculated_key_image;
   cryptonote::keypair in_ephemeral;
   
-  // Subaddresses aren't supported in mykickass/openkickass yet. Roll out the original scheme:
+  // Subaddresses aren't supported in mykickasscoin/openkickasscoin yet. Roll out the original scheme:
   //   compute D = a*R
   //   compute P = Hs(D || i)*G + B
   //   compute x = Hs(D || i) + b      (and check if P==x*G)
@@ -12639,7 +12639,7 @@ std::string wallet2::make_uri(const std::string &address, const std::string &pay
     }
   }
 
-  std::string uri = "kickass:" + address;
+  std::string uri = "kickasscoin:" + address;
   unsigned int n_fields = 0;
 
   if (!payment_id.empty())
@@ -12668,9 +12668,9 @@ std::string wallet2::make_uri(const std::string &address, const std::string &pay
 //----------------------------------------------------------------------------------------------------
 bool wallet2::parse_uri(const std::string &uri, std::string &address, std::string &payment_id, uint64_t &amount, std::string &tx_description, std::string &recipient_name, std::vector<std::string> &unknown_parameters, std::string &error)
 {
-  if (uri.substr(0, 7) != "kickass:")
+  if (uri.substr(0, 7) != "kickasscoin:")
   {
-    error = std::string("URI has wrong scheme (expected \"kickass:\"): ") + uri;
+    error = std::string("URI has wrong scheme (expected \"kickasscoin:\"): ") + uri;
     return false;
   }
 
@@ -12929,12 +12929,12 @@ uint64_t wallet2::get_segregation_fork_height() const
 
   if (m_use_dns && !m_offline)
   {
-    // All four KickAssPulse domains have DNSSEC on and valid
+    // All four KickAssCoinPulse domains have DNSSEC on and valid
     static const std::vector<std::string> dns_urls = {
-        "segheights.kickasspulse.org",
-        "segheights.kickasspulse.net",
-        "segheights.kickasspulse.co",
-        "segheights.kickasspulse.se"
+        "segheights.kickasscoinpulse.org",
+        "segheights.kickasscoinpulse.net",
+        "segheights.kickasscoinpulse.co",
+        "segheights.kickasscoinpulse.se"
     };
 
     const uint64_t current_height = get_blockchain_current_height();
@@ -12981,7 +12981,7 @@ mms::multisig_wallet_state wallet2::get_multisig_wallet_state() const
   state.num_transfer_details = m_transfers.size();
   if (state.multisig)
   {
-    THROW_WALLET_EXCEPTION_IF(!m_original_keys_available, error::wallet_internal_error, "MMS use not possible because own original KickAss address not available");
+    THROW_WALLET_EXCEPTION_IF(!m_original_keys_available, error::wallet_internal_error, "MMS use not possible because own original KickAssCoin address not available");
     state.address = m_original_address;
     state.view_secret_key = m_original_view_secret_key;
   }

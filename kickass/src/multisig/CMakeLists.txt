@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2019, The KickAss Project
+# Copyright (c) 2017-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -34,10 +34,10 @@ set(multisig_headers)
 set(multisig_private_headers
   multisig.h)
 
-kickass_private_headers(multisig
+kickasscoin_private_headers(multisig
   ${multisig_private_headers})
 
-kickass_add_library(multisig
+kickasscoin_add_library(multisig
   ${multisig_sources}
   ${multisig_headers}
   ${multisig_private_headers})

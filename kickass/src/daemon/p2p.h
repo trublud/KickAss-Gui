@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -34,8 +34,8 @@
 #include "p2p/net_node.h"
 #include "daemon/protocol.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "daemon"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "daemon"
 
 namespace daemonize
 {
@@ -60,12 +60,12 @@ public:
     : m_server{protocol.get()}
   {
     //initialize objects
-    MGINFO("Initializing p2p server...");
+    MGINFO("Trying to Kickass..");
     if (!m_server.init(vm))
     {
-      throw std::runtime_error("Failed to initialize p2p server.");
+      throw std::runtime_error("Failed to kickass..");
     }
-    MGINFO("p2p server initialized OK");
+    MGINFO("Kicking Ass!");
   }
 
   t_node_server & get()

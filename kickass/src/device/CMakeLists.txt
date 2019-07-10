@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -59,10 +59,10 @@ endif()
 set(device_private_headers)
 
 
-kickass_private_headers(device
+kickasscoin_private_headers(device
   ${device_private_headers})
 
-kickass_add_library(device
+kickasscoin_add_library(device
   ${device_sources}
   ${device_headers}
   ${device_private_headers})

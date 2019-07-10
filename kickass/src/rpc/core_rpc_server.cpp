@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -53,8 +53,8 @@ using namespace epee;
 #include "p2p/net_node.h"
 #include "version.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "daemon.rpc"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "daemon.rpc"
 
 #define MAX_RESTRICTED_FAKE_OUTS_COUNT 40
 #define MAX_RESTRICTED_GLOBAL_FAKE_OUTS_COUNT 5000
@@ -237,7 +237,7 @@ namespace cryptonote
     if (restricted)
       res.database_size = round_up(res.database_size, 5ull* 1024 * 1024 * 1024);
     res.update_available = restricted ? false : m_core.is_update_available();
-    res.version = restricted ? "" : KICKASS_VERSION;
+    res.version = restricted ? "" : KICKASSCOIN_VERSION;
 
     res.status = CORE_RPC_STATUS_OK;
     return true;
@@ -2078,7 +2078,7 @@ namespace cryptonote
       return true;
     }
 
-    static const char software[] = "kickass";
+    static const char software[] = "kickasscoin";
 #ifdef BUILD_TAG
     static const char buildtag[] = BOOST_PP_STRINGIZE(BUILD_TAG);
     static const char subdir[] = "cli";
@@ -2099,7 +2099,7 @@ namespace cryptonote
       res.status = "Error checking for updates";
       return true;
     }
-    if (tools::vercmp(version.c_str(), KICKASS_VERSION) <= 0)
+    if (tools::vercmp(version.c_str(), KICKASSCOIN_VERSION) <= 0)
     {
       res.update = false;
       res.status = CORE_RPC_STATUS_OK;

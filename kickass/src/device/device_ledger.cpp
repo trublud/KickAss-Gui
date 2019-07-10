@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -43,8 +43,8 @@ namespace hw {
 
   #ifdef WITH_DEVICE_LEDGER
 
-    #undef KICKASS_DEFAULT_LOG_CATEGORY
-    #define KICKASS_DEFAULT_LOG_CATEGORY "device.ledger"
+    #undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+    #define KICKASSCOIN_DEFAULT_LOG_CATEGORY "device.ledger"
 
     /* ===================================================================== */
     /* ===                           Debug                              ==== */
@@ -320,8 +320,8 @@ namespace hw {
     bool device_ledger::reset() {
       reset_buffer();
       int offset = set_command_header_noopt(INS_RESET);
-      memmove(this->buffer_send+offset, KICKASS_VERSION, strlen(KICKASS_VERSION));
-      offset += strlen(KICKASS_VERSION);
+      memmove(this->buffer_send+offset, KICKASSCOIN_VERSION, strlen(KICKASSCOIN_VERSION));
+      offset += strlen(KICKASSCOIN_VERSION);
       this->buffer_send[4] = offset-5;
       this->length_send = offset;
       this->exchange();

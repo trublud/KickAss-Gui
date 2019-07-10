@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -27,8 +27,8 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#ifndef KICKASS_MESSAGES_MAP_H
-#define KICKASS_MESSAGES_MAP_H
+#ifndef KICKASSCOIN_MESSAGES_MAP_H
+#define KICKASSCOIN_MESSAGES_MAP_H
 
 #include <string>
 #include <type_traits>
@@ -91,4 +91,4 @@ namespace trezor {
 
 }}
 
-#endif //KICKASS_MESSAGES_MAP_H
+#endif //KICKASSCOIN_MESSAGES_MAP_H

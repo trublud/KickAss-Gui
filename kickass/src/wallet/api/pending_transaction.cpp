@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -43,7 +43,7 @@
 
 using namespace std;
 
-namespace KickAss {
+namespace KickAssCoin {
 
 PendingTransaction::~PendingTransaction() {}
 
@@ -264,5 +264,5 @@ std::vector<std::string> PendingTransactionImpl::signersKeys() const {
 
 }
 
-namespace Bitkickass = KickAss;
+namespace bitkickasscoin = KickAssCoin;
 

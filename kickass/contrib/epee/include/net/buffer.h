@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The KickAss Project
+// Copyright (c) 2018, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -32,8 +32,8 @@
 #include "misc_log_ex.h"
 #include "span.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "net.buffer"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "net.buffer"
 
 //#define NET_BUFFER_LOG(x) MDEBUG(x)
 #define NET_BUFFER_LOG(x) ((void)0)

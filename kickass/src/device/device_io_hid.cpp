@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -35,8 +35,8 @@
 namespace hw {
   namespace io {
  
-    #undef KICKASS_DEFAULT_LOG_CATEGORY
-    #define KICKASS_DEFAULT_LOG_CATEGORY "device.io"
+    #undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+    #define KICKASSCOIN_DEFAULT_LOG_CATEGORY "device.io"
  
     #define ASSERT_X(exp,msg)    CHECK_AND_ASSERT_THROW_MES(exp, msg); 
 

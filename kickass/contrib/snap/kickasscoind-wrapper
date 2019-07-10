@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ ! -d "$SNAP_USER_DATA/etc" ]; then
+  mkdir $SNAP_USER_DATA/etc/
+  cp -R $SNAP/etc/kickasscoind.conf $SNAP_USER_DATA/etc/kickasscoind.conf
+fi
+
+exec "$SNAP/bin/kickasscoind" "$@"

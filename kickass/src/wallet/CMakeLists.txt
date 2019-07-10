@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -51,9 +51,9 @@ set(wallet_private_headers
   message_store.h
   message_transporter.h)
 
-kickass_private_headers(wallet
+kickasscoin_private_headers(wallet
   ${wallet_private_headers})
-kickass_add_library(wallet
+kickasscoin_add_library(wallet
   ${wallet_sources}
   ${wallet_private_headers})
 target_link_libraries(wallet
@@ -82,9 +82,9 @@ set(wallet_rpc_headers)
 set(wallet_rpc_private_headers
   wallet_rpc_server.h)
 
-kickass_private_headers(wallet_rpc_server
+kickasscoin_private_headers(wallet_rpc_server
   ${wallet_rpc_private_headers})
-kickass_add_executable(wallet_rpc_server
+kickasscoin_add_executable(wallet_rpc_server
   ${wallet_rpc_sources}
   ${wallet_rpc_headers}
   ${wallet_rpc_private_headers})
@@ -107,7 +107,7 @@ target_link_libraries(wallet_rpc_server
     ${EXTRA_LIBRARIES})
 set_property(TARGET wallet_rpc_server
   PROPERTY
-    OUTPUT_NAME "kickass-wallet-rpc")
+    OUTPUT_NAME "kickasscoin-wallet-rpc")
 install(TARGETS wallet_rpc_server DESTINATION bin)
 
 

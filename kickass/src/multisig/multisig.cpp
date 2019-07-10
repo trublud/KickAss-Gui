@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -34,8 +34,8 @@
 #include "cryptonote_basic/cryptonote_format_utils.h"
 #include "multisig.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "multisig"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "multisig"
 
 using namespace std;
 

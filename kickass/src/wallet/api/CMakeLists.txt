@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -57,9 +57,9 @@ set(wallet_api_private_headers
   subaddress_account.h
   unsigned_transaction.h)
 
-kickass_private_headers(wallet_api
+kickasscoin_private_headers(wallet_api
   ${wallet_api_private_headers})
-kickass_add_library(wallet_api
+kickasscoin_add_library(wallet_api
   ${wallet_api_sources}
   ${wallet_api_headers}
   ${wallet_api_private_headers})

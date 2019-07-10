@@ -1,4 +1,4 @@
-:: Copyright (c) 2014-2019, The KickAss Project
+:: Copyright (c) 2014-2019, The KickAssCoin Project
 :: 
 :: All rights reserved.
 :: 

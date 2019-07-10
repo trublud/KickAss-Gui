@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -42,7 +42,7 @@ endif()
 cmake_minimum_required(VERSION 2.8.7)
 message(STATUS "CMake version ${CMAKE_VERSION}")
 
-project(kickass)
+project(kickasscoin)
 
 enable_language(C ASM)
 
@@ -347,7 +347,7 @@ if(SANITIZE)
 endif()
 
 # Set default blockchain storage location:
-# memory was the default in Cryptonote before KickAss implemented LMDB, it still works but is unnecessary.
+# memory was the default in Cryptonote before KickAssCoin implemented LMDB, it still works but is unnecessary.
 # set(DATABASE memory)
 set(DATABASE lmdb)
 
@@ -820,7 +820,7 @@ else()
     set(DEBUG_FLAGS "${DEBUG_FLAGS} -O0 ")
   endif()
 
-  # At least some CLANGs default to not enough for kickass
+  # At least some CLANGs default to not enough for kickasscoin
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ftemplate-depth=900")
 
   if(NOT DEFINED USE_LTO_DEFAULT)

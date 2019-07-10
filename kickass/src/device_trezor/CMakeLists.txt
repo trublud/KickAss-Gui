@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -30,14 +30,14 @@ set(TREZOR_PROTOB_H
         trezor/messages/messages.pb.h
         trezor/messages/messages-common.pb.h
         trezor/messages/messages-management.pb.h
-        trezor/messages/messages-kickass.pb.h
+        trezor/messages/messages-kickasscoin.pb.h
 )
 
 set(TREZOR_PROTOB_CPP
         trezor/messages/messages.pb.cc
         trezor/messages/messages-common.pb.cc
         trezor/messages/messages-management.pb.cc
-        trezor/messages/messages-kickass.pb.cc
+        trezor/messages/messages-kickasscoin.pb.cc
 )
 
 set(trezor_headers
@@ -73,10 +73,10 @@ if(DEVICE_TREZOR_READY)
         message(STATUS "Trezor debugging enabled")
     endif()
 
-    kickass_private_headers(device_trezor
+    kickasscoin_private_headers(device_trezor
             ${device_private_headers})
 
-    kickass_add_library(device_trezor
+    kickasscoin_add_library(device_trezor
             ${trezor_sources}
             ${trezor_headers}
             ${trezor_private_headers})
@@ -97,7 +97,7 @@ if(DEVICE_TREZOR_READY)
 
 else()
     message(STATUS "Trezor support disabled")
-    kickass_private_headers(device_trezor)
-    kickass_add_library(device_trezor device_trezor.cpp)
+    kickasscoin_private_headers(device_trezor)
+    kickasscoin_add_library(device_trezor device_trezor.cpp)
     target_link_libraries(device_trezor PUBLIC cncrypto)
 endif()

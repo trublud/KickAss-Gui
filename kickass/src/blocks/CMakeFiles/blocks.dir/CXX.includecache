@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/src/blocks/blocks.cpp
+blocks.h
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/src/blocks/blocks.h
+unordered_map
+-
+
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/src/blocks/blocks.h
+cryptonote_config.h
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/src/blocks/cryptonote_config.h
+span.h
+/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/src/blocks/span.h
+
+contrib/epee/include/span.h
+algorithm
+-
+cstdint
+-
+memory
+-
+string
+-
+type_traits
+-
+
+src/cryptonote_config.h
+stdexcept
+-
+string
+-
+boost/uuid/uuid.hpp
+-
+

@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -61,9 +61,9 @@ set(cryptonote_basic_private_headers
   tx_extra.h
   verification_context.h)
 
-kickass_private_headers(cryptonote_basic
+kickasscoin_private_headers(cryptonote_basic
   ${cryptonote_basic_private_headers})
-kickass_add_library(cryptonote_basic
+kickasscoin_add_library(cryptonote_basic
   ${cryptonote_basic_sources}
   ${cryptonote_basic_headers}
   ${cryptonote_basic_private_headers})

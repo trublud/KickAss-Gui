@@ -1,31 +1,31 @@
-name: kickass
+name: kickasscoin
 version: 0.11.1.0-1
-summary: "KickAss: the secure, private, untraceable cryptocurrency https://getkickass.org"
+summary: "KickAssCoin: the secure, private, untraceable cryptocurrency https://getkickasscoin.org"
 description: |
-    KickAss is a private, secure, untraceable, decentralised digital currency.
+    KickAssCoin is a private, secure, untraceable, decentralised digital currency.
     You are your bank, you control your funds, and nobody can trace your transfers
     unless you allow them to do so.
 grade: devel
 confinement: strict
 
 apps:
-    kickassd:
+    kickasscoind:
         daemon: forking
         command: |
-          kickassd-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/kickassd.conf
+          kickasscoind-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/kickasscoind.conf
         plugs:
             - network
             - network-bind
-    kickass-wallet-rpc:
+    kickasscoin-wallet-rpc:
         command: |
-          kickass-wallet-rpc --log-file ${SNAP_USER_DATA}
+          kickasscoin-wallet-rpc --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
             - network-bind
-    kickass-wallet-cli:
+    kickasscoin-wallet-cli:
         command: |
-          kickass-wallet-cli --log-file ${SNAP_USER_DATA}
+          kickasscoin-wallet-cli --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
@@ -71,8 +71,8 @@ parts:
         plugin: dump
         source: .
         organize:
-            contrib/snap/kickassd.conf: etc/kickassd.conf
-            contrib/snap/kickassd-wrapper: bin/kickassd-wrapper
+            contrib/snap/kickasscoind.conf: etc/kickasscoind.conf
+            contrib/snap/kickasscoind-wrapper: bin/kickasscoind-wrapper
         prime:
             - etc
             - bin

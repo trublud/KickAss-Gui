@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -40,8 +40,8 @@
 #include <ctime>
 #include <string>
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "daemon"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "daemon"
 
 namespace daemonize {
 
@@ -558,8 +558,8 @@ bool t_rpc_command_executor::mining_status() {
     uint64_t daily = 86400ull / mres.block_target * mres.block_reward * ratio;
     uint64_t monthly = 86400ull / mres.block_target * 30.5 * mres.block_reward * ratio;
     uint64_t yearly = 86400ull / mres.block_target * 356 * mres.block_reward * ratio;
-    tools::msg_writer() << "Expected: " << cryptonote::print_money(daily) << " kickass daily, "
-        << cryptonote::print_money(monthly) << " kickass monthly, " << cryptonote::print_money(yearly) << " yearly";
+    tools::msg_writer() << "Expected: " << cryptonote::print_money(daily) << " kickasscoin daily, "
+        << cryptonote::print_money(monthly) << " kickasscoin monthly, " << cryptonote::print_money(yearly) << " yearly";
   }
 
   return true;
@@ -1299,8 +1299,8 @@ bool t_rpc_command_executor::stop_daemon()
 //# ifdef WIN32
 //    // Stop via service API
 //    // TODO - this is only temporary!  Get rid of hard-coded constants!
-//    bool ok = windows::stop_service("BitKickAss Daemon");
-//    ok = windows::uninstall_service("BitKickAss Daemon");
+//    bool ok = windows::stop_service("bitkickasscoin Daemon");
+//    ok = windows::uninstall_service("bitkickasscoin Daemon");
 //    //bool ok = windows::stop_service(SERVICE_NAME);
 //    //ok = windows::uninstall_service(SERVICE_NAME);
 //    if (ok)
@@ -1344,10 +1344,10 @@ bool t_rpc_command_executor::print_status()
   bool daemon_is_alive = m_rpc_client->check_connection();
 
   if(daemon_is_alive) {
-    tools::success_msg_writer() << "kickassd is running";
+    tools::success_msg_writer() << "kickasscoind is running";
   }
   else {
-    tools::fail_msg_writer() << "kickassd is NOT running";
+    tools::fail_msg_writer() << "kickasscoind is NOT running";
   }
 
   return true;

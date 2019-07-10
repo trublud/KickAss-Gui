@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -43,8 +43,8 @@ extern "C"
 #include "multiexp.h"
 #include "bulletproofs.h"
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "bulletproofs"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "bulletproofs"
 
 //#define DEBUG_BP
 

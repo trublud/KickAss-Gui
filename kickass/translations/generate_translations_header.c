@@ -1,5 +1,5 @@
 // Copyright (c) 2013, Sergey Lyubka
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 // All rights reserved.
 // Released under the MIT license.
 
@@ -11,13 +11,13 @@
 //      cc -o generate-translations-header generate-translations-header.c
 //
 //   2. Convert list of files into single header:
-//      ./generate-translations-header kickass_fr.qm kickass_it.qm > translations_files.h
+//      ./generate-translations-header kickasscoin_fr.qm kickasscoin_it.qm > translations_files.h
 //
 //   3. In your application code, include translations_files.h, then you can
 //      access the files using this function:
 //      static bool find_embedded_file(const std::string &file_name, std::string &data);
 //      std::string data;
-//      find_embedded_file("kickass_fr.qm", data);
+//      find_embedded_file("kickasscoin_fr.qm", data);
 
 #include <stdio.h>
 #include <stdlib.h>

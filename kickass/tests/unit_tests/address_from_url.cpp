@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -58,7 +58,7 @@ TEST(AddressFromTXT, Success)
 
   EXPECT_STREQ(addr.c_str(), res.c_str());
 
-  std::string txtr3 = "foobar oa1:xmr tx_description=\"Donation for KickAss Development Fund\"; ";
+  std::string txtr3 = "foobar oa1:xmr tx_description=\"Donation for KickAssCoin Development Fund\"; ";
   txtr3 += "recipient_address=";
   txtr3 += addr;
   txtr3 += "; foobar";
@@ -84,11 +84,11 @@ TEST(AddressFromTXT, Failure)
 
 TEST(AddressFromURL, Success)
 {
-  const std::string addr = KICKASS_DONATION_ADDR;
+  const std::string addr = KICKASSCOIN_DONATION_ADDR;
   
   bool dnssec_result = false;
 
-  std::vector<std::string> addresses = tools::dns_utils::addresses_from_url("donate.getkickass.org", dnssec_result);
+  std::vector<std::string> addresses = tools::dns_utils::addresses_from_url("donate.getkickasscoin.org", dnssec_result);
 
   EXPECT_EQ(1, addresses.size());
   if (addresses.size() == 1)
@@ -97,7 +97,7 @@ TEST(AddressFromURL, Success)
   }
 
   // OpenAlias address with an @ instead of first .
-  addresses = tools::dns_utils::addresses_from_url("donate@getkickass.org", dnssec_result);
+  addresses = tools::dns_utils::addresses_from_url("donate@getkickasscoin.org", dnssec_result);
   EXPECT_EQ(1, addresses.size());
   if (addresses.size() == 1)
   {

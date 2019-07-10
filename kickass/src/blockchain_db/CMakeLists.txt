@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The KickAss Project
+# Copyright (c) 2014-2019, The KickAssCoin Project
 #
 # All rights reserved.
 #
@@ -53,9 +53,9 @@ if (BERKELEY_DB)
   )
 endif()
 
-kickass_private_headers(blockchain_db
+kickasscoin_private_headers(blockchain_db
   ${crypto_private_headers})
-kickass_add_library(blockchain_db
+kickasscoin_add_library(blockchain_db
   ${blockchain_db_sources}
   ${blockchain_db_headers}
   ${blockchain_db_private_headers})

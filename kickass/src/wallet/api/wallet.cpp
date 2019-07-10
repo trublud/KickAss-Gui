@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -53,10 +53,10 @@
 using namespace std;
 using namespace cryptonote;
 
-#undef KICKASS_DEFAULT_LOG_CATEGORY
-#define KICKASS_DEFAULT_LOG_CATEGORY "WalletAPI"
+#undef KICKASSCOIN_DEFAULT_LOG_CATEGORY
+#define KICKASSCOIN_DEFAULT_LOG_CATEGORY "WalletAPI"
 
-namespace KickAss {
+namespace KickAssCoin {
 
 namespace {
     // copy-pasted from simplewallet
@@ -72,7 +72,7 @@ namespace {
     std::string get_default_ringdb_path(cryptonote::network_type nettype)
     {
       boost::filesystem::path dir = tools::get_default_data_dir();
-      // remove .bitkickass, replace with .shared-ringdb
+      // remove .bitkickasscoin, replace with .shared-ringdb
       dir = dir.remove_filename();
       dir /= ".shared-ringdb";
       if (nettype == cryptonote::TESTNET)
@@ -399,19 +399,19 @@ void Wallet::init(const char *argv0, const char *default_log_base_name, const st
 }
 
 void Wallet::debug(const std::string &category, const std::string &str) {
-    MCDEBUG(category.empty() ? KICKASS_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+    MCDEBUG(category.empty() ? KICKASSCOIN_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 void Wallet::info(const std::string &category, const std::string &str) {
-    MCINFO(category.empty() ? KICKASS_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+    MCINFO(category.empty() ? KICKASSCOIN_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 void Wallet::warning(const std::string &category, const std::string &str) {
-    MCWARNING(category.empty() ? KICKASS_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+    MCWARNING(category.empty() ? KICKASSCOIN_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 void Wallet::error(const std::string &category, const std::string &str) {
-    MCERROR(category.empty() ? KICKASS_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+    MCERROR(category.empty() ? KICKASSCOIN_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 ///////////////////////// WalletImpl implementation ////////////////////////
@@ -2421,4 +2421,4 @@ uint64_t WalletImpl::coldKeyImageSync(uint64_t &spent, uint64_t &unspent)
 }
 } // namespace
 
-namespace Bitkickass = KickAss;
+namespace bitkickasscoin = KickAssCoin;

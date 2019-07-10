@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -27,8 +27,8 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#ifndef KICKASS_EXCEPTIONS_H
-#define KICKASS_EXCEPTIONS_H
+#ifndef KICKASSCOIN_EXCEPTIONS_H
+#define KICKASSCOIN_EXCEPTIONS_H
 
 #include <exception>
 #include <string>
@@ -190,4 +190,4 @@ namespace proto {
 }
 }
 }
-#endif //KICKASS_EXCEPTIONS_H
+#endif //KICKASSCOIN_EXCEPTIONS_H

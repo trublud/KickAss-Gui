@@ -1,0 +1,999 @@
+The system is: Linux - 4.18.0-25-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/3.10.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e6cea/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e6cea.dir/build.make CMakeFiles/cmTC_e6cea.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e6cea.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e6cea.dir/testCCompiler.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_e6cea
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6cea.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e6cea.dir/testCCompiler.c.o  -o cmTC_e6cea 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ed127/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ed127.dir/build.make CMakeFiles/cmTC_ed127.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ed127.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ed127.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_ed127
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed127.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ed127.dir/CMakeCCompilerABI.c.o  -o cmTC_ed127 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04.1' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ed127' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJH87Nt.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ed127 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_ed127.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ed127' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_ed127/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_ed127.dir/build.make CMakeFiles/cmTC_ed127.dir/build]
+  ignore line: [make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_ed127.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_ed127.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_ed127]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed127.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ed127.dir/CMakeCCompilerABI.c.o  -o cmTC_ed127 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04.1' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ed127' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJH87Nt.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ed127 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_ed127.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccJH87Nt.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_ed127] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
+    arg [CMakeFiles/cmTC_ed127.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7] ==> [/usr/lib/gcc/x86_64-linux-gnu/7]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ed8ca/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ed8ca.dir/build.make CMakeFiles/cmTC_ed8ca.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ed8ca.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_ed8ca.dir/feature_tests.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/feature_tests.c
+Linking C executable cmTC_ed8ca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed8ca.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ed8ca.dir/feature_tests.c.o  -o cmTC_ed8ca 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fddf9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fddf9.dir/build.make CMakeFiles/cmTC_fddf9.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fddf9.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_fddf9.dir/feature_tests.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/feature_tests.c
+Linking C executable cmTC_fddf9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fddf9.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_fddf9.dir/feature_tests.c.o  -o cmTC_fddf9 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_059b6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_059b6.dir/build.make CMakeFiles/cmTC_059b6.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_059b6.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_059b6.dir/feature_tests.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/feature_tests.c
+Linking C executable cmTC_059b6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_059b6.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_059b6.dir/feature_tests.c.o  -o cmTC_059b6 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7370c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7370c.dir/build.make CMakeFiles/cmTC_7370c.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7370c.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_7370c.dir/testCXXCompiler.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_7370c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7370c.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_7370c.dir/testCXXCompiler.cxx.o  -o cmTC_7370c 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f033f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f033f.dir/build.make CMakeFiles/cmTC_f033f.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f033f.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_f033f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_f033f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f033f.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_f033f.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f033f 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04.1' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f033f' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8grjtX.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f033f /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_f033f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f033f' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_f033f/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_f033f.dir/build.make CMakeFiles/cmTC_f033f.dir/build]
+  ignore line: [make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_f033f.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_f033f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_f033f]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f033f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_f033f.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f033f ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.4.0-1ubuntu1~18.04.1' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f033f' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8grjtX.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f033f /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_f033f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc8grjtX.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_f033f] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
+    arg [CMakeFiles/cmTC_f033f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7] ==> [/usr/lib/gcc/x86_64-linux-gnu/7]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+
+
+Detecting CXX [-std=c++1z] compiler features compiled with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7f30f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7f30f.dir/build.make CMakeFiles/cmTC_7f30f.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7f30f.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_7f30f.dir/feature_tests.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_7f30f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f30f.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_7f30f.dir/feature_tests.cxx.o  -o cmTC_7f30f 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9fb58/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9fb58.dir/build.make CMakeFiles/cmTC_9fb58.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9fb58.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_9fb58.dir/feature_tests.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_9fb58
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9fb58.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_9fb58.dir/feature_tests.cxx.o  -o cmTC_9fb58 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e1692/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e1692.dir/build.make CMakeFiles/cmTC_e1692.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e1692.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_e1692.dir/feature_tests.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_e1692
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1692.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_e1692.dir/feature_tests.cxx.o  -o cmTC_e1692 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fe7fd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fe7fd.dir/build.make CMakeFiles/cmTC_fe7fd.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fe7fd.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_fe7fd.dir/feature_tests.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_fe7fd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe7fd.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_fe7fd.dir/feature_tests.cxx.o  -o cmTC_fe7fd 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b7e75/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b7e75.dir/build.make CMakeFiles/cmTC_b7e75.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b7e75.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_b7e75.dir/CheckIncludeFile.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_b7e75
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7e75.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b7e75.dir/CheckIncludeFile.c.o  -o cmTC_b7e75 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test _pthread_c succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a50c8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a50c8.dir/build.make CMakeFiles/cmTC_a50c8.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a50c8.dir/src.c.o
+/usr/bin/cc   -D_pthread_c   -pthread -o CMakeFiles/cmTC_a50c8.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a50c8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a50c8.dir/link.txt --verbose=1
+/usr/bin/cc  -D_pthread_c    -rdynamic CMakeFiles/cmTC_a50c8.dir/src.c.o  -o cmTC_a50c8 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test _pthread_cxx succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_93bf4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_93bf4.dir/build.make CMakeFiles/cmTC_93bf4.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_93bf4.dir/src.cxx.o
+/usr/bin/c++    -D_pthread_cxx   -pthread -o CMakeFiles/cmTC_93bf4.dir/src.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_93bf4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93bf4.dir/link.txt --verbose=1
+/usr/bin/c++   -D_pthread_cxx    -rdynamic CMakeFiles/cmTC_93bf4.dir/src.cxx.o  -o cmTC_93bf4 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Determining if the function explicit_bzero exists in the c passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_04c10/fast"
+/usr/bin/make -f CMakeFiles/cmTC_04c10.dir/build.make CMakeFiles/cmTC_04c10.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_04c10.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pthread -DCHECK_FUNCTION_EXISTS=explicit_bzero   -o CMakeFiles/cmTC_04c10.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_04c10
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04c10.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -DCHECK_FUNCTION_EXISTS=explicit_bzero    -rdynamic CMakeFiles/cmTC_04c10.dir/CheckFunctionExists.c.o  -o cmTC_04c10  -L/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/strings.h -Wl,-rpath,/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/strings.h -lc 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Determining if the function strptime exists passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_89287/fast"
+/usr/bin/make -f CMakeFiles/cmTC_89287.dir/build.make CMakeFiles/cmTC_89287.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89287.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pthread -DCHECK_FUNCTION_EXISTS=strptime   -o CMakeFiles/cmTC_89287.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_89287
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89287.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -DCHECK_FUNCTION_EXISTS=strptime    -rdynamic CMakeFiles/cmTC_89287.dir/CheckFunctionExists.c.o  -o cmTC_89287 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Determining if the backtrace exist passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9892e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9892e.dir/build.make CMakeFiles/cmTC_9892e.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9892e.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -pthread    -o CMakeFiles/cmTC_9892e.dir/CheckSymbolExists.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_9892e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9892e.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread     -rdynamic CMakeFiles/cmTC_9892e.dir/CheckSymbolExists.c.o  -o cmTC_9892e 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+File /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <execinfo.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef backtrace
+  return ((int*)(&backtrace))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test CC_SUPPORTS_MARCH_NATIVE succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0d993/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0d993.dir/build.make CMakeFiles/cmTC_0d993.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0d993.dir/src.c.o
+/usr/bin/cc   -pthread -DCC_SUPPORTS_MARCH_NATIVE   -march=native -o CMakeFiles/cmTC_0d993.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_0d993
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d993.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -DCC_SUPPORTS_MARCH_NATIVE    -rdynamic CMakeFiles/cmTC_0d993.dir/src.c.o  -o cmTC_0d993 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test _Wformat_c succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ad6a4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ad6a4.dir/build.make CMakeFiles/cmTC_ad6a4.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ad6a4.dir/src.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -D_Wformat_c   -Wformat -o CMakeFiles/cmTC_ad6a4.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ad6a4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad6a4.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -D_Wformat_c    -rdynamic CMakeFiles/cmTC_ad6a4.dir/src.c.o  -o cmTC_ad6a4 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test _Wformat_cxx succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f2e6b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f2e6b.dir/build.make CMakeFiles/cmTC_f2e6b.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f2e6b.dir/src.cxx.o
+/usr/bin/c++    -pthread -maes -march=native -fno-strict-aliasing -D_Wformat_cxx   -Wformat -o CMakeFiles/cmTC_f2e6b.dir/src.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_f2e6b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2e6b.dir/link.txt --verbose=1
+/usr/bin/c++   -pthread -maes -march=native -fno-strict-aliasing -D_Wformat_cxx    -rdynamic CMakeFiles/cmTC_f2e6b.dir/src.cxx.o  -o cmTC_f2e6b 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test _Wformat_security_c succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0d925/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0d925.dir/build.make CMakeFiles/cmTC_0d925.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0d925.dir/src.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -D_Wformat_security_c   -Wformat-security -o CMakeFiles/cmTC_0d925.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_0d925
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d925.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -D_Wformat_security_c    -rdynamic CMakeFiles/cmTC_0d925.dir/src.c.o  -o cmTC_0d925 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test _Wformat_security_cxx succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d9f4c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d9f4c.dir/build.make CMakeFiles/cmTC_d9f4c.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d9f4c.dir/src.cxx.o
+/usr/bin/c++    -pthread -maes -march=native -fno-strict-aliasing -D_Wformat_security_cxx   -Wformat-security -o CMakeFiles/cmTC_d9f4c.dir/src.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_d9f4c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9f4c.dir/link.txt --verbose=1
+/usr/bin/c++   -pthread -maes -march=native -fno-strict-aliasing -D_Wformat_security_cxx    -rdynamic CMakeFiles/cmTC_d9f4c.dir/src.cxx.o  -o cmTC_d9f4c 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test _fstack_protector_c succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8144d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8144d.dir/build.make CMakeFiles/cmTC_8144d.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8144d.dir/src.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -D_fstack_protector_c   -fstack-protector -o CMakeFiles/cmTC_8144d.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8144d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8144d.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -D_fstack_protector_c    -rdynamic CMakeFiles/cmTC_8144d.dir/src.c.o  -o cmTC_8144d 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test _fstack_protector_cxx succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_58e3d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_58e3d.dir/build.make CMakeFiles/cmTC_58e3d.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_58e3d.dir/src.cxx.o
+/usr/bin/c++    -pthread -maes -march=native -fno-strict-aliasing -D_fstack_protector_cxx   -fstack-protector -o CMakeFiles/cmTC_58e3d.dir/src.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_58e3d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58e3d.dir/link.txt --verbose=1
+/usr/bin/c++   -pthread -maes -march=native -fno-strict-aliasing -D_fstack_protector_cxx    -rdynamic CMakeFiles/cmTC_58e3d.dir/src.cxx.o  -o cmTC_58e3d 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test _fstack_protector_strong_c succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d55a0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d55a0.dir/build.make CMakeFiles/cmTC_d55a0.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d55a0.dir/src.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -D_fstack_protector_strong_c   -fstack-protector-strong -o CMakeFiles/cmTC_d55a0.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_d55a0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d55a0.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -D_fstack_protector_strong_c    -rdynamic CMakeFiles/cmTC_d55a0.dir/src.c.o  -o cmTC_d55a0 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test _fstack_protector_strong_cxx succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cd75e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cd75e.dir/build.make CMakeFiles/cmTC_cd75e.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_cd75e.dir/src.cxx.o
+/usr/bin/c++    -pthread -maes -march=native -fno-strict-aliasing -D_fstack_protector_strong_cxx   -fstack-protector-strong -o CMakeFiles/cmTC_cd75e.dir/src.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_cd75e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd75e.dir/link.txt --verbose=1
+/usr/bin/c++   -pthread -maes -march=native -fno-strict-aliasing -D_fstack_protector_strong_cxx    -rdynamic CMakeFiles/cmTC_cd75e.dir/src.cxx.o  -o cmTC_cd75e 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test _mmitigate_rop_c succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9c1a1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9c1a1.dir/build.make CMakeFiles/cmTC_9c1a1.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9c1a1.dir/src.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -D_mmitigate_rop_c   -mmitigate-rop -o CMakeFiles/cmTC_9c1a1.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_9c1a1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9c1a1.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -D_mmitigate_rop_c    -rdynamic CMakeFiles/cmTC_9c1a1.dir/src.c.o  -o cmTC_9c1a1 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test _mmitigate_rop_cxx succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fd5bf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fd5bf.dir/build.make CMakeFiles/cmTC_fd5bf.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fd5bf.dir/src.cxx.o
+/usr/bin/c++    -pthread -maes -march=native -fno-strict-aliasing -D_mmitigate_rop_cxx   -mmitigate-rop -o CMakeFiles/cmTC_fd5bf.dir/src.cxx.o -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_fd5bf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fd5bf.dir/link.txt --verbose=1
+/usr/bin/c++   -pthread -maes -march=native -fno-strict-aliasing -D_mmitigate_rop_cxx    -rdynamic CMakeFiles/cmTC_fd5bf.dir/src.cxx.o  -o cmTC_fd5bf 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Determining if the -pie linker flag is supported passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_52611/fast"
+/usr/bin/make -f CMakeFiles/cmTC_52611.dir/build.make CMakeFiles/cmTC_52611.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_52611.dir/CheckLinkerFlag.c.o
+/usr/bin/cc   -pie    -pie -o CMakeFiles/cmTC_52611.dir/CheckLinkerFlag.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/cmake/CheckLinkerFlag.c
+Linking C executable cmTC_52611
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52611.dir/link.txt --verbose=1
+/usr/bin/cc -pie     -rdynamic CMakeFiles/cmTC_52611.dir/CheckLinkerFlag.c.o  -o cmTC_52611 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Determining if the -Wl,-z,relro linker flag is supported passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_450d1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_450d1.dir/build.make CMakeFiles/cmTC_450d1.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_450d1.dir/CheckLinkerFlag.c.o
+/usr/bin/cc   -Wl,-z,relro    -Wl,-z,relro -o CMakeFiles/cmTC_450d1.dir/CheckLinkerFlag.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/cmake/CheckLinkerFlag.c
+Linking C executable cmTC_450d1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_450d1.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,-z,relro     -rdynamic CMakeFiles/cmTC_450d1.dir/CheckLinkerFlag.c.o  -o cmTC_450d1 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Determining if the -Wl,-z,now linker flag is supported passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b0f66/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b0f66.dir/build.make CMakeFiles/cmTC_b0f66.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b0f66.dir/CheckLinkerFlag.c.o
+/usr/bin/cc   -Wl,-z,now    -Wl,-z,now -o CMakeFiles/cmTC_b0f66.dir/CheckLinkerFlag.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/cmake/CheckLinkerFlag.c
+Linking C executable cmTC_b0f66
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0f66.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,-z,now     -rdynamic CMakeFiles/cmTC_b0f66.dir/CheckLinkerFlag.c.o  -o cmTC_b0f66 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Determining if the -Wl,-z,noexecstack linker flag is supported passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_716f1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_716f1.dir/build.make CMakeFiles/cmTC_716f1.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_716f1.dir/CheckLinkerFlag.c.o
+/usr/bin/cc   -Wl,-z,noexecstack    -Wl,-z,noexecstack -o CMakeFiles/cmTC_716f1.dir/CheckLinkerFlag.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/cmake/CheckLinkerFlag.c
+Linking C executable cmTC_716f1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_716f1.dir/link.txt --verbose=1
+/usr/bin/cc -Wl,-z,noexecstack     -rdynamic CMakeFiles/cmTC_716f1.dir/CheckLinkerFlag.c.o  -o cmTC_716f1 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Determining if the function rl_copy_text exists passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_76913/fast"
+/usr/bin/make -f CMakeFiles/cmTC_76913.dir/build.make CMakeFiles/cmTC_76913.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_76913.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-unused-variable -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -Wformat -Wformat-security -fstack-protector -fstack-protector-strong -mmitigate-rop -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_copy_text   -o CMakeFiles/cmTC_76913.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_76913
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76913.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-unused-variable -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -Wformat -Wformat-security -fstack-protector -fstack-protector-strong -mmitigate-rop -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_copy_text    -rdynamic CMakeFiles/cmTC_76913.dir/CheckFunctionExists.c.o  -o cmTC_76913 /usr/lib/x86_64-linux-gnu/libreadline.so 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Determining if the function rl_filename_completion_function exists passed with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cf201/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cf201.dir/build.make CMakeFiles/cmTC_cf201.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cf201.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-unused-variable -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -Wformat -Wformat-security -fstack-protector -fstack-protector-strong -mmitigate-rop -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_filename_completion_function   -o CMakeFiles/cmTC_cf201.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cf201
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf201.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-unused-variable -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -Wformat -Wformat-security -fstack-protector -fstack-protector-strong -mmitigate-rop -fno-strict-aliasing -DCHECK_FUNCTION_EXISTS=rl_filename_completion_function    -rdynamic CMakeFiles/cmTC_cf201.dir/CheckFunctionExists.c.o  -o cmTC_cf201 /usr/lib/x86_64-linux-gnu/libreadline.so 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test HAVE_C11 succeeded with the following output:
+Change Dir: /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_874a9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_874a9.dir/build.make CMakeFiles/cmTC_874a9.dir/build
+make[1]: Entering directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_874a9.dir/src.c.o
+/usr/bin/cc   -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-unused-variable -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -Wformat -Wformat-security -fstack-protector -fstack-protector-strong -mmitigate-rop -fno-strict-aliasing -DHAVE_C11   -std=c11 -o CMakeFiles/cmTC_874a9.dir/src.c.o   -c /home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_874a9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_874a9.dir/link.txt --verbose=1
+/usr/bin/cc  -pthread -maes -march=native -fno-strict-aliasing -std=c11 -D_GNU_SOURCE   -Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=deprecated-declarations -Wno-unused-parameter -Wno-unused-variable -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wlogical-op -Wno-error=maybe-uninitialized -Wno-error=cpp -Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes  -fPIC  -Wformat -Wformat-security -fstack-protector -fstack-protector-strong -mmitigate-rop -fno-strict-aliasing -DHAVE_C11    -rdynamic CMakeFiles/cmTC_874a9.dir/src.c.o  -o cmTC_874a9 /usr/lib/x86_64-linux-gnu/libreadline.so 
+make[1]: Leaving directory '/home/dad/coins/build/GenerateKickAssCoin/kickasscoin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }

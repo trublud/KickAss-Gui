@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The KickAss Project
+// Copyright (c) 2017-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -27,8 +27,8 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#ifndef KICKASS_DEVICE_TREZOR_BASE_H
-#define KICKASS_DEVICE_TREZOR_BASE_H
+#ifndef KICKASSCOIN_DEVICE_TREZOR_BASE_H
+#define KICKASSCOIN_DEVICE_TREZOR_BASE_H
 
 
 #include <cstddef>
@@ -242,7 +242,7 @@ namespace trezor {
 
     bool reset();
 
-    // Default derivation path for KickAss
+    // Default derivation path for KickAssCoin
     static const uint32_t DEFAULT_BIP44_PATH[2];
 
     std::shared_ptr<Transport> get_transport(){
@@ -339,4 +339,4 @@ namespace trezor {
 
 }
 }
-#endif //KICKASS_DEVICE_TREZOR_BASE_H
+#endif //KICKASSCOIN_DEVICE_TREZOR_BASE_H

@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The KickAss Project
+// Copyright (c) 2018, The KickAssCoin Project
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without modification, are
@@ -118,18 +118,18 @@ namespace lmdb
                 if (!txn)
                     return txn.error();
 
-                KICKASS_PRECOND(*txn != nullptr);
+                KICKASSCOIN_PRECOND(*txn != nullptr);
                 const auto wrote = f(*(*txn));
                 if (wrote)
                 {
-                    KICKASS_CHECK(commit(std::move(*txn)));
+                    KICKASSCOIN_CHECK(commit(std::move(*txn)));
                     return wrote;
                 }
                 if (wrote != lmdb::error(MDB_MAP_FULL))
                     return wrote;
 
                 txn->reset();
-                KICKASS_CHECK(this->resize());
+                KICKASSCOIN_CHECK(this->resize());
             }
             return {lmdb::error(MDB_MAP_FULL)};
         }

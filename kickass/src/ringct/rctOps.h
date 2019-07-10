@@ -1,5 +1,5 @@
 //#define DBG
-// Copyright (c) 2016, KickAss Research Labs
+// Copyright (c) 2016, KickAssCoin Research Labs
 //
 // Author: Shen Noether <shen.noether@gmx.com>
 //

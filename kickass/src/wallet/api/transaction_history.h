@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 //
 // All rights reserved.
 //
@@ -31,7 +31,7 @@
 #include "wallet/api/wallet2_api.h"
 #include <boost/thread/shared_mutex.hpp>
 
-namespace KickAss {
+namespace KickAssCoin {
 
 class WalletImpl;
 
@@ -56,5 +56,5 @@ private:
 
 }
 
-namespace Bitkickass = KickAss;
+namespace bitkickasscoin = KickAssCoin;
 

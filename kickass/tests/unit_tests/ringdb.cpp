@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The KickAss Project
+// Copyright (c) 2018, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -83,10 +83,10 @@ private:
     boost::filesystem::path path =
       boost::filesystem::temp_directory_path();
 #if defined(__MINGW32__) || defined(__MINGW__)
-    filename = tempnam(path.string().c_str(), "kickass-ringdb-test-");
+    filename = tempnam(path.string().c_str(), "kickasscoin-ringdb-test-");
     EXPECT_TRUE(filename != NULL);
 #else
-    path /= "kickass-ringdb-test-XXXXXX";
+    path /= "kickasscoin-ringdb-test-XXXXXX";
     filename = strdup(path.string().c_str());
     EXPECT_TRUE(mkdtemp(filename) != NULL);
 #endif

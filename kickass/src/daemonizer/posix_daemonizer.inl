@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The KickAss Project
+// Copyright (c) 2014-2019, The KickAssCoin Project
 // 
 // All rights reserved.
 // 
@@ -100,7 +100,7 @@ namespace daemonizer
     }
     else
     {
-      //LOG_PRINT_L0("KickAss '" << KICKASS_RELEASE_NAME << "' (v" << KICKASS_VERSION_FULL);
+      //LOG_PRINT_L0("KickAssCoin '" << KICKASSCOIN_RELEASE_NAME << "' (v" << KICKASSCOIN_VERSION_FULL);
       return executor.run_interactive(vm);
     }
   }
